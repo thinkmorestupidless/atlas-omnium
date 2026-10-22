@@ -49,3 +49,9 @@ Feature: Travel out to the nearby stars
     Given the nearby stellar regime is in force
     When the person reads the scale rail
     Then the scale rail declares that a dimension is flattened
+
+  Scenario: a bright star the catalogue lacks is drawn through a cross-match record showing both source records
+    Given the nearby stellar regime is in force
+    When the person selects "Alpha Centauri A"
+    Then the star is visible as a stellar mark
+    And the inspector shows a cross-match record with both source records and the basis of the match

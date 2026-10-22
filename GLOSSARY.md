@@ -176,6 +176,17 @@ state can be checked against it.
 *Proposed.* The reference frame of a molecule type's structure as its source record gives it;
 never a celestial frame.
 
+### cross-match record
+*Proposed.* The record that says two source records in two catalogues are the same entity, with
+the basis of the match; the only way a star enters the star sample from a second catalogue.
+
+### basis of the match
+*Proposed.* What a cross-match record rests on: a shared catalogue identifier, a position match
+within a stated tolerance, or a published cross-identification.
+
+### minimum scale
+*Proposed.* The finest scale a body can be viewed at in the current release; scaling in stops there.
+
 ### star sample
 *Proposed.* The bounded set of nearby stars a release holds, chosen by its selection criteria.
 
@@ -374,4 +385,5 @@ displayed, measured, supported, reference, held, second, seconds, day, days, per
 positions, ten, over, under, during, around, towards, larger, smaller, enters, leaves, left,
 returns, return, visible, movement, fade, fades, advance, advances, advancing, stops, remains,
 dataset, data, record, records, source, sources, model, system, Solar System, sun, Sun, Earth,
-Moon, moon, moons, Mars, Neptune, water, hydrogen, oxygen, Mercury, Proxima Centauri
+Moon, moon, moons, Mars, Neptune, water, hydrogen, oxygen, Mercury, Proxima Centauri,
+Alpha Centauri A, stays

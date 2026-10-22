@@ -36,3 +36,10 @@ Feature: Descend into what Earth is made of
     Then the focus is "Earth"
     And spatial navigation is in force
     And the mode change is announced
+
+  Scenario: scaling in past the minimum stops and offers the structural step
+    Given spatial navigation is in force
+    When the person scales in past the minimum scale of "Earth"
+    Then the scale stays at the minimum scale
+    And the atlas offers what the focus is made of
+    And spatial navigation is in force

@@ -6,9 +6,10 @@ Feature: Explore the Solar System from Earth
   Background:
     Given the atlas is open on the release "001-prototype"
 
-  Scenario: the atlas opens with Earth as the focus
+  Scenario: the atlas opens with Earth as the focus and the Moon just out of view
     When the person opens the atlas
-    Then the focus is "Earth"
+    Then the focus is "Earth" and the selection is "Earth"
+    And "Moon" is not visible
     And the scale rail and the time controller are visible
 
   Scenario: scaling out from Earth brings the Moon into view

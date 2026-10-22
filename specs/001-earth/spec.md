@@ -31,7 +31,7 @@ read its distance and source, go back to Earth. Delivers a real, navigable Solar
 
 **Acceptance Scenarios** *(each names a scenario in a living feature; none is written here)*:
 
-- added `features/solar-system/explore.feature`: the atlas opens with Earth as the focus
+- added `features/solar-system/explore.feature`: the atlas opens with Earth as the focus and the Moon just out of view
 - added `features/solar-system/explore.feature`: scaling out from Earth brings the Moon into view
 - added `features/solar-system/explore.feature`: scaling out past the Moon shows the Sun, the planets and their orbit tracks
 - added `features/solar-system/explore.feature`: selecting a planet shows its name, its distance from the Sun and the source of both
@@ -93,6 +93,7 @@ and uncertainty, scale back in.
 - added `features/stars/neighbourhood.feature`: the selection criteria of the star sample are shown
 - added `features/stars/neighbourhood.feature`: scaling back in reverses the transition exactly
 - added `features/stars/neighbourhood.feature`: the flattened dimension is declared on the scale rail
+- added `features/stars/neighbourhood.feature`: a bright star the catalogue lacks is drawn through a cross-match record showing both source records
 
 ---
 
@@ -147,6 +148,7 @@ its source, go back to Earth; confirm the mode change was announced on the way i
 - added `features/composition/composition.feature`: the water molecule shows its atom types with their counts
 - added `features/composition/composition.feature`: an atom's position is in the molecule's own reference frame
 - added `features/composition/composition.feature`: going back from the structural branch returns to Earth in spatial navigation
+- added `features/composition/composition.feature`: scaling in past the minimum stops and offers the structural step
 
 ---
 
@@ -198,11 +200,12 @@ not depend on it; it is the last story and the first to be deferred after story 
 - A nearby star whose parallax uncertainty is large: its distance uncertainty is shown as a
   range, and the star is still in the sample only if it passed the selection criteria that are
   shown (scenario in `features/stars/neighbourhood.feature`).
-- The very brightest nearby stars are expected to be absent from the chosen catalogue. The atlas
-  shows the gap and the selection criteria that explain it, or draws them from a second catalogue
-  through an explicit cross-match: [NEEDS CLARIFICATION: Q1, see below].
-- Scaling in past Earth's surface: the atlas has no terrestrial regime in 001; what the person sees
-  and is offered is [NEEDS CLARIFICATION: Q3, see below].
+- The very brightest nearby stars are absent from the chosen catalogue. The atlas draws them from
+  a second catalogue through an explicit cross-match record carrying both source records and the
+  basis of the match; the inspector shows both (scenario in `features/stars/neighbourhood.feature`).
+- Scaling in past Earth's surface: the atlas has no terrestrial regime in 001. Scaling stops at a
+  stated minimum and the atlas offers the structural step there (scenario in
+  `features/composition/composition.feature`).
 - A relationship with no evidence: shown with status illustrative, never as observed.
 - The release's manifest has a null field: the build refuses to call the release reproducible
   (scenario in `features/release/release.feature`).
@@ -211,9 +214,9 @@ not depend on it; it is the last story and the first to be deferred after story 
 
 ### Functional Requirements
 
-- **FR-001**: The atlas MUST open with a focus the person can read and act on, on a cream canvas,
-  with the product's name, the scale rail and the time controller visible. The opening focus is
-  [NEEDS CLARIFICATION: Q2, see below].
+- **FR-001**: The atlas MUST open with Earth selected and focused, at a scale where the Moon is
+  just out of view, on a cream canvas, with the product's name, the scale rail and the time
+  controller visible.
 - **FR-002**: The atlas MUST present the Sun, the eight planets, Earth's Moon and the release's
   curated additional bodies as selectable entities with stable atlas ids.
 - **FR-003**: The person MUST be able to scale the view continuously within a spatial regime,
@@ -228,6 +231,9 @@ not depend on it; it is the last story and the first to be deferred after story 
   factor on request, and MUST keep true distances readable; distance MUST never be exaggerated.
 - **FR-008**: The atlas MUST present a bounded sample of nearby stars with distance, distance
   uncertainty and source record for each, and MUST show the selection criteria of the sample.
+- **FR-008a**: A bright nearby star the primary catalogue lacks MUST enter the sample only through
+  an explicit cross-match record naming both source records and the basis of the match, never by
+  name alone; the inspector MUST show both records and the basis.
 - **FR-009**: The transition between the planetary and the nearby stellar regimes MUST preserve
   the focus and the selection as the same atlas ids, MUST keep the Sun at the same place on the
   screen, and MUST reverse exactly when scaled back.
@@ -246,6 +252,9 @@ not depend on it; it is the last story and the first to be deferred after story 
 - **FR-015**: Structural navigation MUST be a distinct mode from spatial navigation, entered by an
   explicit choice, announced on entry and on exit, and never drawn as a continuation of spatial
   scaling.
+- **FR-015a**: Scaling in MUST stop at a stated minimum scale for a body with no finer regime, and
+  the atlas MUST offer the structural step there as a choice the person makes; scaling alone MUST
+  never enter structural navigation.
 - **FR-016**: The composition branch MUST link Earth to water as a representative substance
   (status illustrative), water to the water molecule type and the molecule type to its atom types
   with counts, each with its source record, and MUST draw molecular structure in the molecule's
@@ -318,7 +327,8 @@ not depend on it; it is the last story and the first to be deferred after story 
   are never exaggerated.
 - The nearby-star sample is bounded by a distance threshold and quality criteria shown in the
   atlas; the working assumption is the stars within roughly 10 parsecs that pass the catalogue's
-  quality cuts, pending Q1.
+  quality cuts, plus the few bright stars the catalogue lacks, each through a cross-match record
+  (Q1). The second catalogue is the plan's choice.
 - The stellar neighbourhood is drawn in the same plane as the Solar System (seen from above the
   ecliptic) with the out-of-plane height shown as a mark, so the Sun never moves on screen across
   the transition.
@@ -329,54 +339,25 @@ not depend on it; it is the last story and the first to be deferred after story 
   not colour alone.
 - The additional curated bodies beyond the Sun, planets and Moon are a small hand-picked set
   (the brief says "where useful"); the plan names them.
-- Earth has no terrestrial regime in 001; scaling in past its surface is bounded (Q3).
+- Earth has no terrestrial regime in 001; scaling in stops at a stated minimum and offers the
+  structural step (Q3).
 - No accounts, no persistence of a person's journey, no external calls while running.
 - Visual quality is judged against screenshots at standard scales and in sessions; it is not a
   functional requirement here beyond the legend, labels and the lock-up.
 
 ## Clarifications
 
-Three questions the brief leaves open and whose answers change the scope or the first screen.
-Each is put to the owner as options with implications before planning; the rest of the brief's
-open questions are planning matters and are carried in `docs/`.
+### Session 2026-10-22
 
-### Q1: The nearby-star sample and the brightest stars
+Three questions the brief left open and whose answers change the scope or the first screen,
+answered by the owner before planning. The brief's other open questions are planning matters and
+are carried in `docs/`.
 
-**Context**: FR-008 and the edge case on the brightest stars. The chosen catalogue is expected to
-lack reliable astrometry for Sirius and the Alpha Centauri pair while holding Proxima and
-hundreds of fainter neighbours.
-
-**What we need to know**: Does the 001 neighbourhood show that gap honestly, or draw the missing
-bright stars from a second catalogue through explicit cross-match records?
-
-| Option | Answer | Implications |
-|--------|--------|--------------|
-| A | Show the gap: the sample is one catalogue's, the selection criteria explain the absences, and the inspector says so | Smallest scope and one source of truth; the view surprises anyone who knows the sky, which is itself a lesson about selection effects |
-| B | Add the handful of missing bright stars from a second catalogue, each through an explicit cross-match row carrying both source records | The neighbourhood looks right to enthusiasts; adds a second source, a reconciliation table and the first identity-reconciliation work, which the brief placed in stage 2 |
-| C | Show the gap in 001 and mark the bright stars' positions as "known, not in this sample" from a second catalogue without full records | A middle path; adds a second source anyway and a new status mark to design and explain |
-
-### Q2: The opening scene
-
-**Context**: FR-001. The brief's open question 6: Earth, a single dot, or a deliberately
-ambiguous mark revealed by interaction.
-
-**What we need to know**: What is on screen when the atlas opens?
-
-| Option | Answer | Implications |
-|--------|--------|--------------|
-| A | Earth selected and focused, at a scale where the Moon is just out of view, with the lock-up, scale rail and time controller | Matches the brief's journey step 1 and the acceptance criteria; the person starts with a known thing |
-| B | A single dot on the cream canvas with the lock-up; the first scroll reveals it is Earth | A stronger graphic opening; the first interaction teaches scale travel; a person who does not interact sees nothing named |
-| C | Earth focused, but the lock-up fills the screen and recedes on the first interaction | A chapter-like opening; adds an animated state and a reduced-motion variant to design |
-
-### Q3: Scaling in past Earth
-
-**Context**: FR-015 and the edge case. 001 has no terrestrial regime. The brief's open question 1:
-when should scrolling switch from continuous physical scale to an explicit structural jump?
-
-**What we need to know**: What happens when a person scales in past Earth's surface?
-
-| Option | Answer | Implications |
-|--------|--------|--------------|
-| A | Scaling stops at a stated minimum; the structural branch is entered only by the explicit "what is it made of?" choice | Cleanest separation of the four modes; the person must find the affordance, which the sessions measure |
-| B | Scaling stops at the minimum and the atlas offers the structural step there ("Earth has no surface view yet; what is it made of?") | Discoverable; still an explicit choice, so the modes stay distinct; one more piece of copy and one more state |
-| C | Scaling in past the minimum enters the structural branch with a chapter cue | Most fluid; risks the false continuity the brief warns against, and the sessions would have to prove the cue is enough |
+- Q1: The brightest nearby stars the catalogue lacks → **drawn from a second catalogue through
+  explicit cross-match records**, each carrying both source records and the basis of the match
+  (FR-008a). Pulls the first identity-reconciliation work into 001; the neighbourhood looks right
+  to anyone who knows the sky.
+- Q2: The opening scene → **Earth selected and focused, the Moon just out of view**, with the
+  lock-up, scale rail and time controller (FR-001).
+- Q3: Scaling in past Earth's surface → **scaling stops at a stated minimum and the atlas offers
+  the structural step there**; the step is still the person's explicit choice (FR-015a).

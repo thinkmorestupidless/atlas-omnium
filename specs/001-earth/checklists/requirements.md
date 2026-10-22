@@ -13,7 +13,7 @@
 
 ## Requirement Completeness
 
-- [ ] No [NEEDS CLARIFICATION] markers remain (three remain, Q1 to Q3, put to the owner by design: the family workflow stops here for answers)
+- [x] No [NEEDS CLARIFICATION] markers remain (Q1 to Q3 answered 2026-10-22, recorded under Clarifications)
 - [x] Requirements are testable and unambiguous
 - [x] Success criteria are measurable
 - [x] Success criteria are technology-agnostic (no implementation details)
@@ -32,8 +32,6 @@
 ## Notes
 
 - Q1 (star sample and the brightest stars), Q2 (opening scene) and Q3 (scaling in past Earth)
-  are the three clarifications; `/speckit-clarify` encodes the answers and runs the bdd checker
-  first. FR-001, FR-008 and FR-015 and the scenarios in `features/solar-system/explore.feature`
-  and `features/stars/neighbourhood.feature` may change with the answers.
+  were answered on 2026-10-22 and encoded as FR-001, FR-008a and FR-015a with their scenarios.
 - "Catalogue", "ephemeris", "manifest" and "checksum" are domain words of the atlas, not
   implementation details; they are glossary terms.

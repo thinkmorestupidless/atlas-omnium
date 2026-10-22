@@ -121,12 +121,12 @@ as a ring on the distance axis, not as a vague glow. Positions are converted fro
 distance) to ICRS Cartesian with the Sun at the origin, then rotated into the ecliptic so the
 neighbourhood and the Solar System share one projection plane (`rendering.md`).
 
-**Known hazard, to verify at implementation:** Gaia DR3 lacks or distrusts astrometry for the very
-brightest stars; Sirius and the Alpha Centauri pair are expected to be absent or cut, while
-Proxima is present. A neighbourhood without Alpha Centauri reads as wrong to anyone who knows the
-sky. Options for the plan: show the gap and say why (honest, surprising), or add a second
-catalogue (Hipparcos-2 or SIMBAD identifiers) for those few stars through explicit cross-match
-rows, each row carrying both source records. Nothing is added by name alone.
+**The brightest stars come through cross-match records.** Gaia DR3 lacks or distrusts astrometry
+for the very brightest stars; Sirius and the Alpha Centauri pair are expected to be absent or
+cut, while Proxima is present (verify at implementation). The few missing bright stars enter the
+sample from a second catalogue (Hipparcos-2 or SIMBAD identifiers; the plan chooses) through an
+explicit cross-match record carrying both source records and the basis of the match. Nothing is
+added by name alone, and the inspector shows both records.
 
 ### The composition path is structural and representative
 
