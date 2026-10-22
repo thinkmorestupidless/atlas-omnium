@@ -1,0 +1,31 @@
+# The atlas release the application loads. Every null is a placeholder the ingest pipeline fills;
+# a release with a null in it is not reproducible and the build refuses to call it one.
+atlas_release: 001-prototype
+generated_at: null
+units_policy: SI-internal-with-explicit-conversions
+sources:
+  - name: jpl-horizons
+    role: Solar System state vectors for the supported bodies, sampled over the valid window
+    endpoint: https://ssd.jpl.nasa.gov/api/horizons.api
+    query_parameters: null       # EPHEM_TYPE, CENTER, REF_PLANE, REF_SYSTEM, STEP_SIZE, bodies, window
+    retrieval_time: null
+    source_release: null         # the DE ephemeris version Horizons reports
+    checksum: null
+  - name: nasa-planetary-factsheet
+    role: radii, masses and descriptive properties
+    endpoint: https://nssdc.gsfc.nasa.gov/planetary/planetfact.html
+    retrieval_time: null
+    checksum: null
+  - name: gaia
+    role: a bounded nearby-star sample with parallax, proper motion and their uncertainties
+    endpoint: https://gea.esac.esa.int/tap-server/tap/sync
+    catalogue_release: DR3
+    selection_query: null        # the ADQL, verbatim
+    retrieval_time: null
+    checksum: null
+  - name: pubchem
+    role: water (CID 962) and its constituent atom types for the composition path
+    endpoint: https://pubchem.ncbi.nlm.nih.gov/rest/pug
+    retrieval_time: null
+    checksum: null
+validation_report: null

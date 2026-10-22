@@ -1,0 +1,32 @@
+/* Tokens. The visual grammar of thinkmorestupidless.com: cream canvas, near-black ink, and the
+   flat panel colours. Colour names a scale regime at scene level only when a legend says so; it
+   never doubles as a scientific property. */
+:root {
+  --cream: #F4EFE3;
+  --paper: #EFE9DC;
+  --ink: #16181A;
+  --muted: #5C6166;
+  --rule: #D9D3C6;
+  --vermilion: #D83A12;
+  --cobalt: #1F5FA8;
+  --yellow: #F2B134;
+  --violet: #6B4FBB;
+  --sans: 'Bricolage Grotesque', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html { background: var(--cream); color: var(--ink); font-family: var(--sans); font-optical-sizing: auto; }
+body { margin: 0; }
+.mono { font-family: var(--mono); }
+.display { font-weight: 800; letter-spacing: -0.045em; line-height: 0.9; font-variation-settings: 'opsz' 96; }
+
+.atlas { position: relative; min-height: 100dvh; overflow: hidden; }
+#scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lockup { position: absolute; left: 24px; bottom: 24px; max-width: 70vw; pointer-events: none; }
+.lockup h1 { margin: 0; font-size: clamp(40px, 9vw, 128px); }
+.lockup .stop { color: var(--vermilion); }
+.lockup .promise { margin: 12px 0 0 4px; font-size: 13px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

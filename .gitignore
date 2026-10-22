@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env*.local
+# Playwright output, when the visual tier is added
+test-results/
+playwright-report/

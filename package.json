@@ -1,0 +1,25 @@
+{
+  "name": "atlas-of-everything",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "an atlas of everything: every place, every scale, everything we know",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4",
+    "tsx": "^4.20.6",
+    "zod": "^4.1.11",
+    "yaml": "^2.9.1"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
