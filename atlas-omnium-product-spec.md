@@ -1,4 +1,6 @@
-# an atlas of everything.
+# Atlas Omnium.
+
+*Renamed from "an atlas of everything." on 2026-10-23 (decision 0008); the brief is otherwise as written.*
 
 **Product vision, experience design, system specification and first implementation plan**  
 Version 0.1 — 22 October 2026  
@@ -8,7 +10,7 @@ Status: Working product and engineering brief
 
 ## 1. The idea
 
-An Atlas of Everything is an explorable, connected representation of physical reality as humanity currently understands it.
+Atlas Omnium is an explorable, connected representation of physical reality as humanity currently understands it.
 
 It isn't another animation of the scale of the universe. It isn't primarily an astronomy encyclopedia, a conventional 3D space simulator or a collection of disconnected models. It is a place to navigate **real entities, actual observed places, their structure, motion and relationships**, travelling outwards through astronomical scales and inwards through physical composition.
 
@@ -81,7 +83,7 @@ Use the visual grammar of [thinkmorestupidless.com](https://thinkmorestupidless.
 
 Suggested opening lock-up:
 
-> **an atlas of everything.**  
+> **Atlas Omnium.**  
 > Every place. Every scale. Everything we know.
 
 The full stop is part of the visual signature. Keep the visible interface almost entirely 2D even when the underlying data is spatially 3D.
@@ -218,7 +220,7 @@ This can later map naturally onto EitherOr/Ankka-style twins, concepts and relat
 ### Suggested repository structure
 
 ```text
-atlas-of-everything/
+atlas-omnium/
   README.md
   docs/
     vision.md
@@ -398,7 +400,7 @@ None of these stages should begin at full scale until the previous one has demon
 
 ### Decisions made
 
-- Product name: **an atlas of everything.**
+- Product name: **Atlas Omnium.** (was "an atlas of everything." until 2026-10-23)
 - Core promise: **Every place. Every scale. Everything we know.**
 - Scope includes inward physical structure as well as outward cosmic scale.
 - Ground the atlas in actual observations, source provenance and explicit uncertainty.

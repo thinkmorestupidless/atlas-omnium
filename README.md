@@ -1,4 +1,4 @@
-# an atlas of everything.
+# Atlas Omnium.
 
 **Every place. Every scale. Everything we know.**
 
@@ -9,7 +9,7 @@ animation and not an encyclopedia: a place where selecting a thing and following
 is the interface, and where every view says whether it is measured, inferred, schematic or
 illustrative.
 
-The brief is `atlas-of-everything-product-spec.md` (v0.1, 22 October 2026). The design documents
+The brief is `atlas-omnium-product-spec.md` (v0.1, 22 October 2026). The design documents
 under `docs/` restate it as the contracts the code is held to; where they disagree with the brief,
 the documents win and say why in `decisions/`.
 

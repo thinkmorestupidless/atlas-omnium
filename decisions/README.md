@@ -12,3 +12,4 @@ decision that affects another repository also goes to the brain that maps it.
 | [0005](0005-spec-kit-with-bdd-and-the-family-workflow.md) | Spec-kit with the bdd extension and the family's feature workflow; first feature `001-earth` | 2026-10-22 |
 | [0006](0006-the-browser-is-the-first-surface.md) | The browser is the first surface; a surface is projections, renderers, UI and input, and nothing below them; VR (WebXR first) and console are later surfaces | 2026-10-23 |
 | [0007](0007-what-building-001-changed.md) | What building 001 changed: held-out epochs at grid midpoints, the transition band from 1 × 10¹² m/px, one star file with positions derived on load | 2026-10-23 |
+| [0008](0008-the-name-is-atlas-omnium.md) | The product is called Atlas Omnium.; the repository is `thinkmorestupidless/atlas-omnium` | 2026-10-23 |

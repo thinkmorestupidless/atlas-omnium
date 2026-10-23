@@ -6,7 +6,7 @@
 
 **Status**: Draft
 
-**Input**: User description: "Section 8 of `atlas-of-everything-product-spec.md`: one functioning, visually convincing interactive screen that explores real Solar System objects, transitions into a small true-data stellar neighbourhood, and demonstrates one separate inward composition path. It must prove both navigation coherence and data fidelity."
+**Input**: User description: "Section 8 of `atlas-omnium-product-spec.md`: one functioning, visually convincing interactive screen that explores real Solar System objects, transitions into a small true-data stellar neighbourhood, and demonstrates one separate inward composition path. It must prove both navigation coherence and data fidelity."
 
 ## User Scenarios & Testing *(mandatory)*
 

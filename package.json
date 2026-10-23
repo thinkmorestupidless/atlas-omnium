@@ -1,9 +1,9 @@
 {
-  "name": "atlas-of-everything",
+  "name": "atlas-omnium",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "an atlas of everything: every place, every scale, everything we know",
+  "description": "Atlas Omnium: every place, every scale, everything we know",
   "scripts": {
     "dev": "vite",
     "build": "npm run typecheck && vite build",

@@ -17,7 +17,7 @@ export const makeHttp = (minIntervalMsByHost: Record<string, number> = {}, retri
         if (wait > 0) await sleep(wait);
         last.set(host, Date.now());
         try {
-          const res = await fetch(url, { headers: { 'user-agent': 'atlas-of-everything ingest (https://github.com/thinkmorestupidless)' } });
+          const res = await fetch(url, { headers: { 'user-agent': 'atlas-omnium ingest (https://github.com/thinkmorestupidless/atlas-omnium)' } });
           if (res.ok) return new Uint8Array(await res.arrayBuffer());
           if (res.status < 500 && res.status !== 429) throw new Error(`${res.status} ${res.statusText} from ${url}`);
           if (attempt >= retries) throw new Error(`${res.status} from ${url} after ${retries} retries`);

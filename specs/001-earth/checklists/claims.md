@@ -9,7 +9,7 @@ data name the field they read; the data's own provenance is the inspector's.
 
 ## The lock-up and the page
 
-- [x] "an atlas of everything." and "Every place. Every scale. Everything we know." · lock-up · not a claim: the product's name and promise, kept with their full stops.
+- [x] "Atlas Omnium." and "Every place. Every scale. Everything we know." · lock-up · not a claim: the product's name and promise, kept with their full stops.
 - [x] "Release … is not reproducible yet (… is unfilled), so the atlas will not show it." · problem notice · the manifest's first null field (`firstUnfilled`).
 - [x] "test release …" · banner · the manifest's `test_release`.
 - [x] "The atlas scene: … in focus, the … regime, … navigation" · canvas label · the navigation state.

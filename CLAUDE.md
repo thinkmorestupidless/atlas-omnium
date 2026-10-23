@@ -1,11 +1,11 @@
-# atlas-of-everything
+# atlas-omnium
 
 An explorable, connected, provenance-aware atlas of physical reality: real objects and places,
 their structure, motion and relationships, navigated outwards through astronomical scales and
 inwards through composition. A browser application in TypeScript, local-first, with frozen source
 snapshots and no backend. Read `README.md`, then `docs/` before touching the area it covers:
 `data-contracts.md` before the model or ingest, `rendering.md` before a renderer or projection,
-`evaluation.md` before a test tier. The brief is `atlas-of-everything-product-spec.md`; the docs
+`evaluation.md` before a test tier. The brief is `atlas-omnium-product-spec.md`; the docs
 restate it as contracts and win where they disagree.
 
 The family conventions in `../ankka-brain/conventions.md` apply where they fit a Node repository:
