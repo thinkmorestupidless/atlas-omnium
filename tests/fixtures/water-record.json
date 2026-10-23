@@ -1,0 +1,47 @@
+{
+  "about": "Transcribed from PubChem PUG REST compound/cid/962/record/JSON?record_type=3d (the 001-prototype raw file): the atoms, elements, bonds and the first conformer coordinates in \u00e5ngstr\u00f6m.",
+  "cid": 962,
+  "atoms": {
+    "aid": [
+      1,
+      2,
+      3
+    ],
+    "element": [
+      8,
+      1,
+      1
+    ]
+  },
+  "bonds": {
+    "aid1": [
+      1,
+      1
+    ],
+    "aid2": [
+      2,
+      3
+    ],
+    "order": [
+      1,
+      1
+    ]
+  },
+  "conformer": {
+    "x": [
+      0,
+      0.2774,
+      0.6068
+    ],
+    "y": [
+      0,
+      0.8929,
+      -0.2383
+    ],
+    "z": [
+      0,
+      0.2544,
+      -0.7169
+    ]
+  }
+}

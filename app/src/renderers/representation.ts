@@ -12,6 +12,7 @@ import { fadesAt } from '../navigation/resolver';
 import type { NavigationState } from '../navigation/state';
 import type { Entity } from '../model/schema';
 import type { Projection, View } from '../projections/projection';
+import { resolveComposition } from './composition';
 import type { ResolvedLine, ResolvedMark, Scene } from './representation-types';
 
 export interface ResolveInput {
@@ -25,12 +26,7 @@ export interface ResolveInput {
   readonly reducedMotion?: boolean;
 }
 
-/**
- * The selection mark is a ring set apart from the mark; the focus mark is the mark's own ring made
- * heavy. Neither shares a shape with a status mark (R11, app/src/ui/status-marks.ts).
- */
-export const SELECTION_MARK = { shape: 'offset-ring', gapPx: 5 } as const;
-export const FOCUS_MARK = { shape: 'ring-weight', weightPx: 2.5 } as const;
+export { FOCUS_MARK, SELECTION_MARK } from './marks';
 
 /** The smallest disc an exaggerated policy draws; anything drawn larger than measured says by how much. */
 export const MIN_DISC_PX = 3;
@@ -90,7 +86,11 @@ export const resolve = (i: ResolveInput): Scene => {
   const marks: ResolvedMark[] = [];
   const lines: ResolvedLine[] = [];
 
-  if (state.mode === 'spatial') {
+  if (state.mode === 'structural') {
+    const c = resolveComposition(state, model, i.viewport);
+    return { regime: state.regime, scale: state.scale, fades, marks: c.marks, lines: c.lines, cue: null, parts: c.parts };
+  }
+  {
     const trackAlpha = fades.tracks * ramp(state.scale, TRACKS_FROM, TRACKS_FULL);
     for (const el of model.elements) {
       if (trackAlpha <= 0) break;

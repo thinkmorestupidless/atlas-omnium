@@ -17,6 +17,7 @@ import { eclipticTopDown } from './projections/ecliptic-top-down';
 import { createCanvas2d } from './renderers/canvas2d';
 import { drawOrbitGeometry } from './renderers/orbit-geometry';
 import { drawPoints } from './renderers/points';
+import { drawComposition } from './renderers/composition';
 import type { Renderer } from './renderers/renderer';
 import { resolve, viewOf } from './renderers/representation';
 import type { Scene } from './renderers/representation-types';
@@ -27,6 +28,7 @@ import { legend } from './ui/legend';
 import { MARK_SHAPES } from './ui/status-marks';
 import { lockup } from './ui/lockup';
 import { madeOf } from './ui/made-of';
+import { announcer } from './ui/announcer';
 import { metadata } from './ui/metadata';
 import { onMotionChange, reducedMotion } from './ui/motion';
 import { scaleRail } from './ui/scale-rail';
@@ -122,13 +124,15 @@ const start = async (): Promise<AtlasApp | null> => {
   const crumbs = breadcrumb(dispatch, model.entities);
   const meta = metadata(dispatch);
   const time = timeController(dispatch);
-  const offer = madeOf(dispatch, false);
+  const offer = madeOf(dispatch);
+  const says = announcer();
   const key = legend(dispatch, model);
   const insp = inspector(dispatch);
   const cue = chapterCue();
   const controls = document.createElement('div');
   controls.className = 'controls';
-  controls.append(crumbs.el, meta.el, rail.el, offer.el, time.el, key.toggle, key.el, insp.el);
+  controls.append(crumbs.el, meta.el, rail.el, offer.el, says.notice, time.el, key.toggle, key.el, insp.el);
+  root.append(says.live);
   root.append(cue.el);
   root.append(controls);
 
@@ -137,8 +141,8 @@ const start = async (): Promise<AtlasApp | null> => {
     positions = bodyPositions(model, epochOf(s.nav.utc));
     scene = resolve({ state: s.nav, model, projection, viewport: viewport(), positions, stars, reducedMotion: reducedMotion() });
     renderer.clear();
-    drawOrbitGeometry(renderer, scene);
-    drawPoints(renderer, scene);
+    if (s.nav.mode === 'structural') drawComposition(renderer, scene, viewport());
+    else { drawOrbitGeometry(renderer, scene); drawPoints(renderer, scene); }
     labels = renderer.flush();
     rail.update(s.nav, projection);
     crumbs.update(s.nav);
@@ -149,7 +153,8 @@ const start = async (): Promise<AtlasApp | null> => {
     cue.update(scene, reducedMotion());
     time.update(s.nav);
     offer.update(s.nav, model.entities.name(s.nav.focus));
-    canvas.setAttribute('aria-label', `The atlas scene: ${model.entities.name(s.nav.focus)} in focus, the ${s.nav.regime.replace('-', ' ')} regime`);
+    says.update(s.nav, (id) => model.entities.name(id));
+    canvas.setAttribute('aria-label', `The atlas scene: ${model.entities.name(s.nav.focus)} in focus, the ${s.nav.regime.replace('-', ' ')} regime, ${s.nav.mode} navigation`);
   };
 
   let frame = 0;

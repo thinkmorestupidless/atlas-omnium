@@ -6,7 +6,8 @@ export type InspectTarget =
   | { kind: 'position'; subject: AtlasId }
   | { kind: 'relationship'; source: AtlasId; predicate: string; target: AtlasId }
   | { kind: 'release' }
-  | { kind: 'entity'; subject: AtlasId };
+  | { kind: 'entity'; subject: AtlasId }
+  | { kind: 'atom'; molecule: AtlasId; index: number };
 
 export type Action =
   | { kind: 'scale'; factor: number; anchorPx?: { x: number; y: number } }

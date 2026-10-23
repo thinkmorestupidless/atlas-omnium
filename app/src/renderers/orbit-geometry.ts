@@ -2,7 +2,7 @@
 // selection ring and the focus weight (never a status mark's shape, R11), and labels through the
 // collision pass.
 import type { Renderer } from './renderer';
-import { FOCUS_MARK, SELECTION_MARK } from './representation';
+import { FOCUS_MARK, SELECTION_MARK } from './marks';
 import type { ResolvedMark, Scene } from './representation-types';
 
 export const SELECTION_GAP_PX = SELECTION_MARK.gapPx;
@@ -22,7 +22,7 @@ export const drawLabel = (r: Renderer, m: ResolvedMark) => {
 export const drawOrbitGeometry = (r: Renderer, scene: Scene) => {
   for (const l of scene.lines) if (l.visible) r.polyline(l.points, l.style, l.closed);
   for (const m of scene.marks) {
-    if (!m.visible || m.shape === 'stellar') continue;
+    if (!m.visible || m.shape === 'stellar' || m.shape === 'atom') continue;
     if (m.shape === 'point') r.disc(m.at, m.radiusPx, { fill: 'ink', alpha: m.alpha });
     else r.disc(m.at, m.radiusPx, { ...m.style, alpha: m.alpha });
     drawMarkDecorations(r, m);

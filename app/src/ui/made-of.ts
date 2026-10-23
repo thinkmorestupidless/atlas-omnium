@@ -4,7 +4,7 @@ import type { Action } from '../input/actions';
 import type { NavigationState } from '../navigation/state';
 import { h } from './dom';
 
-export const madeOf = (dispatch: (a: Action) => void, enabled: boolean) => {
+export const madeOf = (dispatch: (a: Action) => void) => {
   const button = h('button', { type: 'button', class: 'made-of', 'aria-keyshortcuts': 'm' }, 'what is it made of?');
   const note = h('span', { class: 'mono made-of-note' });
   button.addEventListener('click', () => dispatch({ kind: 'enterStructural' }));
@@ -13,9 +13,8 @@ export const madeOf = (dispatch: (a: Action) => void, enabled: boolean) => {
     el,
     update(s: NavigationState, focusName: string) {
       el.hidden = !(s.offer === 'made-of' && s.mode === 'spatial');
-      button.disabled = !enabled;
       button.textContent = `what is ${focusName} made of?`;
-      note.textContent = enabled ? 'a different kind of step' : 'not yet available in this build';
+      note.textContent = 'a different kind of step (m)';
     },
   };
 };

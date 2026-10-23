@@ -115,6 +115,9 @@ export const metadata = (dispatch: (a: Action) => void) => {
         const words = `${PREDICATE_WORDS[r.predicate]} ${i.model.entities.name(r.target as AtlasId)}`;
         rows.push(line('relation', 'relationship', words, null, { kind: 'relationship', source: sel, predicate: r.predicate, target: r.target as AtlasId }, r.status));
       }
+      for (const r of i.model.entities.incomingTo(sel, 'representativeOf')) {
+        rows.push(line('relation', 'relationship', `representative substance of ${i.model.entities.name(r.source as AtlasId)}`, null, { kind: 'relationship', source: r.source as AtlasId, predicate: r.predicate, target: sel }, r.status));
+      }
       replace(el,
         h('h2', { class: 'meta-name' }, e.names.canonical),
         h('p', { class: 'meta-kind' }, KIND_WORDS[e.kind] ?? e.kind),

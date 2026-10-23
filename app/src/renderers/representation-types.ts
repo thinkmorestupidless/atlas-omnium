@@ -30,6 +30,8 @@ export interface ResolvedMark {
   readonly rangePx?: { readonly inner: number; readonly outer: number };
   /** The flattened coordinate as a tick length in pixels, for a star. */
   readonly heightTickPx?: number;
+  /** The atom's index in its conformer, for an atom of the molecule view. */
+  readonly atom?: number;
   readonly label: string | null;
   readonly labelPriority: number;
   readonly alpha: number;
@@ -52,4 +54,6 @@ export interface Scene {
   readonly marks: readonly ResolvedMark[];
   readonly lines: readonly ResolvedLine[];
   readonly cue: { readonly text: string; readonly alpha: number } | null;
+  /** In the molecule view: each atom type with its count from the hasPart relationships. */
+  readonly parts?: readonly { readonly id: AtlasId; readonly name: string; readonly symbol: string | null; readonly count: number; readonly hasSourceRecord: boolean }[];
 }

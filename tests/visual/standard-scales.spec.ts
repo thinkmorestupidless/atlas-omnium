@@ -84,3 +84,28 @@ test('release view', async ({ page }) => {
   await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
   await expect(page.locator('#inspector')).toHaveScreenshot('release-view.png');
 });
+
+// The structural branch: the substance view from Earth, and the water molecule through its plane.
+const hook = (page: import('@playwright/test').Page, f: string, ...args: unknown[]) =>
+  page.evaluate(([n, a]) => {
+    const h = (window as unknown as { __atlas: Record<string, (...x: unknown[]) => unknown> }).__atlas;
+    return h[n as string]?.(...(a as unknown[]));
+  }, [f, args] as const);
+
+test('substance view', async ({ page }) => {
+  await open(page);
+  await hook(page, 'dispatch', { kind: 'enterStructural' });
+  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+  await page.locator('.mode-notice').evaluate((e) => { (e as HTMLElement).hidden = true; });
+  await expect(page).toHaveScreenshot('substance-view.png');
+});
+
+test('molecule view', async ({ page }) => {
+  await open(page);
+  await hook(page, 'dispatch', { kind: 'enterStructural' });
+  await hook(page, 'dispatch', { kind: 'focus', id: 'atlas:water' });
+  await hook(page, 'dispatch', { kind: 'focus', id: 'atlas:pubchem-962' });
+  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+  await page.locator('.mode-notice').evaluate((e) => { (e as HTMLElement).hidden = true; });
+  await expect(page).toHaveScreenshot('molecule-view.png');
+});

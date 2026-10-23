@@ -338,6 +338,17 @@ promise to a person; where it changes a contract's letter, the entry says which.
   `reproducible: true`. The feature harness and the visual tier no longer open the release with
   `allow-unreproducible`.
 
+### The structural branch
+- Marks in the molecular regime are glyphs of one fixed size. Their size says nothing about the
+  thing, because no source in the release gives an atomic or molecular size.
+- PubChem's periodic table names the elements with a capital, "Hydrogen" and "Oxygen". The atlas
+  keeps the source's spelling as the canonical name. It shows the counts in lower case, in prose.
+- The keyboard choice `m` enters structural navigation whenever the focus has a representative
+  substance, not only at the minimum scale. The offer on screen still appears only at the minimum
+  scale, as FR-015a asks. The step is never taken by scaling.
+- The announcement names the body the branch leaves from: "a different kind of step: what Earth is
+  made of" and, on the way back, "back to where Earth is".
+
 ### The inspector
 - The inspector opens from the metadata panel, where each value is a control, or with `i` on the
   selection. It shows an epoch outside the leap-second table, such as Hipparcos's J1991.25 in TT,

@@ -7,6 +7,7 @@
 import type { Action, InspectTarget } from '../input/actions';
 import type { DerivedState, Model } from '../model/derived';
 import { evidenceOf } from '../model/evidence';
+import { atomPosition, conformerOf } from '../model/molecules';
 import { norm, toMetres, type Frame, type PositionAtEpoch } from '../model/frames';
 import type { AtlasId } from '../model/ids';
 import type { StarState } from '../model/parallax';
@@ -195,6 +196,20 @@ export const inspector = (dispatch: (a: Action) => void) => {
             if (ev.kind === 'observation') rows.push(knowledge('derivedFrom', h('dl', {}, ...observationRows(ev.observation))));
           }
         }
+      } else if (target.kind === 'atom') {
+        heading = `${name(target.molecule)}: atom ${target.index}`;
+        const conf = conformerOf(model.molecules, target.molecule);
+        const atom = conf?.atoms.find((a) => a.index === target.index);
+        const p = conf ? atomPosition(conf, target.index) : null;
+        if (!conf || !atom || !p) rows.push(row('value', 'position', 'missing'));
+        else {
+          rows.push(
+            row('value', 'position', `(${p.r.map((v) => fmt(v, 5)).join(', ')}) ${p.unit === 'angstrom' ? 'Å' : p.unit}`),
+            row('element', 'element', name(atom.element as AtlasId)),
+            row('frame', 'frame', frameText(p.frame)),
+            row('status', 'status', statusMark('observed')),
+            ...sourceRows(conf.source));
+        }
       } else if (target.kind === 'relationship') {
         heading = `${name(target.source)} ${PREDICATE_WORDS[target.predicate as Predicate] ?? target.predicate} ${name(target.target)}`;
         const r = model.entities.outgoing(target.source).find((x) => x.predicate === target.predicate && x.target === target.target);
@@ -229,6 +244,8 @@ export const inspector = (dispatch: (a: Action) => void) => {
           if (values.length) rows.push(row('values', 'values', ...values));
           const rels = e.relations.map((r) => go({ kind: 'relationship', source: r.source as AtlasId, predicate: r.predicate, target: r.target as AtlasId }, `${PREDICATE_WORDS[r.predicate]} ${name(r.target as AtlasId)}`));
           if (rels.length) rows.push(row('relationships', 'relationships', ...rels));
+          const conf = conformerOf(model.molecules, id);
+          if (conf) rows.push(row('atoms', 'atoms', ...conf.atoms.map((a) => go({ kind: 'atom', molecule: id, index: a.index }, `atom ${a.index}, ${model.entities.get(a.element as AtlasId)?.names.aliases[0] ?? name(a.element as AtlasId)}`))));
         }
       }
       title.textContent = heading;
