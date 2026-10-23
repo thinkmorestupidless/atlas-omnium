@@ -299,7 +299,7 @@ kinds; `features/navigation/search.feature` passes.
 - [X] T097 Review every label, chapter cue, legend entry and inspector string in `app/src/ui/` and `app/src/renderers/` against the source it rests on, in a checklist under `specs/001-earth/checklists/claims.md` (string, where shown, source record or "not a claim"); every unsupported claim is reworded or removed; the count found is recorded in `research.md`'s measurements (SC-010)
 - [X] T098 Run `quickstart.md` end to end on a clean clone (`npm ci`, `just rebuild`, `npm test`, `just check`, `npm run build`, `npm run features`, `npm run visual`, `npm run perf`) and fix what fails; record the run in `research.md`
 - [X] T099 Write `decisions/0007-...md` only if implementation changed a contract or a plan decision (otherwise skip and say so in the PR); add the dated trap entries to `CLAUDE.md`'s Traps section for anything that cost time
-- [ ] T100 Open the draft PR from `001-earth` to `main` with the spec's path, the tick count, the commands run and their results, the contracts touched, and the Claude Code trailer; it stays a draft until CI is green; Trevor merges
+- [X] T100 Open the draft PR from `001-earth` to `main` with the spec's path, the tick count, the commands run and their results, the contracts touched, and the Claude Code trailer; it stays a draft until CI is green; Trevor merges
 
 ---
 
