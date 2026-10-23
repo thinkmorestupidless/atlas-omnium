@@ -10,3 +10,4 @@ decision that affects another repository also goes to the brain that maps it.
 | [0003](0003-frozen-snapshots-from-a-manifest.md) | Frozen source snapshots in git, reproduced from a manifest; the browser calls no scientific API | 2026-10-22 |
 | [0004](0004-evaluate-from-vectors-draw-from-elements.md) | Solar System positions are interpolated from sampled Horizons vectors; orbit tracks are drawn from Keplerian elements | 2026-10-22 |
 | [0005](0005-spec-kit-with-bdd-and-the-family-workflow.md) | Spec-kit with the bdd extension and the family's feature workflow; first feature `001-earth` | 2026-10-22 |
+| [0006](0006-the-browser-is-the-first-surface.md) | The browser is the first surface; a surface is projections, renderers, UI and input, and nothing below them; VR (WebXR first) and console are later surfaces | 2026-10-23 |

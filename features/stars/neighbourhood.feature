@@ -26,7 +26,8 @@ Feature: Travel out to the nearby stars
   Scenario: selecting a nearby star shows its distance, its uncertainty and its source record
     Given the nearby stellar regime is in force
     When the person selects "Proxima Centauri"
-    Then the metadata shows the distance from "Sun" with its unit, its uncertainty and its source record
+    Then the metadata shows the distance from "Sun" with its unit and the range of its uncertainty
+    And the inspector shows the parallax observation with its source record and the model the distance is derived from
 
   Scenario: a selected star shows no planets the sources do not give
     Given the nearby stellar regime is in force

@@ -114,13 +114,14 @@ epoch; find a body with a missing property and see it shown as missing; read the
 
 **Acceptance Scenarios** *(each names a scenario in a living feature; none is written here)*:
 
-- added `features/evidence/inspector.feature`: a displayed value opens to its source record, release and epoch
+- added `features/evidence/inspector.feature`: a displayed value opens to its source record, release, epoch and attribution
 - added `features/evidence/inspector.feature`: a position shows its reference frame and its epoch
 - added `features/evidence/inspector.feature`: a value the sources do not give is shown as missing
 - added `features/evidence/inspector.feature`: an uncertainty is shown with its value
 - added `features/evidence/inspector.feature`: the assertion status of a relationship is shown apart from the selection
 - added `features/evidence/inspector.feature`: every visible entity has an atlas id and a source record or an illustrative label
 - added `features/evidence/inspector.feature`: the atlas names the release it was built from
+- added `features/evidence/inspector.feature`: the release lists every source with its licence and attribution
 - added `features/release/release.feature`: the curated data is rebuilt from the manifest and the raw snapshots without the network
 - added `features/release/release.feature`: a release with an unfilled manifest is not called reproducible
 
@@ -177,7 +178,7 @@ reduced motion on and confirm no animated transition plays.
 
 A person types a name they know (Mars, Proxima Centauri, water) and arrives in its context: a
 planet in the heliocentric view, a star in the neighbourhood, a substance in the structural
-branch. Ambiguous names are disambiguated by the entity's kind and catalogue identifiers.
+branch. Ambiguous names are disambiguated by the entity's kind.
 
 **Why this priority**: The brief's representative stories include search, but the 001 journey does
 not depend on it; it is the last story and the first to be deferred after story 5.
@@ -197,16 +198,17 @@ not depend on it; it is the last story and the first to be deferred after story 
   (scenario in `features/solar-system/explore.feature`).
 - A date outside the supported window: refused, the view keeps its date (scenario in
   `features/time/time.feature`).
-- A nearby star whose parallax uncertainty is large: its distance uncertainty is shown as a
-  range, and the star is still in the sample only if it passed the selection criteria that are
-  shown (scenario in `features/stars/neighbourhood.feature`).
+- A nearby star whose parallax uncertainty is large: its derived distance shows a wide range
+  from the parallax bounds, never a single number, and the star is still in the sample only if it
+  passed the selection criteria that are shown (scenario in `features/stars/neighbourhood.feature`).
 - The very brightest nearby stars are absent from the chosen catalogue. The atlas draws them from
   a second catalogue through an explicit cross-match record carrying both source records and the
   basis of the match; the inspector shows both (scenario in `features/stars/neighbourhood.feature`).
 - Scaling in past Earth's surface: the atlas has no terrestrial regime in 001. Scaling stops at a
   stated minimum and the atlas offers the structural step there (scenario in
   `features/composition/composition.feature`).
-- A relationship with no evidence: shown with status illustrative, never as observed.
+- A relationship with no evidence: the build rejects it unless its status is illustrative, so
+  nothing reaches the screen as observed, derived or inferred without evidence.
 - The release's manifest has a null field: the build refuses to call the release reproducible
   (scenario in `features/release/release.feature`).
 
@@ -218,7 +220,8 @@ not depend on it; it is the last story and the first to be deferred after story 
   just out of view, on a cream canvas, with the product's name, the scale rail and the time
   controller visible.
 - **FR-002**: The atlas MUST present the Sun, the eight planets, Earth's Moon and the release's
-  curated additional bodies as selectable entities with stable atlas ids.
+  curated additional bodies as selectable entities with stable atlas ids, each with a kind: the
+  Sun's kind is star, the additional bodies' kind is small body.
 - **FR-003**: The person MUST be able to scale the view continuously within a spatial regime,
   pan it, select an entity, focus an entity, and go back along the real history.
 - **FR-004**: Every displayed position MUST be evaluated for the current date from the release's
@@ -229,8 +232,11 @@ not depend on it; it is the last story and the first to be deferred after story 
   within a precision the atlas states and the inspector shows.
 - **FR-007**: Where a body is drawn larger than its true size, the atlas MUST say so, MUST name the
   factor on request, and MUST keep true distances readable; distance MUST never be exaggerated.
-- **FR-008**: The atlas MUST present a bounded sample of nearby stars with distance, distance
-  uncertainty and source record for each, and MUST show the selection criteria of the sample.
+- **FR-008**: The atlas MUST present a bounded sample of nearby stars and MUST show the selection
+  criteria of the sample. A star's parallax is the observation, with the catalogue's uncertainty
+  and source record; its distance is a derived value (status derived, model "inverse parallax")
+  whose uncertainty is the range the parallax bounds give. The inspector MUST name the parallax
+  record and the model the distance came from.
 - **FR-008a**: A bright nearby star the primary catalogue lacks MUST enter the sample only through
   an explicit cross-match record naming both source records and the basis of the match, never by
   name alone; the inspector MUST show both records and the basis.
@@ -266,9 +272,13 @@ not depend on it; it is the last story and the first to be deferred after story 
 - **FR-019**: A release MUST be reproducible from its manifest and raw snapshots, and the build
   MUST refuse to call a release reproducible while any manifest field is unfilled.
 - **FR-020**: The person MUST be able to search the release's named entities and arrive at the
-  chosen entity in its context, with same-named entities distinguished by kind.
-- **FR-021**: Each source's licence and attribution requirements MUST be recorded in the manifest
-  and shown where the source requires.
+  chosen entity in its context, with same-named entities distinguished by kind. 001-prototype
+  holds no shared name, so the disambiguation scenario runs against a small test release built
+  for it, "shared-names", and not against the curated data.
+- **FR-021**: Each source's licence and attribution MUST be recorded in the manifest and shown in
+  two places: the inspector shows the source's attribution beside the dataset release of every
+  value, and the inspector's view of the release lists every source with its licence and
+  attribution.
 
 ### Key Entities *(each a term in the project glossary)*
 
@@ -280,12 +290,14 @@ not depend on it; it is the last story and the first to be deferred after story 
   evidence.
 - **observation**: one property's value for one entity with unit, source record, epoch and
   uncertainty where given.
-- **derived state**: a value computed for a chosen time from observations and a named model, such
-  as a position at a date; names what it came from.
+- **derived state**: a value computed from observations and a named model, such as a position at
+  a date from the ephemeris or a distance from a parallax; names what it came from.
 - **mark**: what is drawn for an entity in the current regime; never the entity itself.
 - **source record**: the record in a named dataset release an observation came from.
 - **epoch** and **reference frame**: the instant and the coordinate system a position is valid in.
 - **assertion status**: observed, derived, inferred or illustrative.
+- **kind**: the classification of an entity; in 001: star (the Sun and the nearby stars alike),
+  planet, moon, small body, substance, molecule type, atom type.
 - **regime**: the rendering approach in force at the current scale; in 001, planetary, nearby
   stellar and molecular.
 - **focus**, **selection**, **breadcrumb**: the entity the view centres on, the entity the person
@@ -361,3 +373,26 @@ are carried in `docs/`.
   lock-up, scale rail and time controller (FR-001).
 - Q3: Scaling in past Earth's surface → **scaling stops at a stated minimum and the atlas offers
   the structural step there**; the step is still the person's explicit choice (FR-015a).
+
+### Session 2026-10-23
+
+Five questions from `/speckit-clarify`, after the bdd check found the features and glossary clean.
+
+- Q4: Is a nearby star's distance an observation or a derived value? → A: **derived from the
+  parallax observation** by the model "inverse parallax", status derived, its uncertainty the range
+  the parallax bounds give; the inspector names the parallax record and the model (FR-008).
+- Q5: What kind do the Sun and the curated additional bodies have? → A: **the Sun is a star**,
+  the term `star` now including it with *nearby star* kept for a member of the sample; **the
+  additional bodies are small bodies**, one kind for dwarf planets, asteroids and comets in 001
+  (FR-002, key entity kind).
+- Q6: Release 001-prototype has one Mercury, so how is name disambiguation proved? → A: **against
+  a test release "shared-names"** built for the scenario, holding two entities named Mercury;
+  the requirement stays, the curated data gains nothing for the sake of a test (FR-020,
+  `features/navigation/search.feature`).
+- Q7: Where are a source's licence and attribution shown? → A: **in two places**: the inspector
+  shows the attribution beside the dataset release of every value, and its view of the release
+  lists every source with licence and attribution (FR-021; the first scenario of
+  `features/evidence/inspector.feature` extended, one scenario added).
+- Q8: How are the glossary's *Proposed* terms settled? → A: **all settled now, as amended**; the
+  marker is removed from every term in `GLOSSARY.md`, and a term that proves wrong returns as a
+  clarification.
