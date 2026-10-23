@@ -162,7 +162,7 @@ export const setScalePolicy = (s: NavigationState, scalePolicy: ScalePolicy): Na
 /** Search: one match is a focus; several are offered with their kinds and nothing else changes. */
 export const search = (s: NavigationState, query: string, ctx: NavContext): NavigationState => {
   const q = query.trim();
-  if (!q) return s;
+  if (!q) return s.candidates ? { ...s, candidates: null } : s;
   const found = ctx.search(q);
   const exact = found.filter((c) => c.name.toLowerCase() === q.toLowerCase());
   const matches = exact.length ? exact : found;

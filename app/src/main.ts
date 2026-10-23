@@ -29,6 +29,7 @@ import { MARK_SHAPES } from './ui/status-marks';
 import { lockup } from './ui/lockup';
 import { madeOf } from './ui/made-of';
 import { announcer } from './ui/announcer';
+import { search } from './ui/search';
 import { metadata } from './ui/metadata';
 import { onMotionChange, reducedMotion } from './ui/motion';
 import { scaleRail } from './ui/scale-rail';
@@ -126,6 +127,7 @@ const start = async (): Promise<AtlasApp | null> => {
   const time = timeController(dispatch);
   const offer = madeOf(dispatch);
   const says = announcer();
+  const finder = search(dispatch);
   const key = legend(dispatch, model);
   const insp = inspector(dispatch);
   const cue = chapterCue();
@@ -133,7 +135,7 @@ const start = async (): Promise<AtlasApp | null> => {
   controls.className = 'controls';
   // The Tab order: lock-up, scale rail (and the offer beside it), time, breadcrumb, search, the
   // selection's values and the inspector they open, the legend.
-  controls.append(rail.el, offer.el, time.el, crumbs.el, meta.el, insp.el, key.toggle, key.el, says.notice);
+  controls.append(rail.el, offer.el, time.el, crumbs.el, finder.el, meta.el, insp.el, key.toggle, key.el, says.notice);
   root.append(says.live);
   root.append(cue.el);
   root.append(controls);
@@ -156,6 +158,7 @@ const start = async (): Promise<AtlasApp | null> => {
     time.update(s.nav);
     offer.update(s.nav, model.entities.name(s.nav.focus));
     says.update(s.nav, (id) => model.entities.name(id));
+    finder.update(s.nav);
     canvas.setAttribute('aria-label', `The atlas scene: ${model.entities.name(s.nav.focus)} in focus, the ${s.nav.regime.replace('-', ' ')} regime, ${s.nav.mode} navigation`);
   };
 
@@ -178,7 +181,7 @@ const start = async (): Promise<AtlasApp | null> => {
 
   attachPointer(canvas, dispatch, () => scene);
   attachTouch(canvas, dispatch, () => scene, () => bus.get().nav.selection);
-  attachKeyboard(dispatch, { dateField: () => { time.input.focus(); time.input.select(); }, rateStep: (d) => time.step(d), escape: () => { dispatch({ kind: 'legend', open: false }); dispatch({ kind: 'inspect', target: null }); },
+  attachKeyboard(dispatch, { dateField: () => { time.input.focus(); time.input.select(); }, rateStep: (d) => time.step(d), search: () => finder.open(), escape: () => { dispatch({ kind: 'legend', open: false }); dispatch({ kind: 'inspect', target: null }); dispatch({ kind: 'search', query: '' }); },
     inspectSelection: () => { const sel = bus.get().nav.selection; dispatch({ kind: 'inspect', target: sel ? { kind: 'entity', subject: sel } : { kind: 'release' } }); } });
   render();
 
@@ -203,6 +206,8 @@ void start().then((app) => {
     radiusKm: (id: string) => app?.model.observations.measured(id as AtlasId, 'meanRadius').value ?? null,
     nameOf: (id: string) => app?.model.entities.name(id as AtlasId) ?? null,
     idOf: (name: string) => app?.model.entities.all().find((e) => e.names.canonical === name)?.id ?? null,
+    /** Every entity of the open release with this canonical name, with its kind. */
+    named: (name: string) => app ? app.model.entities.all().filter((e) => e.names.canonical === name).map((e) => ({ id: e.id, kind: e.kind })) : [],
     precision: () => app ? [...app.model.precision.values()] : [],
     /** Every visible mark: its entity, its status and whether a source record stands behind it. */
     marks: () => (app?.scene()?.marks ?? []).filter((m) => m.visible).map((m) => ({ id: m.id, name: m.name, kind: m.kind, status: m.status, hasSourceRecord: m.hasSourceRecord, label: m.label })),

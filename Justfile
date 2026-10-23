@@ -50,3 +50,7 @@ perf:
 # The surface boundary and the TypeScript rules
 lint:
     npm run lint
+
+# Derive the shared-names test release from 001-prototype, without the network
+test-release:
+    npx tsx ingest/test-release.ts

@@ -360,6 +360,15 @@ promise to a person; where it changes a contract's letter, the entry says which.
 - Every text colour meets WCAG AA on the backgrounds it is set on, and the focus ring meets 3:1. The
   unit test reads the ratios from the stylesheets, so a new token pair fails until it is checked.
 
+### Search and the test release
+- A search that names an entity exactly prefers the exact matches. Otherwise it matches by prefix.
+  So "Mars" focuses Mars, and "alpha" offers every star with an alias that starts so.
+- The `shared-names` test release is derived from 001-prototype by `ingest/test-release.ts`, without
+  the network. It keeps only Earth's and Mercury's ephemerides, to stay at about 5 MB. The second
+  "Mercury" is the element, transcribed from the PubChem periodic table that 001-prototype already
+  holds. It cites that record, so nothing in it is illustrative. Its manifest points at
+  001-prototype's raw snapshots and validation report, and the loader refuses it outside `?test`.
+
 ### The inspector
 - The inspector opens from the metadata panel, where each value is a control, or with `i` on the
   selection. It shows an epoch outside the leap-second table, such as Hipparcos's J1991.25 in TT,

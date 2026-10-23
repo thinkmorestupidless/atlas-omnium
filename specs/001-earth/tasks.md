@@ -281,11 +281,11 @@ entity with its kind, proved on the test release "shared-names".
 stellar and molecular regimes; on the test release search Mercury and be offered two with their
 kinds; `features/navigation/search.feature` passes.
 
-- [ ] T089 [P] [US7] Write `tests/features/steps/search.steps.ts` for the two scenarios of `features/navigation/search.feature`: "searches {string}", "two entities share the name {string}" (asserted against the open release), "each entity is offered with its kind", "the focus is unchanged"
-- [ ] T090 [P] [US7] Write `tests/scientific/search.test.ts`: canonical names and aliases match case-insensitively and by prefix; a single match returns the id; several return candidates with kind; no match returns none
-- [ ] T091 [US7] Write `app/src/model/search.ts` (makes T090 pass) and `app/src/ui/search.ts` (`/`; a field with a result list of canonical name and kind; Enter on one dispatches `focus` to it, which the transitions resolve to the entity's regime: planetary for a body, nearby stellar for a star, molecular with `mode: 'structural'` for a substance, molecule type or atom type)
-- [ ] T092 [US7] Write `data/manifests/shared-names.yaml` and `data/curated/shared-names/` by a script `ingest/test-release.ts` that derives a minimal release from 001-prototype's curated files plus a second entity named "Mercury" of a different kind (an `AtomType` with a transcribed source record, `illustrative` for anything it cannot cite), marked `test_release: true` in the manifest so the application shows "test release" and `release.ts` refuses to serve it outside `?test`
-- [ ] T093 [US7] Make `search.feature` 2 of 2 pass (the outline on 001-prototype, the shared-name scenario on `shared-names`)
+- [X] T089 [P] [US7] Write `tests/features/steps/search.steps.ts` for the two scenarios of `features/navigation/search.feature`: "searches {string}", "two entities share the name {string}" (asserted against the open release), "each entity is offered with its kind", "the focus is unchanged"
+- [X] T090 [P] [US7] Write `tests/scientific/search.test.ts`: canonical names and aliases match case-insensitively and by prefix; a single match returns the id; several return candidates with kind; no match returns none
+- [X] T091 [US7] Write `app/src/model/search.ts` (makes T090 pass) and `app/src/ui/search.ts` (`/`; a field with a result list of canonical name and kind; Enter on one dispatches `focus` to it, which the transitions resolve to the entity's regime: planetary for a body, nearby stellar for a star, molecular with `mode: 'structural'` for a substance, molecule type or atom type)
+- [X] T092 [US7] Write `data/manifests/shared-names.yaml` and `data/curated/shared-names/` by a script `ingest/test-release.ts` that derives a minimal release from 001-prototype's curated files plus a second entity named "Mercury" of a different kind (an `AtomType` with a transcribed source record, `illustrative` for anything it cannot cite), marked `test_release: true` in the manifest so the application shows "test release" and `release.ts` refuses to serve it outside `?test`
+- [X] T093 [US7] Make `search.feature` 2 of 2 pass (the outline on 001-prototype, the shared-name scenario on `shared-names`)
 
 **Checkpoint**: all 47 scenarios pass; `just check` green.
 

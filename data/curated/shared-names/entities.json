@@ -1,0 +1,7988 @@
+[
+  {
+    "id": "atlas:ceres",
+    "kind": "SmallBody",
+    "names": {
+      "canonical": "Ceres",
+      "aliases": [
+        "1 Ceres",
+        "A801 AA"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "1"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "JPL#48",
+        "record": "Target body name: 1 Ceres (A801 AA)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:ceres",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:ceres:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:ceres:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:earth",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Earth",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "399"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Earth (399)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:earth",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:earth:state-vectors"
+        ]
+      },
+      {
+        "source": "atlas:earth",
+        "predicate": "representativeOf",
+        "target": "atlas:water",
+        "status": "illustrative",
+        "evidence": []
+      }
+    ],
+    "evidence": [
+      "obs:horizons:earth:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:element-h",
+    "kind": "AtomType",
+    "names": {
+      "canonical": "Hydrogen",
+      "aliases": [
+        "H"
+      ],
+      "catalogue": [],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "periodic table: AtomicNumber 1, Hydrogen",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:pubchem:element-1:atomicNumber"
+    ]
+  },
+  {
+    "id": "atlas:element-hg",
+    "kind": "AtomType",
+    "names": {
+      "canonical": "Mercury",
+      "aliases": [
+        "Hg"
+      ],
+      "catalogue": [],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "periodic table: AtomicNumber 80, Mercury",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:pubchem:element-80:atomicNumber"
+    ]
+  },
+  {
+    "id": "atlas:element-o",
+    "kind": "AtomType",
+    "names": {
+      "canonical": "Oxygen",
+      "aliases": [
+        "O"
+      ],
+      "catalogue": [],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "periodic table: AtomicNumber 8, Oxygen",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:pubchem:element-8:atomicNumber"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1022456104850892928",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 79211",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1022456104850892928"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  79211"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  79211 (identifier Gaia DR3 1022456104850892928)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1022456104850892928:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1022456139210632064",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 79210",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1022456139210632064"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  79210"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  79210 (identifier Gaia DR3 1022456139210632064)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1022456139210632064:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1040827088726734976",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 234-45",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1040827088726734976"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 234-45"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 234-45 (identifier Gaia DR3 1040827088726734976)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1040827088726734976:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1057318835428596096",
+    "kind": "Star",
+    "names": {
+      "canonical": "SZ UMa",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1057318835428596096"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* SZ UMa"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* SZ UMa (identifier Gaia DR3 1057318835428596096)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1057318835428596096:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1129149723913123456",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 254-29",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1129149723913123456"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 254-29"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 254-29 (identifier Gaia DR3 1129149723913123456)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1129149723913123456:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-114207651462714880",
+    "kind": "Star",
+    "names": {
+      "canonical": "VX Ari",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "114207651462714880"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* VX Ari"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* VX Ari (identifier Gaia DR3 114207651462714880)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:114207651462714880:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1143321672882274560",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 222-11",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1143321672882274560"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 222-11"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 222-11 (identifier Gaia DR3 1143321672882274560)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1143321672882274560:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1187851653287128576",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+16 2708",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1187851653287128576"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+16  2708"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+16  2708 (identifier Gaia DR3 1187851653287128576)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1187851653287128576:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1227133699053734528",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J14162408+1348263",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1227133699053734528"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J14162408+1348263"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J14162408+1348263 (identifier Gaia DR3 1227133699053734528)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1227133699053734528:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1237090738916392704",
+    "kind": "Star",
+    "names": {
+      "canonical": "Xi Boötis A",
+      "aliases": [
+        "ksi Boo A"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1237090738916392704"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* ksi Boo A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* ksi Boo A (identifier Gaia DR3 1237090738916392704)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1237090738916392704:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1267906854386665088",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J15031961+2525196",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1267906854386665088"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J15031961+2525196"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J15031961+2525196 (identifier Gaia DR3 1267906854386665088)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1267906854386665088:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1314438839310796800",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 151288",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1314438839310796800"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 151288"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 151288 (identifier Gaia DR3 1314438839310796800)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1314438839310796800:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1349047857580994560",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+43 2796",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1349047857580994560"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+43  2796"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+43  2796 (identifier Gaia DR3 1349047857580994560)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1349047857580994560:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1412645602995521920",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 203-42",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1412645602995521920"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 203-42"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 203-42 (identifier Gaia DR3 1412645602995521920)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1412645602995521920:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1428427236986209024",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 202-48",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1428427236986209024"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 202-48"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 202-48 (identifier Gaia DR3 1428427236986209024)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1428427236986209024:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1470462322431834880",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 1015",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1470462322431834880"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross 1015"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross 1015 (identifier Gaia DR3 1470462322431834880)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1470462322431834880:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1589250088362827776",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASSW J1515008+484742",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1589250088362827776"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASSW J1515008+484742"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASSW J1515008+484742 (identifier Gaia DR3 1589250088362827776)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1589250088362827776:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1618010323247026560",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 98-79",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1618010323247026560"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP   98-79"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP   98-79 (identifier Gaia DR3 1618010323247026560)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1618010323247026560:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1637645127018395776",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+68 946",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1637645127018395776"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+68   946"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+68   946 (identifier Gaia DR3 1637645127018395776)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1637645127018395776:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1638979384378696704",
+    "kind": "Star",
+    "names": {
+      "canonical": "EGGR 372",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1638979384378696704"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "EGGR 372"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "EGGR 372 (identifier Gaia DR3 1638979384378696704)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1638979384378696704:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1695191332232990720",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J15065257+7027247",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1695191332232990720"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J15065257+7027247"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J15065257+7027247 (identifier Gaia DR3 1695191332232990720)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1695191332232990720:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1725759404752580736",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J14053729+8350248",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1725759404752580736"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J14053729+8350248"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J14053729+8350248 (identifier Gaia DR3 1725759404752580736)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1725759404752580736:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1749030362195988096",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J20304235+0749358",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1749030362195988096"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J20304235+0749358"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J20304235+0749358 (identifier Gaia DR3 1749030362195988096)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1749030362195988096:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1784473016438653056",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 775",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1784473016438653056"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  775"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  775 (identifier Gaia DR3 1784473016438653056)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1784473016438653056:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1810616448010879488",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 144-25",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1810616448010879488"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 144-25"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 144-25 (identifier Gaia DR3 1810616448010879488)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1810616448010879488:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1872046574983497216",
+    "kind": "Star",
+    "names": {
+      "canonical": "61 Cyg B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1872046574983497216"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  61 Cyg B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  61 Cyg B (identifier Gaia DR3 1872046574983497216)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1872046574983497216:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1872046609345556480",
+    "kind": "Star",
+    "names": {
+      "canonical": "61 Cyg A",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1872046609345556480"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  61 Cyg A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  61 Cyg A (identifier Gaia DR3 1872046609345556480)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1872046609345556480:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1893189736896880640",
+    "kind": "Star",
+    "names": {
+      "canonical": "V374 Peg",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1893189736896880640"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* V374 Peg"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* V374 Peg (identifier Gaia DR3 1893189736896880640)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1893189736896880640:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1926461164913660160",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 248",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1926461164913660160"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  248"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  248 (identifier Gaia DR3 1926461164913660160)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1926461164913660160:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1934263333784036736",
+    "kind": "Star",
+    "names": {
+      "canonical": "EV Lac",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1934263333784036736"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* EV Lac"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* EV Lac (identifier Gaia DR3 1934263333784036736)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1934263333784036736:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1952802469918554368",
+    "kind": "Star",
+    "names": {
+      "canonical": "LSPM J2146+3813",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1952802469918554368"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LSPM J2146+3813"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LSPM J2146+3813 (identifier Gaia DR3 1952802469918554368)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1952802469918554368:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-1954170404122975232",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASSW J2148162+400359",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "1954170404122975232"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASSW J2148162+400359"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASSW J2148162+400359 (identifier Gaia DR3 1954170404122975232)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:1954170404122975232:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2009481748875806976",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 219134",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2009481748875806976"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 219134"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 219134 (identifier Gaia DR3 2009481748875806976)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2009481748875806976:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2019802555283940608",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J19284155+2356016",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2019802555283940608"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J19284155+2356016"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J19284155+2356016 (identifier Gaia DR3 2019802555283940608)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2019802555283940608:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2091177593123254016",
+    "kind": "Star",
+    "names": {
+      "canonical": "LSR J1835+3259",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2091177593123254016"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LSR J1835+3259"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LSR J1835+3259 (identifier Gaia DR3 2091177593123254016)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2091177593123254016:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2154880616774131712",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 173740",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2154880616774131712"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 173740"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 173740 (identifier Gaia DR3 2154880616774131712)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2154880616774131712:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2154880616774131840",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 173739",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2154880616774131840"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 173739"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 173739 (identifier Gaia DR3 2154880616774131840)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2154880616774131840:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2159844052779000064",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 227-29",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2159844052779000064"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 227-29"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 227-29 (identifier Gaia DR3 2159844052779000064)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2159844052779000064:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2195886971653527168",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 199305",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2195886971653527168"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 199305"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 199305 (identifier Gaia DR3 2195886971653527168)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2195886971653527168:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2202703050401536000",
+    "kind": "Star",
+    "names": {
+      "canonical": "UCAC4 747-070768",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2202703050401536000"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "UCAC4 747-070768"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "UCAC4 747-070768 (identifier Gaia DR3 2202703050401536000)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2202703050401536000:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2246206567973292160",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 262-15",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2246206567973292160"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 262-15"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 262-15 (identifier Gaia DR3 2246206567973292160)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2246206567973292160:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2257597439718033536",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 258-33",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2257597439718033536"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 258-33"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 258-33 (identifier Gaia DR3 2257597439718033536)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2257597439718033536:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2322561156529549440",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 881-64",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2322561156529549440"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  881-64"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  881-64 (identifier Gaia DR3 2322561156529549440)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2322561156529549440:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2349916559152267008",
+    "kind": "Star",
+    "names": {
+      "canonical": "EGGR 246",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2349916559152267008"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "EGGR 246"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "EGGR 246 (identifier Gaia DR3 2349916559152267008)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2349916559152267008:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2358022227591374336",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 268-110",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2358022227591374336"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 268-110"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 268-110 (identifier Gaia DR3 2358022227591374336)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2358022227591374336:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2358524597030794112",
+    "kind": "Star",
+    "names": {
+      "canonical": "YZ Cet",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2358524597030794112"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* YZ Cet"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* YZ Cet (identifier Gaia DR3 2358524597030794112)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2358524597030794112:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2396530698208685312",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 217357",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2396530698208685312"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 217357"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 217357 (identifier Gaia DR3 2396530698208685312)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2396530698208685312:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2441630500517079808",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 158-27",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2441630500517079808"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 158-27"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 158-27 (identifier Gaia DR3 2441630500517079808)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2441630500517079808:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2552925644460225152",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 4628",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2552925644460225152"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD   4628"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD   4628 (identifier Gaia DR3 2552925644460225152)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2552925644460225152:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2552928187080872832",
+    "kind": "Star",
+    "names": {
+      "canonical": "vMA 2",
+      "aliases": [
+        "van Maanen 2",
+        "van Maanen Star",
+        "van Maanen's Star",
+        "Wolf 28"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2552928187080872832"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Wolf   28"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Wolf   28 (identifier Gaia DR3 2552928187080872832)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2552928187080872832:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2572901021957789568",
+    "kind": "Star",
+    "names": {
+      "canonical": "SIMP J013656.5+093347.3",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2572901021957789568"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "SIMP J013656.5+093347.3"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "SIMP J013656.5+093347.3 (identifier Gaia DR3 2572901021957789568)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2572901021957789568:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2595284016771502080",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 788-34",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2595284016771502080"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  788-34"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  788-34 (identifier Gaia DR3 2595284016771502080)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2595284016771502080:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2603090003484152064",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD-15 6290",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2603090003484152064"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD-15  6290"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD-15  6290 (identifier Gaia DR3 2603090003484152064)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2603090003484152064:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2611561706216413696",
+    "kind": "Star",
+    "names": {
+      "canonical": "EGGR 453",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2611561706216413696"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "EGGR 453"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "EGGR 453 (identifier Gaia DR3 2611561706216413696)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2611561706216413696:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2627117287488522240",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD-05 5715",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2627117287488522240"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD-05  5715"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD-05  5715 (identifier Gaia DR3 2627117287488522240)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2627117287488522240:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2640434056928150400",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 157-77",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2640434056928150400"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 157-77"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 157-77 (identifier Gaia DR3 2640434056928150400)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2640434056928150400:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-272855565763652480",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 232979",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "272855565763652480"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 232979"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 232979 (identifier Gaia DR3 272855565763652480)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:272855565763652480:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2739689239311660672",
+    "kind": "Star",
+    "names": {
+      "canonical": "BR Psc",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2739689239311660672"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* BR Psc"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* BR Psc (identifier Gaia DR3 2739689239311660672)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2739689239311660672:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2794735086363871360",
+    "kind": "Star",
+    "names": {
+      "canonical": "LSPM J0036+1821",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2794735086363871360"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LSPM J0036+1821"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LSPM J0036+1821 (identifier Gaia DR3 2794735086363871360)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2794735086363871360:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2824770686019003904",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+19 5116A",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2824770686019003904"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+19  5116A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+19  5116A (identifier Gaia DR3 2824770686019003904)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2824770686019003904:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2828928008202069376",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 216899",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2828928008202069376"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 216899"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 216899 (identifier Gaia DR3 2828928008202069376)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2828928008202069376:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2879455480942629248",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 130-4",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2879455480942629248"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 130-4"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 130-4 (identifier Gaia DR3 2879455480942629248)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2879455480942629248:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2886233695250041216",
+    "kind": "Star",
+    "names": {
+      "canonical": "AP Col",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2886233695250041216"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* AP Col"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* AP Col (identifier Gaia DR3 2886233695250041216)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2886233695250041216:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2940856402123426176",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 42581",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2940856402123426176"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  42581"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  42581 (identifier Gaia DR3 2940856402123426176)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2940856402123426176:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2964001014514075520",
+    "kind": "Star",
+    "names": {
+      "canonical": "Gamma Leporis B",
+      "aliases": [
+        "AK Lep",
+        "gam Lep B"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2964001014514075520"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* AK Lep"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* AK Lep (identifier Gaia DR3 2964001014514075520)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2964001014514075520:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-2976850598890749824",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 776-46",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "2976850598890749824"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  776-46"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  776-46 (identifier Gaia DR3 2976850598890749824)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:2976850598890749824:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3022956969731332096",
+    "kind": "Star",
+    "names": {
+      "canonical": "HL 4",
+      "aliases": [
+        "EGGR 45"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3022956969731332096"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "EGGR  45"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "EGGR  45 (identifier Gaia DR3 3022956969731332096)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3022956969731332096:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3085716990368639744",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 112-50",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3085716990368639744"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 112-50"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 112-50 (identifier Gaia DR3 3085716990368639744)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3085716990368639744:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3089711447388931584",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 113-20",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3089711447388931584"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 113-20"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 113-20 (identifier Gaia DR3 3089711447388931584)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3089711447388931584:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3101920046552857728",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 50281B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3101920046552857728"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  50281B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  50281B (identifier Gaia DR3 3101920046552857728)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3101920046552857728:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3101923001490347392",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 50281",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3101923001490347392"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  50281"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  50281 (identifier Gaia DR3 3101923001490347392)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3101923001490347392:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3136952686035250688",
+    "kind": "Star",
+    "names": {
+      "canonical": "YZ CMi",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3136952686035250688"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* YZ CMi"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* YZ CMi (identifier Gaia DR3 3136952686035250688)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3136952686035250688:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3139847906307949696",
+    "kind": "Star",
+    "names": {
+      "canonical": "Luyten's star",
+      "aliases": [
+        "BD+05 1668"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3139847906307949696"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+05  1668"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+05  1668 (identifier Gaia DR3 3139847906307949696)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3139847906307949696:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3186021141200137472",
+    "kind": "Star",
+    "names": {
+      "canonical": "EGGR 41",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3186021141200137472"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "EGGR  41"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "EGGR  41 (identifier Gaia DR3 3186021141200137472)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3186021141200137472:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3187115498866675456",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 656-38",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3187115498866675456"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  656-38"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  656-38 (identifier Gaia DR3 3187115498866675456)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3187115498866675456:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3195919254111315712",
+    "kind": "Star",
+    "names": {
+      "canonical": "Omicron2 Eridani B",
+      "aliases": [
+        "omi02 Eri B",
+        "40 Eri B"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3195919254111315712"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* omi02 Eri B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* omi02 Eri B (identifier Gaia DR3 3195919254111315712)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3195919254111315712:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3200303384927512960",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 655-48",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3200303384927512960"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  655-48"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  655-48 (identifier Gaia DR3 3200303384927512960)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3200303384927512960:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3209938366665770752",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 36395",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3209938366665770752"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  36395"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  36395 (identifier Gaia DR3 3209938366665770752)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3209938366665770752:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3211461469444773376",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 32147",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3211461469444773376"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  32147"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  32147 (identifier Gaia DR3 3211461469444773376)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3211461469444773376:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3269362645115584640",
+    "kind": "Star",
+    "names": {
+      "canonical": "Kappa1 Ceti",
+      "aliases": [
+        "kap01 Cet",
+        "96 Cet",
+        "kap Cet"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3269362645115584640"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* kap01 Cet"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* kap01 Cet (identifier Gaia DR3 3269362645115584640)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3269362645115584640:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3303349202364648320",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J03552337+1133437",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3303349202364648320"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J03552337+1133437"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J03552337+1133437 (identifier Gaia DR3 3303349202364648320)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3303349202364648320:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3316364602541746048",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 99-49",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3316364602541746048"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G  99-49"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G  99-49 (identifier Gaia DR3 3316364602541746048)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3316364602541746048:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3320184202856435840",
+    "kind": "Star",
+    "names": {
+      "canonical": "EGGR 290",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3320184202856435840"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "EGGR 290"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "EGGR 290 (identifier Gaia DR3 3320184202856435840)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3320184202856435840:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3340477717172813568",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 47",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3340477717172813568"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross   47"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross   47 (identifier Gaia DR3 3340477717172813568)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3340477717172813568:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3359074685047632640",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 260655",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3359074685047632640"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 260655"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 260655 (identifier Gaia DR3 3359074685047632640)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3359074685047632640:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3377365057060447616",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 64",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3377365057060447616"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross   64"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross   64 (identifier Gaia DR3 3377365057060447616)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3377365057060447616:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3409711211681795584",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 285968",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3409711211681795584"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 285968"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 285968 (identifier Gaia DR3 3409711211681795584)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3409711211681795584:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3426333598021539840",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J06073908+2429574",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3426333598021539840"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J06073908+2429574"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J06073908+2429574 (identifier Gaia DR3 3426333598021539840)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3426333598021539840:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3464485826872541440",
+    "kind": "Star",
+    "names": {
+      "canonical": "SIPS J1141-3624",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3464485826872541440"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "SIPS J1141-3624"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "SIPS J1141-3624 (identifier Gaia DR3 3464485826872541440)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3464485826872541440:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3478127463341507072",
+    "kind": "Star",
+    "names": {
+      "canonical": "20 Crt",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3478127463341507072"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  20 Crt"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  20 Crt (identifier Gaia DR3 3478127463341507072)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3478127463341507072:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3478127467639543296",
+    "kind": "Star",
+    "names": {
+      "canonical": "20 Crt B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3478127467639543296"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  20 Crt B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  20 Crt B (identifier Gaia DR3 3478127467639543296)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3478127467639543296:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3478160727866058368",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-31 9113",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3478160727866058368"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-31  9113"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-31  9113 (identifier Gaia DR3 3478160727866058368)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3478160727866058368:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3507879565090229888",
+    "kind": "Star",
+    "names": {
+      "canonical": "61 Vir",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3507879565090229888"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  61 Vir"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  61 Vir (identifier Gaia DR3 3507879565090229888)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3507879565090229888:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3519785523672576384",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 695",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3519785523672576384"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  695"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  695 (identifier Gaia DR3 3519785523672576384)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3519785523672576384:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-35227046884571776",
+    "kind": "Star",
+    "names": {
+      "canonical": "Teegarden's Star",
+      "aliases": [
+        "APM EO0425-0315372",
+        "SO J025300.5+165258",
+        "NAME Teegarden's Star"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "35227046884571776"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "NAME Teegarden's Star"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "NAME Teegarden's Star (identifier Gaia DR3 35227046884571776)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:35227046884571776:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3705324881045028992",
+    "kind": "Star",
+    "names": {
+      "canonical": "Wolf 461",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3705324881045028992"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Wolf  461"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Wolf  461 (identifier Gaia DR3 3705324881045028992)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3705324881045028992:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3713594960831605760",
+    "kind": "Star",
+    "names": {
+      "canonical": "Wolf 489",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3713594960831605760"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Wolf  489"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Wolf  489 (identifier Gaia DR3 3713594960831605760)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3713594960831605760:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3735000631158990976",
+    "kind": "Star",
+    "names": {
+      "canonical": "Wolf 437",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3735000631158990976"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Wolf  437"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Wolf  437 (identifier Gaia DR3 3735000631158990976)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3735000631158990976:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3738099879558957952",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+11 2576",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3738099879558957952"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+11  2576"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+11  2576 (identifier Gaia DR3 3738099879558957952)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3738099879558957952:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3741297293732404352",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 119850",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3741297293732404352"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 119850"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 119850 (identifier Gaia DR3 3741297293732404352)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3741297293732404352:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3757613049856225792",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 731-58",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3757613049856225792"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  731-58"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  731-58 (identifier Gaia DR3 3757613049856225792)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3757613049856225792:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3796072592206250624",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 128",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3796072592206250624"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  128"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  128 (identifier Gaia DR3 3796072592206250624)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3796072592206250624:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3828238392559860992",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD-03 2870",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3828238392559860992"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD-03  2870"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD-03  2870 (identifier Gaia DR3 3828238392559860992)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3828238392559860992:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3840711729206827520",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 48-20",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3840711729206827520"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G  48-20"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G  48-20 (identifier Gaia DR3 3840711729206827520)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3840711729206827520:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-385334196532776576",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 1326B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "385334196532776576"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD   1326B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD   1326B (identifier Gaia DR3 385334196532776576)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:385334196532776576:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-385334230892516480",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 1326",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "385334230892516480"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD   1326"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD   1326 (identifier Gaia DR3 385334230892516480)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:385334230892516480:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3855208897392952192",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+01 2447",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3855208897392952192"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+01  2447"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+01  2447 (identifier Gaia DR3 3855208897392952192)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3855208897392952192:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3864615459886222464",
+    "kind": "Star",
+    "names": {
+      "canonical": "Wolf 358",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3864615459886222464"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Wolf  358"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Wolf  358 (identifier Gaia DR3 3864615459886222464)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3864615459886222464:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3864972938605115520",
+    "kind": "Star",
+    "names": {
+      "canonical": "Wolf 359",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3864972938605115520"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Wolf  359"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Wolf  359 (identifier Gaia DR3 3864972938605115520)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3864972938605115520:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3907283967108054528",
+    "kind": "Star",
+    "names": {
+      "canonical": "GL Vir",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3907283967108054528"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* GL Vir"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* GL Vir (identifier Gaia DR3 3907283967108054528)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3907283967108054528:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-3988987164339438208",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 104",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "3988987164339438208"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  104"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  104 (identifier Gaia DR3 3988987164339438208)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:3988987164339438208:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4017860992519744384",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 905",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4017860992519744384"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  905"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  905 (identifier Gaia DR3 4017860992519744384)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4017860992519744384:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4025850731201819392",
+    "kind": "Star",
+    "names": {
+      "canonical": "61 UMa",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4025850731201819392"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  61 UMa"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  61 UMa (identifier Gaia DR3 4025850731201819392)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4025850731201819392:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4031586157514097024",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+36 2219",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4031586157514097024"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+36  2219"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+36  2219 (identifier Gaia DR3 4031586157514097024)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4031586157514097024:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4034171629042489088",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 103095",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4034171629042489088"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 103095"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 103095 (identifier Gaia DR3 4034171629042489088)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4034171629042489088:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4075141768785646848",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-23 14742",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4075141768785646848"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-23 14742"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-23 14742 (identifier Gaia DR3 4075141768785646848)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4075141768785646848:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4109030160308317312",
+    "kind": "Star",
+    "names": {
+      "canonical": "36 Oph B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4109030160308317312"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  36 Oph B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  36 Oph B (identifier Gaia DR3 4109030160308317312)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4109030160308317312:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4109030160308320128",
+    "kind": "Star",
+    "names": {
+      "canonical": "36 Oph A",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4109030160308320128"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  36 Oph A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  36 Oph A (identifier Gaia DR3 4109030160308320128)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4109030160308320128:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4109034455276324608",
+    "kind": "Star",
+    "names": {
+      "canonical": "V2215 Oph",
+      "aliases": [
+        "30 Sco",
+        "36 Oph C"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4109034455276324608"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* V2215 Oph"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* V2215 Oph (identifier Gaia DR3 4109034455276324608)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4109034455276324608:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4145870293808914688",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 154-44",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4145870293808914688"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 154-44"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 154-44 (identifier Gaia DR3 4145870293808914688)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4145870293808914688:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4147112604476417792",
+    "kind": "Star",
+    "names": {
+      "canonical": "PM J18057-1422",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4147112604476417792"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "PM J18057-1422"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "PM J18057-1422 (identifier Gaia DR3 4147112604476417792)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4147112604476417792:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4177731838628465408",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 165222",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4177731838628465408"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 165222"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 165222 (identifier Gaia DR3 4177731838628465408)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4177731838628465408:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-423027104407576576",
+    "kind": "Star",
+    "names": {
+      "canonical": "GAT 1367",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "423027104407576576"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "GAT 1367"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "GAT 1367 (identifier Gaia DR3 423027104407576576)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:423027104407576576:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-425040000962497792",
+    "kind": "Star",
+    "names": {
+      "canonical": "Eta Cassiopeiae B",
+      "aliases": [
+        "eta Cas B"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "425040000962497792"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* eta Cas B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* eta Cas B (identifier Gaia DR3 425040000962497792)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:425040000962497792:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4286249341336984576",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 141-36",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4286249341336984576"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 141-36"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 141-36 (identifier Gaia DR3 4286249341336984576)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4286249341336984576:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4293315765165489536",
+    "kind": "Star",
+    "names": {
+      "canonical": "VB 10",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4293315765165489536"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "VB 10"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "VB 10 (identifier Gaia DR3 4293315765165489536)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4293315765165489536:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4293318823182081408",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 180617",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4293318823182081408"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 180617"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 180617 (identifier Gaia DR3 4293318823182081408)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4293318823182081408:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4318384355378007424",
+    "kind": "Star",
+    "names": {
+      "canonical": "Gaia DR3 4318384355378007424",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4318384355378007424"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Gaia DR3 4318384355378007424"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Gaia DR3 4318384355378007424 (identifier Gaia DR3 4318384355378007424)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4318384355378007424:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4330690742322011520",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD-12 4523",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4330690742322011520"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD-12  4523"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD-12  4523 (identifier Gaia DR3 4330690742322011520)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4330690742322011520:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4339417394313320192",
+    "kind": "Star",
+    "names": {
+      "canonical": "VB 8",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4339417394313320192"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "VB  8"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "VB  8 (identifier Gaia DR3 4339417394313320192)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4339417394313320192:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4339465360510320128",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 152751C",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4339465360510320128"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 152751C"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 152751C (identifier Gaia DR3 4339465360510320128)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4339465360510320128:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4358031335898505472",
+    "kind": "Star",
+    "names": {
+      "canonical": "12 Oph",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4358031335898505472"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  12 Oph"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  12 Oph (identifier Gaia DR3 4358031335898505472)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4358031335898505472:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4365609170043180416",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 19-7",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4365609170043180416"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G  19-7"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G  19-7 (identifier Gaia DR3 4365609170043180416)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4365609170043180416:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4371611781971072768",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J17502484-0016151",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4371611781971072768"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J17502484-0016151"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J17502484-0016151 (identifier Gaia DR3 4371611781971072768)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4371611781971072768:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4375233191015944192",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 157881",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4375233191015944192"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 157881"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 157881 (identifier Gaia DR3 4375233191015944192)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4375233191015944192:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4468009917744160000",
+    "kind": "Star",
+    "names": {
+      "canonical": "WISEP J180026.60+013453.1",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4468009917744160000"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "WISEP J180026.60+013453.1"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "WISEP J180026.60+013453.1 (identifier Gaia DR3 4468009917744160000)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4468009917744160000:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4472832130942575872",
+    "kind": "Star",
+    "names": {
+      "canonical": "Barnard's star",
+      "aliases": [
+        "Barnard Star",
+        "NAME Barnard's star"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4472832130942575872"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "NAME Barnard's star"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "NAME Barnard's star (identifier Gaia DR3 4472832130942575872)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4472832130942575872:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4485574134969389312",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J18212815+1414010",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4485574134969389312"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J18212815+1414010"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J18212815+1414010 (identifier Gaia DR3 4485574134969389312)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4485574134969389312:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4519789081415296128",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 349726",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4519789081415296128"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 349726"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 349726 (identifier Gaia DR3 4519789081415296128)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4519789081415296128:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4519789321942643072",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 730",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4519789321942643072"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  730"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  730 (identifier Gaia DR3 4519789321942643072)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4519789321942643072:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4535928365908540416",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 184-19",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4535928365908540416"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 184-19"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 184-19 (identifier Gaia DR3 4535928365908540416)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4535928365908540416:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4535928365908541440",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 184-19B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4535928365908541440"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 184-19B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 184-19B (identifier Gaia DR3 4535928365908541440)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4535928365908541440:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4550763526539955712",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+18 3421",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4550763526539955712"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+18  3421"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+18  3421 (identifier Gaia DR3 4550763526539955712)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4550763526539955712:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4667836363565989120",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J03400942-6724051",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4667836363565989120"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J03400942-6724051"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J03400942-6724051 (identifier Gaia DR3 4667836363565989120)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4667836363565989120:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4698424845771339520",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 88-59",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4698424845771339520"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L   88-59"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L   88-59 (identifier Gaia DR3 4698424845771339520)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4698424845771339520:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-470826482637310080",
+    "kind": "Star",
+    "names": {
+      "canonical": "Stein 2051",
+      "aliases": [
+        "Stein 2051A",
+        "G 175-34"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "470826482637310080"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 175-34"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 175-34 (identifier Gaia DR3 470826482637310080)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:470826482637310080:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-470826482637310848",
+    "kind": "Star",
+    "names": {
+      "canonical": "Stein 2051 B",
+      "aliases": [
+        "EGGR 180"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "470826482637310848"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "EGGR 180"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "EGGR 180 (identifier Gaia DR3 470826482637310848)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:470826482637310848:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4719430087707860736",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 173-19",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4719430087707860736"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  173-19"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  173-19 (identifier Gaia DR3 4719430087707860736)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4719430087707860736:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4736655036868019072",
+    "kind": "Star",
+    "names": {
+      "canonical": "LEHPM 3396",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4736655036868019072"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LEHPM 3396"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LEHPM 3396 (identifier Gaia DR3 4736655036868019072)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4736655036868019072:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4752399493622045696",
+    "kind": "Star",
+    "names": {
+      "canonical": "DENIS 0255-4700",
+      "aliases": [
+        "DENIS J025503.3-470049"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4752399493622045696"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "DENIS J025503.3-470049"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "DENIS J025503.3-470049 (identifier Gaia DR3 4752399493622045696)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4752399493622045696:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4780100658292046592",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 230-188",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4780100658292046592"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  230-188"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  230-188 (identifier Gaia DR3 4780100658292046592)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4780100658292046592:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4810594479418041856",
+    "kind": "Star",
+    "names": {
+      "canonical": "Kapteyn's",
+      "aliases": [
+        "Kapteyn Star",
+        "Kapteyn's star",
+        "HD 33793"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4810594479418041856"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  33793"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  33793 (identifier Gaia DR3 4810594479418041856)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4810594479418041856:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4848140361962951552",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 372-58",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4848140361962951552"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  372-58"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  372-58 (identifier Gaia DR3 4848140361962951552)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4848140361962951552:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4860376345833699840",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 944-20",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4860376345833699840"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  944-20"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  944-20 (identifier Gaia DR3 4860376345833699840)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4860376345833699840:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4911306239828325632",
+    "kind": "Star",
+    "names": {
+      "canonical": "p Eri A",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4911306239828325632"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* p Eri A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* p Eri A (identifier Gaia DR3 4911306239828325632)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4911306239828325632:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4911306239828325760",
+    "kind": "Star",
+    "names": {
+      "canonical": "p Eri B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4911306239828325760"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* p Eri B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* p Eri B (identifier Gaia DR3 4911306239828325760)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4911306239828325760:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-4994877094997259264",
+    "kind": "Star",
+    "names": {
+      "canonical": "LAWD 96",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "4994877094997259264"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LAWD 96"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LAWD 96 (identifier Gaia DR3 4994877094997259264)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:4994877094997259264:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5020179503252128768",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-30 731",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5020179503252128768"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-30   731"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-30   731 (identifier Gaia DR3 5020179503252128768)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5020179503252128768:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5052876333365036928",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J02572581-3105523",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5052876333365036928"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J02572581-3105523"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J02572581-3105523 (identifier Gaia DR3 5052876333365036928)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5052876333365036928:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5153091836072107136",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD-17 588A",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5153091836072107136"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD-17   588A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD-17   588A (identifier Gaia DR3 5153091836072107136)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5153091836072107136:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5224460173763882496",
+    "kind": "Star",
+    "names": {
+      "canonical": "SCR J1138-7721",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5224460173763882496"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "SCR J1138-7721"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "SCR J1138-7721 (identifier Gaia DR3 5224460173763882496)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5224460173763882496:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-522863309964987520",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+61 195",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "522863309964987520"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+61   195"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+61   195 (identifier Gaia DR3 522863309964987520)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:522863309964987520:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-522864272041351296",
+    "kind": "Star",
+    "names": {
+      "canonical": "Wolf 47",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "522864272041351296"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Wolf   47"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Wolf   47 (identifier Gaia DR3 522864272041351296)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:522864272041351296:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5243594081269535872",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 100-115",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5243594081269535872"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  100-115"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  100-115 (identifier Gaia DR3 5243594081269535872)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5243594081269535872:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5254061535106490112",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 143-23",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5254061535106490112"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  143-23"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  143-23 (identifier Gaia DR3 5254061535106490112)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5254061535106490112:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5260451999700465536",
+    "kind": "Star",
+    "names": {
+      "canonical": "SCR J0630-7643A",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5260451999700465536"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "SCR J0630-7643A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "SCR J0630-7643A (identifier Gaia DR3 5260451999700465536)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5260451999700465536:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5260759175761501696",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 32-9",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5260759175761501696"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L   32-9"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L   32-9 (identifier Gaia DR3 5260759175761501696)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5260759175761501696:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5260759175761502976",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 32-8",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5260759175761502976"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L   32-8"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L   32-8 (identifier Gaia DR3 5260759175761502976)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5260759175761502976:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5273943488410008832",
+    "kind": "Star",
+    "names": {
+      "canonical": "LAWD 26",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5273943488410008832"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LAWD 26"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LAWD 26 (identifier Gaia DR3 5273943488410008832)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5273943488410008832:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5278042880077383040",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J08173001-6155158",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5278042880077383040"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J08173001-6155158"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J08173001-6155158 (identifier Gaia DR3 5278042880077383040)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5278042880077383040:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5332606522595645952",
+    "kind": "Star",
+    "names": {
+      "canonical": "LAWD 37",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5332606522595645952"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LAWD 37"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LAWD 37 (identifier Gaia DR3 5332606522595645952)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5332606522595645952:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-533621859441169920",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 318",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "533621859441169920"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  318"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  318 (identifier Gaia DR3 533621859441169920)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:533621859441169920:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5381537023379295232",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 102365",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5381537023379295232"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 102365"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 102365 (identifier Gaia DR3 5381537023379295232)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5381537023379295232:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5393446658454453632",
+    "kind": "Star",
+    "names": {
+      "canonical": "DENIS J104814.6-395606",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5393446658454453632"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "DENIS J104814.6-395606"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "DENIS J104814.6-395606 (identifier Gaia DR3 5393446658454453632)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5393446658454453632:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5412250540681250560",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-45 5378",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5412250540681250560"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-45  5378"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-45  5378 (identifier Gaia DR3 5412250540681250560)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5412250540681250560:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5425628298649940608",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-40 5404",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5425628298649940608"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-40  5404"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-40  5404 (identifier Gaia DR3 5425628298649940608)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5425628298649940608:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5535361753834861312",
+    "kind": "Star",
+    "names": {
+      "canonical": "SCR J0740-4257",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5535361753834861312"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "SCR J0740-4257"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "SCR J0740-4257 (identifier Gaia DR3 5535361753834861312)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5535361753834861312:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5639391810273308416",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-32 5613",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5639391810273308416"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-32  5613"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-32  5613 (identifier Gaia DR3 5639391810273308416)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5639391810273308416:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5664814198431308288",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 678-39",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5664814198431308288"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  678-39"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  678-39 (identifier Gaia DR3 5664814198431308288)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5664814198431308288:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5699418131466175488",
+    "kind": "Star",
+    "names": {
+      "canonical": "UPM J0815-2344",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5699418131466175488"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "UPM J0815-2344"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "UPM J0815-2344 (identifier Gaia DR3 5699418131466175488)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5699418131466175488:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5700706729031126656",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 674-15",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5700706729031126656"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  674-15"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  674-15 (identifier Gaia DR3 5700706729031126656)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5700706729031126656:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5717278911884258176",
+    "kind": "Star",
+    "names": {
+      "canonical": "LAWD 25",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5717278911884258176"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LAWD 25"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LAWD 25 (identifier Gaia DR3 5717278911884258176)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5717278911884258176:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5717278911884264576",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 783-2",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5717278911884264576"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  783-2"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  783-2 (identifier Gaia DR3 5717278911884264576)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5717278911884264576:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5761985432616501376",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 666-9",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5761985432616501376"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  666-9"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  666-9 (identifier Gaia DR3 5761985432616501376)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5761985432616501376:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5853498713190525696",
+    "kind": "Star",
+    "names": {
+      "canonical": "Proxima Centauri",
+      "aliases": [
+        "Proxima",
+        "Proxima Cen",
+        "Alpha Centauri C",
+        "NAME Proxima Centauri",
+        "alf Cen C"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5853498713190525696"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "NAME Proxima Centauri"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "NAME Proxima Centauri (identifier Gaia DR3 5853498713190525696)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5853498713190525696:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5918660719983560192",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 205-128",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5918660719983560192"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  205-128"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  205-128 (identifier Gaia DR3 5918660719983560192)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5918660719983560192:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5946986063671469824",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-48 11837B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5946986063671469824"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-48 11837B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-48 11837B (identifier Gaia DR3 5946986063671469824)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5946986063671469824:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5946986063684477056",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-48 11837",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5946986063684477056"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-48 11837"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-48 11837 (identifier Gaia DR3 5946986063684477056)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5946986063684477056:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5951165616611763456",
+    "kind": "Star",
+    "names": {
+      "canonical": "41 Ara",
+      "aliases": [
+        "41 Ara A"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5951165616611763456"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "*  41 Ara"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "*  41 Ara (identifier Gaia DR3 5951165616611763456)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5951165616611763456:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5951824121022278144",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-46 11540",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5951824121022278144"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-46 11540"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-46 11540 (identifier Gaia DR3 5951824121022278144)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5951824121022278144:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5955305209191546112",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-44 11909",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5955305209191546112"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-44 11909"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-44 11909 (identifier Gaia DR3 5955305209191546112)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5955305209191546112:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5975663354131618304",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 156384C",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5975663354131618304"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 156384C"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 156384C (identifier Gaia DR3 5975663354131618304)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5975663354131618304:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-5985290231327158144",
+    "kind": "Star",
+    "names": {
+      "canonical": "UCAC4 195-119117",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "5985290231327158144"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "UCAC4 195-119117"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "UCAC4 195-119117 (identifier Gaia DR3 5985290231327158144)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:5985290231327158144:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6002807341299977216",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-40 9712",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6002807341299977216"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-40  9712"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-40  9712 (identifier Gaia DR3 6002807341299977216)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6002807341299977216:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6021430250773348736",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-37 10765",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6021430250773348736"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-37 10765"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-37 10765 (identifier Gaia DR3 6021430250773348736)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6021430250773348736:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6021430250773733632",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-37 10765B",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6021430250773733632"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-37 10765B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-37 10765B (identifier Gaia DR3 6021430250773733632)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6021430250773733632:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6078114541943893888",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-51 6859",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6078114541943893888"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-51  6859"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-51  6859 (identifier Gaia DR3 6078114541943893888)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6078114541943893888:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6109610086872510592",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 403-34",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6109610086872510592"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  403-34"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  403-34 (identifier Gaia DR3 6109610086872510592)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6109610086872510592:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6133474952391837824",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 399-68",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6133474952391837824"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  399-68"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  399-68 (identifier Gaia DR3 6133474952391837824)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6133474952391837824:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6135947032490329472",
+    "kind": "Star",
+    "names": {
+      "canonical": "SIPS J1259-4336",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6135947032490329472"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "SIPS J1259-4336"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "SIPS J1259-4336 (identifier Gaia DR3 6135947032490329472)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6135947032490329472:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6153483658836320384",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 471-42",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6153483658836320384"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  471-42"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  471-42 (identifier Gaia DR3 6153483658836320384)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6153483658836320384:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6224387727748521344",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 914-54",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6224387727748521344"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  914-54"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  914-54 (identifier Gaia DR3 6224387727748521344)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6224387727748521344:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6232511606838403968",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 131977",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6232511606838403968"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 131977"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 131977 (identifier Gaia DR3 6232511606838403968)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6232511606838403968:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-625453654702751872",
+    "kind": "Star",
+    "names": {
+      "canonical": "AD Leo",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "625453654702751872"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* AD Leo"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* AD Leo (identifier Gaia DR3 625453654702751872)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:625453654702751872:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-628080246633611520",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 42-24",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "628080246633611520"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G  42-24"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G  42-24 (identifier Gaia DR3 628080246633611520)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:628080246633611520:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6305165514134625024",
+    "kind": "Star",
+    "names": {
+      "canonical": "Gaia DR3 6305165514134625024",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6305165514134625024"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Gaia DR3 6305165514134625024"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Gaia DR3 6305165514134625024 (identifier Gaia DR3 6305165514134625024)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6305165514134625024:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6306068659857135232",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASSW J1507476-162738",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6306068659857135232"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASSW J1507476-162738"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASSW J1507476-162738 (identifier Gaia DR3 6306068659857135232)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6306068659857135232:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6322070093095493504",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD-07 4003",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6322070093095493504"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD-07  4003"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD-07  4003 (identifier Gaia DR3 6322070093095493504)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6322070093095493504:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6378584028690858496",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 49-19",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6378584028690858496"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L   49-19"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L   49-19 (identifier Gaia DR3 6378584028690858496)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6378584028690858496:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6412595290592307840",
+    "kind": "Star",
+    "names": {
+      "canonical": "Epsilon Indi",
+      "aliases": [
+        "eps Ind"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6412595290592307840"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* eps Ind"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* eps Ind (identifier Gaia DR3 6412595290592307840)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6412595290592307840:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6439125097427143808",
+    "kind": "Star",
+    "names": {
+      "canonical": "SCR J1845-6357",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6439125097427143808"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "SCR J1845-6357"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "SCR J1845-6357 (identifier Gaia DR3 6439125097427143808)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6439125097427143808:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6553614253923452800",
+    "kind": "Star",
+    "names": {
+      "canonical": "Lacaille 9352",
+      "aliases": [
+        "HD 217987"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6553614253923452800"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 217987"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 217987 (identifier Gaia DR3 6553614253923452800)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6553614253923452800:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6562924609150908416",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 204961",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6562924609150908416"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 204961"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 204961 (identifier Gaia DR3 6562924609150908416)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6562924609150908416:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6575069780231675264",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 499-56",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6575069780231675264"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  499-56"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  499-56 (identifier Gaia DR3 6575069780231675264)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6575069780231675264:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6583272171336048640",
+    "kind": "Star",
+    "names": {
+      "canonical": "Lacaille 8760",
+      "aliases": [
+        "AX Mic"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6583272171336048640"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* AX Mic"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* AX Mic (identifier Gaia DR3 6583272171336048640)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6583272171336048640:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6604147121141267712",
+    "kind": "Star",
+    "names": {
+      "canonical": "Alpha Piscis Austrini B",
+      "aliases": [
+        "Fomalhaut B",
+        "TW PsA",
+        "alf PsA B"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6604147121141267712"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* TW PsA"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* TW PsA (identifier Gaia DR3 6604147121141267712)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6604147121141267712:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6623351805412369024",
+    "kind": "Star",
+    "names": {
+      "canonical": "Alpha Piscis Austrini C",
+      "aliases": [
+        "Fomalhaut C",
+        "alf PsA C"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6623351805412369024"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* alf PsA C"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* alf PsA C (identifier Gaia DR3 6623351805412369024)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6623351805412369024:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6663600360560306560",
+    "kind": "Star",
+    "names": {
+      "canonical": "L 347-14",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6663600360560306560"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "L  347-14"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "L  347-14 (identifier Gaia DR3 6663600360560306560)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6663600360560306560:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6673000841376349696",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 191849",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6673000841376349696"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 191849"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 191849 (identifier Gaia DR3 6673000841376349696)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6673000841376349696:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6697578465310949376",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 191408",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6697578465310949376"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 191408"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 191408 (identifier Gaia DR3 6697578465310949376)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6697578465310949376:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6779821003058453120",
+    "kind": "Star",
+    "names": {
+      "canonical": "PM J20502-3424",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6779821003058453120"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "PM J20502-3424"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "PM J20502-3424 (identifier Gaia DR3 6779821003058453120)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6779821003058453120:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6794047652729201024",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 197481",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6794047652729201024"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 197481"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 197481 (identifier Gaia DR3 6794047652729201024)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6794047652729201024:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6847167606385195648",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 192310",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6847167606385195648"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 192310"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 192310 (identifier Gaia DR3 6847167606385195648)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6847167606385195648:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-685103912857072640",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 368-128",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "685103912857072640"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  368-128"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  368-128 (identifier Gaia DR3 685103912857072640)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:685103912857072640:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-6882963066420161664",
+    "kind": "Star",
+    "names": {
+      "canonical": "LP 816-60",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "6882963066420161664"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "LP  816-60"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "LP  816-60 (identifier Gaia DR3 6882963066420161664)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:6882963066420161664:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-703790044252850688",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 51-15",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "703790044252850688"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G  51-15"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G  51-15 (identifier Gaia DR3 703790044252850688)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:703790044252850688:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-762815470562110464",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 95735",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "762815470562110464"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  95735"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  95735 (identifier Gaia DR3 762815470562110464)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:762815470562110464:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-778947608243864320",
+    "kind": "Star",
+    "names": {
+      "canonical": "PM I11055+4331",
+      "aliases": [
+        "BD+44 2051B"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "778947608243864320"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+44  2051B"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+44  2051B (identifier Gaia DR3 778947608243864320)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:778947608243864320:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-778947814402602752",
+    "kind": "Star",
+    "names": {
+      "canonical": "BD+44 2051",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "778947814402602752"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "BD+44  2051"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "BD+44  2051 (identifier Gaia DR3 778947814402602752)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:778947814402602752:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-786834302080370304",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 122-49",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "786834302080370304"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 122-49"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 122-49 (identifier Gaia DR3 786834302080370304)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:786834302080370304:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-823773494718931968",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 88230",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "823773494718931968"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD  88230"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD  88230 (identifier Gaia DR3 823773494718931968)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:823773494718931968:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-922225002820369152",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 111-47",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "922225002820369152"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 111-47"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 111-47 (identifier Gaia DR3 922225002820369152)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:922225002820369152:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-939072613334579328",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 265866",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "939072613334579328"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 265866"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 265866 (identifier Gaia DR3 939072613334579328)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:939072613334579328:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-946632924007399936",
+    "kind": "Star",
+    "names": {
+      "canonical": "QY Aur",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "946632924007399936"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "V* QY Aur"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "V* QY Aur (identifier Gaia DR3 946632924007399936)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:946632924007399936:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-954697944875755136",
+    "kind": "Star",
+    "names": {
+      "canonical": "2MASS J06523073+4710348",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "954697944875755136"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "2MASS J06523073+4710348"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "2MASS J06523073+4710348 (identifier Gaia DR3 954697944875755136)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:954697944875755136:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-96331172942614528",
+    "kind": "Star",
+    "names": {
+      "canonical": "107 Psc",
+      "aliases": [
+        "2 Ari"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "96331172942614528"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* 107 Psc"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* 107 Psc (identifier Gaia DR3 96331172942614528)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:96331172942614528:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-970354749937140736",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 192-15",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "970354749937140736"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 192-15"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 192-15 (identifier Gaia DR3 970354749937140736)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:970354749937140736:parallax"
+    ]
+  },
+  {
+    "id": "atlas:gaia-dr3-999747822484300800",
+    "kind": "Star",
+    "names": {
+      "canonical": "G 192-13",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "gaia-dr3",
+          "id": "999747822484300800"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "G 192-13"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "G 192-13 (identifier Gaia DR3 999747822484300800)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:gaia:999747822484300800:parallax"
+    ]
+  },
+  {
+    "id": "atlas:halley",
+    "kind": "SmallBody",
+    "names": {
+      "canonical": "1P/Halley",
+      "aliases": [
+        "Halley",
+        "1P"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "DES=1P;CAP"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "JPL#75",
+        "record": "Target body name: 1P/Halley",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:halley",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:halley:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:halley:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:hip-110893",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 239960",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "110893"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 239960"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 239960 (identifier HIP 110893)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:110893:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-113368",
+    "kind": "Star",
+    "names": {
+      "canonical": "Fomalhaut",
+      "aliases": [
+        "Alpha Piscis Austrini",
+        "alf PsA",
+        "24 PsA",
+        "79 Aqr"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "113368"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* alf PsA"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* alf PsA (identifier HIP 113368)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:113368:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-114110",
+    "kind": "Star",
+    "names": {
+      "canonical": "HIP 114110",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "114110"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HIP 114110"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HIP 114110 (identifier HIP 114110)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:114110:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-114176",
+    "kind": "Star",
+    "names": {
+      "canonical": "HIP 114176",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "114176"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HIP 114176"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HIP 114176 (identifier HIP 114176)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:114176:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-30920",
+    "kind": "Star",
+    "names": {
+      "canonical": "Ross 614",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "30920"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "Ross  614"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "Ross  614 (identifier HIP 30920)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:30920:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-32349",
+    "kind": "Star",
+    "names": {
+      "canonical": "Sirius",
+      "aliases": [
+        "Sirius A",
+        "Alpha Canis Majoris",
+        "alf CMa",
+        "9 CMa",
+        "alf CMa A"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "32349"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* alf CMa"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* alf CMa (identifier HIP 32349)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:32349:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-37279",
+    "kind": "Star",
+    "names": {
+      "canonical": "Procyon",
+      "aliases": [
+        "Procyon A",
+        "Alpha Canis Minoris",
+        "alf CMi",
+        "10 CMi",
+        "alf CMi A"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "37279"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* alf CMi"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* alf CMi (identifier HIP 37279)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:37279:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-57146",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 101847BC",
+      "aliases": [
+        "NAME HD 101847BC"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "57146"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "NAME HD 101847BC"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "NAME HD 101847BC (identifier HIP 57146)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:57146:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-71683",
+    "kind": "Star",
+    "names": {
+      "canonical": "Alpha Centauri A",
+      "aliases": [
+        "Rigel Kentaurus",
+        "Rigil Kentaurus",
+        "alf Cen A",
+        "alf01 Cen"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "71683"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* alf Cen A"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* alf Cen A (identifier HIP 71683)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:71683:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-84140",
+    "kind": "Star",
+    "names": {
+      "canonical": "HD 155876",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "84140"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "HD 155876"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "HD 155876 (identifier HIP 84140)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:84140:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-91262",
+    "kind": "Star",
+    "names": {
+      "canonical": "Vega",
+      "aliases": [
+        "Alpha Lyrae",
+        "alf Lyr",
+        "3 Lyr"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "91262"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* alf Lyr"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* alf Lyr (identifier HIP 91262)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:91262:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-94223",
+    "kind": "Star",
+    "names": {
+      "canonical": "CD-48 12943",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "94223"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "CD-48 12943"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "CD-48 12943 (identifier HIP 94223)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:94223:parallax"
+    ]
+  },
+  {
+    "id": "atlas:hip-97649",
+    "kind": "Star",
+    "names": {
+      "canonical": "Altair",
+      "aliases": [
+        "Alpha Aquilae",
+        "alf Aql",
+        "53 Aql"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "hip",
+          "id": "97649"
+        },
+        {
+          "catalogue": "simbad",
+          "id": "* alf Aql"
+        }
+      ],
+      "source": {
+        "dataset": "simbad",
+        "release": "SIMBAD4 1.8 - 2026-10",
+        "record": "* alf Aql (identifier HIP 97649)",
+        "retrieved": "2026-10-23T07:39:32.086Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:hip:97649:parallax"
+    ]
+  },
+  {
+    "id": "atlas:jupiter",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Jupiter",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "599"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "jup365_merged",
+        "record": "Target body name: Jupiter (599)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:jupiter",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:jupiter:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:jupiter:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:mars",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Mars",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "499"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "mar099",
+        "record": "Target body name: Mars (499)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:mars",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:mars:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:mars:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:mercury",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Mercury",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "199"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Mercury (199)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:mercury",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:mercury:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:mercury:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:moon",
+    "kind": "Moon",
+    "names": {
+      "canonical": "Moon",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "301"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Moon (301)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:moon",
+        "predicate": "satelliteOf",
+        "target": "atlas:earth",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:moon:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:moon:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:neptune",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Neptune",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "899"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "nep098_merged",
+        "record": "Target body name: Neptune (899)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:neptune",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:neptune:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:neptune:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:pluto",
+    "kind": "SmallBody",
+    "names": {
+      "canonical": "Pluto",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "999"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "plu060_merged",
+        "record": "Target body name: Pluto (999)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:pluto",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:pluto:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:pluto:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:pubchem-962",
+    "kind": "MoleculeType",
+    "names": {
+      "canonical": "oxidane",
+      "aliases": [
+        "H2O"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "pubchem-cid",
+          "id": "962"
+        }
+      ],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "CID 962, compound record: IUPAC Name (Preferred)",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "evidence": [
+      "obs:pubchem:962:molecularWeight",
+      "conformer:atlas:pubchem-962"
+    ],
+    "relations": [
+      {
+        "source": "atlas:pubchem-962",
+        "predicate": "hasPart",
+        "target": "atlas:element-h",
+        "status": "observed",
+        "evidence": [
+          "conformer:atlas:pubchem-962"
+        ],
+        "count": 2
+      },
+      {
+        "source": "atlas:pubchem-962",
+        "predicate": "hasPart",
+        "target": "atlas:element-o",
+        "status": "observed",
+        "evidence": [
+          "conformer:atlas:pubchem-962"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "atlas:saturn",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Saturn",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "699"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "sat441l",
+        "record": "Target body name: Saturn (699)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:saturn",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:saturn:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:saturn:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:sun",
+    "kind": "Star",
+    "names": {
+      "canonical": "Sun",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "10"
+        }
+      ],
+      "source": {
+        "dataset": "nssdca-factsheet",
+        "release": "sunfact.html, last updated 9 May 2024",
+        "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+        "retrieved": "2026-10-23T07:13:31.713Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": []
+  },
+  {
+    "id": "atlas:uranus",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Uranus",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "799"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "ura184_merged",
+        "record": "Target body name: Uranus (799)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:uranus",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:uranus:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:uranus:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:venus",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Venus",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "299"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Venus (299)",
+        "retrieved": "2026-10-23T07:27:49.637Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:venus",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:venus:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:venus:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:water",
+    "kind": "Substance",
+    "names": {
+      "canonical": "water",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "pubchem-cid",
+          "id": "962"
+        }
+      ],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "CID 962, compound record: IUPAC Name (Traditional)",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "evidence": [
+      "obs:pubchem:962:molecularWeight"
+    ],
+    "relations": [
+      {
+        "source": "atlas:water",
+        "predicate": "composedOf",
+        "target": "atlas:pubchem-962",
+        "status": "observed",
+        "evidence": [
+          "obs:pubchem:962:molecularWeight"
+        ]
+      }
+    ]
+  }
+]
