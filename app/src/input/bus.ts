@@ -17,8 +17,10 @@ export interface Store {
 
 export interface BusDeps {
   ctx: NavContext;
-  /** Metres in the projection plane for a screen offset in pixels (y down on screen). */
-  pxToPlane(dx: number, dy: number): { x: number; y: number };
+  /** Metres in the projection plane from the view centre to a screen point. */
+  anchorToPlane(px: { x: number; y: number }): { x: number; y: number };
+  /** Metres in the projection plane for a screen movement in pixels (y down on screen). */
+  deltaToPlane(dx: number, dy: number): { x: number; y: number };
   /** The marks a keyboard can move the selection among, in reading order. */
   selectable(): AtlasId[];
 }
@@ -27,8 +29,8 @@ export const reduce = (store: Store, a: Action, d: BusDeps): Store => {
   const nav = store.nav;
   const s = (n: NavigationState): Store => (n === nav ? store : { ...store, nav: n });
   switch (a.kind) {
-    case 'scale': return s(t.scaleBy(nav, a.factor, d.ctx, a.anchorPx ? d.pxToPlane(a.anchorPx.x, a.anchorPx.y) : undefined));
-    case 'pan': { const m = d.pxToPlane(-a.dxPx, -a.dyPx); return s(t.panBy(nav, m.x, m.y)); }
+    case 'scale': return s(t.scaleBy(nav, a.factor, d.ctx, a.anchorPx ? d.anchorToPlane(a.anchorPx) : undefined));
+    case 'pan': { const m = d.deltaToPlane(-a.dxPx, -a.dyPx); return s(t.panBy(nav, m.x, m.y)); }
     case 'select': return s(t.select(nav, a.id));
     case 'focus': return s(a.id ? t.focusOn(nav, a.id, d.ctx) : t.focus(nav, d.ctx));
     case 'back': return s(t.back(nav, d.ctx));

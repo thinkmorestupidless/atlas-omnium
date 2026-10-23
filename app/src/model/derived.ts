@@ -8,7 +8,7 @@ import type {
 } from './schema';
 import type { Quantity, Unit } from './units';
 
-export type ModelName = 'hermite-state-vectors' | 'inverse-parallax' | 'keplerian-elements' | 'icrs-to-ecliptic' | 'gaia-astrometry-to-position';
+export type ModelName = 'hermite-state-vectors' | 'inverse-parallax' | 'keplerian-elements' | 'icrs-to-ecliptic' | 'gaia-astrometry-to-position' | 'frame-origin';
 
 export interface DerivedState<T> {
   readonly subject: AtlasId;

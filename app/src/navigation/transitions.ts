@@ -123,10 +123,19 @@ export const enterStructural = (s: NavigationState, ctx: NavContext): Navigation
 
 const inWindow = (date: string, w: NavigationState['window']) => date >= w.from && date <= w.to;
 
+/** A civil date (00:00 UTC) or a UTC instant to the ISO instant it names, or null if it names none. */
+const instantOf = (date: string): string | null => {
+  const d = date.trim();
+  const iso = /^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d}T00:00:00Z` : /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/.test(d) ? d : null;
+  if (!iso) return null;
+  const ms = Date.parse(iso);
+  return Number.isNaN(ms) || new Date(ms).toISOString().slice(0, 10) !== iso.slice(0, 10) ? null : new Date(ms).toISOString();
+};
+
 export const setDate = (s: NavigationState, date: string): NavigationState => {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(`${date}T00:00:00Z`))) return { ...s, refusal: { date, window: s.window } };
-  if (!inWindow(date, s.window)) return { ...s, refusal: { date, window: s.window } };
-  return { ...s, utc: `${date}T00:00:00.000Z`, refusal: null };
+  const utc = instantOf(date);
+  if (!utc || !inWindow(utc.slice(0, 10), s.window)) return { ...s, refusal: { date: date.trim(), window: s.window } };
+  return { ...s, utc, refusal: null };
 };
 
 export const play = (s: NavigationState): NavigationState => (s.playing ? s : { ...s, playing: true, refusal: null });

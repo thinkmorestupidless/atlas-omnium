@@ -8,7 +8,7 @@ export interface View {
   readonly scale: number;
   /** The focus's position, in metres, in the projection's frame. */
   readonly centre: Vector3;
-  /** Metres of the view centre from the focus. */
+  /** Metres of the view centre from the focus, in the projection plane. */
   readonly pan: { readonly x: number; readonly y: number };
   readonly width: number;
   readonly height: number;
@@ -21,8 +21,10 @@ export interface Projected extends ScreenPoint {
 
 export interface Projection {
   readonly name: 'ecliptic-top-down' | 'conformer-plane';
-  readonly flattens: null | { readonly dimension: 'ecliptic-z' | 'conformer-normal'; readonly declared: true };
+  readonly flattens: null | { readonly dimension: 'ecliptic-z' | 'conformer-normal'; readonly declared: true; readonly words: string };
   project(p: PositionAtEpoch, view: View): Projected;
-  /** A screen offset from the view centre to metres in the plane, for panning and anchoring. */
-  unprojectOffset(dx: number, dy: number, view: View): { x: number; y: number };
+  /** A position already in metres in the projection's frame. */
+  projectMetres(m: Vector3, view: View): Projected;
+  /** A screen point to metres in the plane from the view centre (which is the focus plus the pan). */
+  offsetOf(s: ScreenPoint, view: View): { x: number; y: number };
 }

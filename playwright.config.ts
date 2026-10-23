@@ -8,6 +8,8 @@ const featuresDir = defineBddConfig({
   steps: 'tests/features/steps/**/*.ts',
   outputDir: '.features-gen',
   missingSteps: 'fail-on-run',
+  // A Given sets a precondition up; a Then with the same words checks it.
+  matchKeywords: true,
 });
 
 export default defineConfig({

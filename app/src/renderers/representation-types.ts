@@ -11,6 +11,9 @@ export type MarkShape = 'disc' | 'point' | 'stellar' | 'atom';
 export interface ResolvedMark {
   readonly id: AtlasId;
   readonly name: string;
+  readonly kind: string;
+  /** On the screen and not faded out. */
+  readonly visible: boolean;
   readonly shape: MarkShape;
   readonly at: ScreenPoint;
   readonly radiusPx: number;
@@ -34,6 +37,9 @@ export interface ResolvedMark {
 
 export interface ResolvedLine {
   readonly id: string;
+  /** The entity whose orbit or bond this is. */
+  readonly of: AtlasId;
+  readonly visible: boolean;
   readonly points: readonly ScreenPoint[];
   readonly style: LineStyle;
   readonly closed: boolean;
@@ -41,6 +47,7 @@ export interface ResolvedLine {
 
 export interface Scene {
   readonly regime: Regime;
+  readonly scale: number;
   readonly fades: Fades;
   readonly marks: readonly ResolvedMark[];
   readonly lines: readonly ResolvedLine[];

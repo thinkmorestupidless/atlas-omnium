@@ -6,16 +6,13 @@
     <title>an atlas of everything.</title>
     <meta name="description" content="Every place. Every scale. Everything we know." />
     <link rel="stylesheet" href="/src/styles/tokens.css" />
+    <link rel="stylesheet" href="/src/styles/controls.css" />
   </head>
   <body>
-    <main class="atlas">
+    <main class="atlas" id="atlas">
       <canvas id="scene" aria-label="The atlas scene" role="img"></canvas>
       <p id="release-banner" class="banner mono" hidden>release not reproducible: development only</p>
       <p id="problem" class="problem mono" role="alert" hidden></p>
-      <header class="lockup">
-        <h1 class="display">an atlas of everything<span class="stop">.</span></h1>
-        <p class="mono promise">Every place. Every scale. Everything we know.</p>
-      </header>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

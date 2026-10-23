@@ -47,7 +47,8 @@ export const createCanvas2d = (canvas: HTMLCanvasElement): Renderer => {
     disc(c, r, s) {
       applyMark(s);
       ctx.beginPath();
-      ctx.arc(c.x, c.y, Math.max(r, 0.5), 0, Math.PI * 2);
+      // Drawn at the radius given, however small: a true-scale disc is not enlarged here.
+      ctx.arc(c.x, c.y, Math.max(r, 0), 0, Math.PI * 2);
       if (s.fill) ctx.fill();
       if (s.stroke) ctx.stroke();
     },

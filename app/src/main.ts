@@ -1,12 +1,30 @@
 // The composition root of the browser surface: load the release, build the navigation state and its
-// context, wire inputs to the bus, and draw on every change.
+// context, wire inputs to the bus, and draw on every change and on every frame while time plays.
 import { buildContext } from './navigation/context';
 import { initialState } from './navigation/state';
 import { loadRelease, UnreproducibleRelease } from './model/release';
-import type { Model } from './model/derived';
-import { createBus, type Bus } from './input/bus';
+import type { DerivedState, Model } from './model/derived';
+import type { PositionAtEpoch } from './model/frames';
+import type { AtlasId } from './model/ids';
+import { bodyPositions, epochOf } from './model/positions';
+import { createBus, type Bus, type Store } from './input/bus';
+import type { Action } from './input/actions';
+import { attachKeyboard } from './input/keyboard';
+import { attachPointer } from './input/pointer';
+import { attachTouch } from './input/touch';
+import { eclipticTopDown } from './projections/ecliptic-top-down';
 import { createCanvas2d } from './renderers/canvas2d';
+import { drawOrbitGeometry } from './renderers/orbit-geometry';
 import type { Renderer } from './renderers/renderer';
+import { resolve, viewOf } from './renderers/representation';
+import type { Scene } from './renderers/representation-types';
+import { breadcrumb } from './ui/breadcrumb';
+import { lockup } from './ui/lockup';
+import { madeOf } from './ui/made-of';
+import { metadata } from './ui/metadata';
+import { onMotionChange, reducedMotion } from './ui/motion';
+import { scaleRail } from './ui/scale-rail';
+import { timeController } from './ui/time-controller';
 
 const params = new URLSearchParams(location.search);
 const release = params.get('release') ?? '001-prototype';
@@ -33,9 +51,18 @@ const showProblem = (text: string) => {
 
 const today = () => new Date().toISOString().slice(0, 10);
 
-export interface AtlasApp { model: Model; bus: Bus; renderer: Renderer }
+export interface AtlasApp {
+  model: Model;
+  bus: Bus;
+  renderer: Renderer;
+  scene(): Scene | null;
+  positions(): ReadonlyMap<AtlasId, DerivedState<PositionAtEpoch>>;
+  labels(): { placed: string[]; dropped: string[] };
+}
 
 const start = async (): Promise<AtlasApp | null> => {
+  const root = el('atlas');
+  root.append(lockup());
   const canvas = el<HTMLCanvasElement>('scene');
   const renderer = createCanvas2d(canvas);
   renderer.clear();
@@ -51,31 +78,94 @@ const start = async (): Promise<AtlasApp | null> => {
   if (!model.release.reproducible) el('release-banner').hidden = false;
   if (model.release.testRelease) { const b = el('release-banner'); b.hidden = false; b.textContent = `test release ${model.release.name}`; }
 
-  const shortSide = () => Math.min(canvas.clientWidth, canvas.clientHeight) || 800;
-  const ctx = buildContext(model, shortSide);
+  const viewport = () => ({ width: canvas.clientWidth || 1, height: canvas.clientHeight || 1 });
+  const ctx = buildContext(model, () => Math.min(viewport().width, viewport().height));
   const nav = initialState({ release, window: model.release.window, today: today() });
-  const bus = createBus({ nav, surface: { inspect: null, legendOpen: false } }, () => ({
-    ctx,
-    pxToPlane: (dx, dy) => ({ x: dx * bus.get().nav.scale, y: -dy * bus.get().nav.scale }),
-    selectable: () => [],
-  }));
-  return { model, bus, renderer };
+  let scene: Scene | null = null;
+  let positions: ReadonlyMap<AtlasId, DerivedState<PositionAtEpoch>> = new Map();
+  let labels = { placed: [] as string[], dropped: [] as string[] };
+  const projection = eclipticTopDown;
+
+  const bus = createBus({ nav, surface: { inspect: null, legendOpen: false } }, () => {
+    const v = viewOf({ state: bus.get().nav, viewport: viewport(), positions });
+    return {
+      ctx,
+      anchorToPlane: (px) => projection.offsetOf(px, v),
+      deltaToPlane: (dx, dy) => ({ x: dx * v.scale, y: -dy * v.scale }),
+      selectable: () => (scene?.marks ?? []).filter((m) => m.visible).sort((a, b) => a.at.y - b.at.y || a.at.x - b.at.x).map((m) => m.id),
+    };
+  });
+  const dispatch = (a: Action) => bus.dispatch(a);
+
+  const rail = scaleRail(dispatch);
+  const crumbs = breadcrumb(dispatch, model.entities);
+  const meta = metadata();
+  const time = timeController(dispatch);
+  const offer = madeOf(dispatch, false);
+  const controls = document.createElement('div');
+  controls.className = 'controls';
+  controls.append(crumbs.el, meta.el, rail.el, offer.el, time.el);
+  root.append(controls);
+
+  const render = () => {
+    const s: Store = bus.get();
+    positions = bodyPositions(model, epochOf(s.nav.utc));
+    scene = resolve({ state: s.nav, model, projection, viewport: viewport(), positions, reducedMotion: reducedMotion() });
+    renderer.clear();
+    drawOrbitGeometry(renderer, scene);
+    labels = renderer.flush();
+    rail.update(s.nav, projection);
+    crumbs.update(s.nav);
+    meta.update({ model, selection: s.nav.selection, positions, mark: scene.marks.find((m) => m.id === s.nav.selection) });
+    time.update(s.nav);
+    offer.update(s.nav, model.entities.name(s.nav.focus));
+    canvas.setAttribute('aria-label', `The atlas scene: ${model.entities.name(s.nav.focus)} in focus, the ${s.nav.regime.replace('-', ' ')} regime`);
+  };
+
+  let frame = 0;
+  let last = 0;
+  const loop = (now: number) => {
+    frame = 0;
+    if (bus.get().nav.playing) {
+      const elapsed = last ? (now - last) / 1000 : 0;
+      last = now;
+      if (elapsed > 0) bus.dispatch({ kind: 'tick', seconds: Math.min(elapsed, 0.25) });
+      schedule();
+    } else last = 0;
+    render();
+  };
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(loop); };
+  bus.subscribe(schedule);
+  window.addEventListener('resize', schedule);
+  onMotionChange(schedule);
+
+  attachPointer(canvas, dispatch, () => scene);
+  attachTouch(canvas, dispatch, () => scene, () => bus.get().nav.selection);
+  attachKeyboard(dispatch, { dateField: () => { time.input.focus(); time.input.select(); }, rateStep: (d) => time.step(d) });
+  render();
+
+  return { model, bus, renderer, scene: () => scene, positions: () => positions, labels: () => labels };
 };
 
 void start().then((app) => {
   if (!testMode) return;
+  // The test hook: what the feature harness reads. Present only under ?test.
   const hook = {
     ready: true,
-    app,
+    loaded: app !== null,
     state: () => {
       if (!app) return null;
       const n = app.bus.get().nav;
-      return {
-        ...n,
-        breadcrumb: n.breadcrumb.map((c) => ({ id: c.id, name: app.model.entities.name(c.id) })),
-      };
+      return { ...n, breadcrumb: n.breadcrumb.map((c) => ({ ...c, name: app.model.entities.name(c.id) })), surface: app.bus.get().surface };
     },
-    dispatch: (a: Parameters<Bus['dispatch']>[0]) => app?.bus.dispatch(a),
+    scene: () => app?.scene() ?? null,
+    labels: () => app?.labels() ?? null,
+    dispatch: (a: Action) => app?.bus.dispatch(a),
+    positions: () => app ? [...app.positions()].map(([id, p]) => ({ id, r: p.value.r, unit: p.value.unit, frame: p.value.frame.kind, jd: p.value.epoch.jd, scale: p.value.epoch.scale })) : [],
+    radiusKm: (id: string) => app?.model.observations.measured(id as AtlasId, 'meanRadius').value ?? null,
+    nameOf: (id: string) => app?.model.entities.name(id as AtlasId) ?? null,
+    idOf: (name: string) => app?.model.entities.all().find((e) => e.names.canonical === name)?.id ?? null,
+    precision: () => app ? [...app.model.precision.values()] : [],
   };
   (window as unknown as { __atlas: unknown }).__atlas = hook;
 });
