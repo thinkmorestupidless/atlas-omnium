@@ -140,7 +140,14 @@ const start = async (): Promise<AtlasApp | null> => {
   root.append(cue.el);
   root.append(controls);
 
+  // Each frame is measured (research R15): tests/performance/run.ts reads the 'atlas:render' entries.
   const render = () => {
+    performance.mark('atlas:render-start');
+    draw();
+    performance.measure('atlas:render', 'atlas:render-start');
+    if (performance.getEntriesByName('atlas:render').length > 2000) { performance.clearMeasures('atlas:render'); performance.clearMarks('atlas:render-start'); }
+  };
+  const draw = () => {
     const s: Store = bus.get();
     positions = bodyPositions(model, epochOf(s.nav.utc));
     scene = resolve({ state: s.nav, model, projection, viewport: viewport(), positions, stars, reducedMotion: reducedMotion() });

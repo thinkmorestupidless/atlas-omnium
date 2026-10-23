@@ -15,8 +15,8 @@ the documents win and say why in `decisions/`.
 
 ## Status
 
-Repository established; nothing renders yet. The first feature, **001 earth**, is the vertical
-slice the brief calls for: Earth, the Solar System under real time-dependent positions, a bounded
+The first feature, **001 earth**, is built and in review. It is the vertical slice the brief calls
+for: Earth, the Solar System under real time-dependent positions, a bounded
 nearby-star sample, the orbit-to-stars transition that keeps the Sun's identity, and one explicitly
 structural path from Earth to water to its atoms. It is specified and built with spec-kit under
 `specs/001-earth/`; the tick count in its `tasks.md` is the status.
@@ -46,6 +46,12 @@ Node 24 or later. Everything works without `just`; the Justfile lists the same c
 | Type-check and build into `dist/` | `npm run build` |
 | The unit, scientific and navigation suites | `npm test` |
 | The living features, glossary and specs | `just check` |
+| Rebuild the release offline and check its checksums | `just rebuild` |
+| The living features end to end in a browser | `npm run features` |
+| Screenshots against the approved baselines | `npm run visual` |
+| Frame times, load time and heap growth | `npm run perf` |
+| Acquire the snapshots again (needs the network) | `just ingest` |
+| Derive the shared-names test release | `just test-release` |
 
 ## Principles the code is held to
 

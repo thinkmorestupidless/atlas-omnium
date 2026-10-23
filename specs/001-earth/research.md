@@ -250,6 +250,19 @@ SC-008 is measured there.
 What building 001 showed that the decisions above did not say. None of it changes a contract's
 promise to a person; where it changes a contract's letter, the entry says which.
 
+### Verify at implementation: the outcomes
+Each item the decisions above left to ingest or implementation, and what it found.
+
+| Left open | Outcome |
+|---|---|
+| R3: the Gaia row count and the stars the cuts removed | 238 rows after the cuts, of 315 within 10 pc. All 77 removed fail the RUWE cut, and the validation report names them. Proxima Centauri is present. |
+| R4: the bright stars entered by cross-match | 13 Hipparcos-2 stars, among them Sirius, Procyon, Alpha Centauri A, Vega, Altair and Fomalhaut. Alpha Centauri B is not among them; the nearby-stars section says why. |
+| R5: a body without a mean radius | 1P/Halley has none in the sources, and neither has Ceres. The "radius missing" scenario runs on 001-prototype, so no test-release fallback was needed. |
+| R7: the PubChem URLs | `compound/cid/962/record/JSON?record_type=3d`, `compound/cid/962/record/JSON` and `periodictable/JSON` under `https://pubchem.ncbi.nlm.nih.gov/rest/pug`, verbatim in the manifest. The periodic table endpoint was stable, so the fallback through CID 783 and 977 was not used. |
+| R8: the licence wording's source pages | Copied on the day from the pages in each source's `terms_pages`: JPL's about page, the NSSDCA fact sheet index, VizieR's licence page, ESA's Gaia licence page with the archived credit page, SIMBAD's home and CDS's acknowledgement page, and PubChem's citation guidelines with NCBI's policies. PubChem states no licence; NCBI's policies say public domain with acknowledgement asked. The CC BY-NC claim about Gaia was not repeated: the release quotes ESA's page. |
+| R9: the scale defaults after the first screen | Opening at 1 × 10⁵ m/px, Earth about 127 px across. Heliocentric 2 × 10¹⁰, stellar 1 × 10¹⁴. The band runs from 1 × 10¹² to 3 × 10¹³ (see the surface section). The sessions may still move them. |
+| R15: the test machine | Measured on the machine named in `tests/performance/README.md`. The sessions' machine is not yet known, so SC-008 is confirmed there only when the sessions name it. |
+
 ### Time, frames and the reference ephemeris
 - Horizons states its "Ecliptic of J2000.0" obliquity as 84381.448″ (IAU 1976) in every vectors
   response. The stars are rotated with the same value so both share one plane exactly.
@@ -390,3 +403,40 @@ promise to a person; where it changes a contract's letter, the entry says which.
   fixtures under `tests/fixtures/`.
 - The observation properties were refined while writing the curators. `raDec` and `properMotion`
   are four properties (`ra`, `dec`, `pmra`, `pmdec`), each with its own uncertainty.
+
+## Measurements
+
+### Claims (SC-010)
+`checklists/claims.md` checks every string the atlas shows against what it rests on. The review
+found 4 unsupported claims, and all 4 were reworded:
+
+- The legend said an orbit track is "the orbit from its elements". The Moon's comes from its own
+  positions over a month.
+- The legend called the Sun "the largest stellar mark". The brightest band is drawn the same size.
+- The legend said the distance ring appears "where it spans a pixel". It appears from half a pixel.
+- A test release's release view repeated the rebuild sentence. Nothing rebuilds a test release.
+
+### Performance (SC-008, R15)
+Measured on 2026-10-23 by `npm run perf`, on an Apple M5 with 32 GB, macOS 26.6.2, headless
+Chromium 156, at 1280 × 800. The full result is `tests/performance/results/2026-10-23.json`.
+
+| View | Draw time per frame, p50 / p95 / max | Visible marks |
+|---|---|---|
+| opening | 0.4 / 0.6 / 0.9 ms | 1 |
+| Moon in view | 0.4 / 0.6 / 0.9 ms | 2 |
+| heliocentric | 0.7 / 0.9 / 1.2 ms | 13 |
+| transition midpoint | 0.6 / 0.9 / 1.2 ms | 1 |
+| stellar | 0.7 / 0.9 / 1.1 ms | 109 |
+| the transition, 198 steps | 0.5 / 0.7 / 1.3 ms | |
+
+| Measure | Result |
+|---|---|
+| Input to drawn frame, keyboard scale, p95 | 15.5 ms |
+| Input to drawn frame, click to select, p95 | 25.3 ms |
+| Release loaded and first frame drawn | 288 ms |
+| Heap growth over a ten-minute soak | 0.04 MB |
+
+Every input is drawn well within a tenth of a second, and no frame takes more than 1.3 ms to draw,
+far under a 16.7 ms frame. Canvas 2D is enough for 001, so decision 0002's WebGL trigger is not
+met. SC-008 itself is confirmed only on the sessions' machine, which is not yet named.
+

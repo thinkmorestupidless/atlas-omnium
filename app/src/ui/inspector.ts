@@ -141,7 +141,7 @@ export const inspector = (dispatch: (a: Action) => void) => {
         rows.push(
           row('release-name', 'release', model.release.name),
           row('release-window', 'supported window', `${model.release.window.from} to ${model.release.window.to}`),
-          row('release-reproducible', 'reproducible', model.release.reproducible ? 'yes: rebuilt from its manifest and raw snapshots to the recorded checksums' : 'no: the manifest is not complete'),
+          row('release-reproducible', 'reproducible', model.release.testRelease ? 'a test release: derived from 001-prototype by ingest/test-release.ts, for the suites only' : model.release.reproducible ? 'yes: rebuilt from its manifest and raw snapshots to the recorded checksums' : 'no: the manifest is not complete'),
           ...model.release.manifest.sources.map((s) => {
             const a = model.attribution.find((x) => x.source === s.name);
             return h('section', { class: 'insp-source', 'data-source': s.name },

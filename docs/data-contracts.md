@@ -21,13 +21,15 @@ is written by ingest and again when the application loads it. Field names are th
 ```ts
 type AtlasId = string & { readonly __brand: 'AtlasId' };
 
-type Kind = 'Star' | 'StarSystem' | 'Planet' | 'DwarfPlanet' | 'Moon' | 'SmallBody'
+// 001 uses these seven. The Sun is a Star; dwarf planets, asteroids and comets are SmallBody.
+// StarSystem and DwarfPlanet are reserved, and the schema rejects them until a release carries one.
+type Kind = 'Star' | 'Planet' | 'Moon' | 'SmallBody'
           | 'Substance' | 'MoleculeType' | 'AtomType';
 
 interface Entity {
   id: AtlasId;
   kind: Kind;
-  names: { canonical: string; aliases: string[]; catalogue: CatalogueId[] };
+  names: { canonical: string; aliases: string[]; catalogue: CatalogueId[]; source: SourceRecord };
   classifications: Classification[];        // typed per domain, e.g. spectral type with its source
   relations: Relationship[];
   evidence: EvidenceRef[];
@@ -58,7 +60,7 @@ interface Observation<U extends Unit> {
   method?: string;                           // instrument or model version where known
 }
 
-interface Epoch { scale: 'TDB' | 'TT' | 'UTC'; jd: number }        // Julian date in that scale
+interface Epoch { scale: 'TDB' | 'TT' | 'TCB' | 'UTC'; jd: number }   // Julian date in that scale; Gaia's epoch is TCB
 type Frame =
   | { kind: 'heliocentric-ecliptic'; equinox: 'J2000'; system: 'ICRF' }
   | { kind: 'barycentric-ecliptic';  equinox: 'J2000'; system: 'ICRF' }
@@ -85,8 +87,10 @@ shown as missing. Nothing fills it.
 |---|---|---|---|
 | JPL Horizons API | state vectors (position, velocity) of the Sun, eight planets, the Moon and a few chosen bodies, sampled across the valid window | heliocentric ecliptic J2000 (ICRF), TDB; the Moon also geocentric | one request per body, fixed step, raw text kept; curated to arrays of (epoch, r, v) |
 | NASA planetary fact sheets, JPL physical parameters | mean radius, mass, rotation period and the like | n/a | hand-transcribed into a curated file with the page and retrieval date as the source record; every value cites its row |
-| Gaia DR3 archive (TAP, ADQL) | position, parallax, proper motion, G magnitude, BP-RP colour, with uncertainties and RUWE | ICRS, epoch J2016.0 | one ADQL query, verbatim in the manifest; curated to ICRS Cartesian with distance from parallax and its propagated uncertainty |
-| PubChem PUG REST | water (CID 962): formula, IUPAC name, 2D and 3D conformer coordinates, bonds; the elements H and O | the conformer's own coordinates | one request per compound; the atom types as entities with `composedOf` from the molecule type |
+| Gaia DR3 archive (TAP, ADQL) | position, parallax, proper motion, G magnitude, BP-RP colour, with uncertainties and RUWE | ICRS, epoch J2016.0 in TCB | one ADQL query, verbatim in the manifest; curated to ICRS Cartesian with distance derived from parallax, an interval |
+| Hipparcos-2 (VizieR I/311, TAP) | position, parallax and Hp magnitude of the bright stars Gaia lacks or cuts | ICRS, epoch J1991.25 in TT | one ADQL query; a star enters only through a cross-match record, after four recorded checks |
+| SIMBAD (TAP) | the common names and identifiers of every star in the sample | n/a | queried by Gaia DR3 and HIP identifier, fifty at a time; names only, never a position |
+| PubChem PUG REST | water (CID 962): formula, IUPAC names, molecular weight, the 3D conformer's coordinates and bonds; the elements H and O from its periodic table | the conformer's own coordinates, in ångström | three requests, raw kept; the atom types as entities with `hasPart` and counts from the molecule type |
 
 ### Solar System positions: evaluate from sampled vectors, draw tracks from elements
 
@@ -107,26 +111,27 @@ lookup; the difference is seconds and is typed, not ignored.
 ### The stellar neighbourhood: a bounded, honest sample
 
 The sample is bounded by a parallax threshold and quality cuts, both shown in the UI as the
-selection criteria. The candidate query, to be settled in the plan:
+selection criteria. The query, verbatim in the manifest, keeps the stars within 10 pc:
 
 ```sql
-SELECT source_id, ra, dec, parallax, parallax_error, pmra, pmdec, radial_velocity,
-       phot_g_mean_mag, bp_rp, ruwe
+SELECT source_id, ra, dec, parallax, parallax_error, pmra, pmdec, pmra_error, pmdec_error,
+       radial_velocity, radial_velocity_error, phot_g_mean_mag, bp_rp, ruwe, ref_epoch
 FROM gaiadr3.gaia_source
-WHERE parallax > 50 AND parallax_over_error > 10 AND ruwe < 1.4
+WHERE parallax > 100 AND parallax_over_error > 10 AND ruwe < 1.4
 ```
 
-Distance is `1000 / parallax` parsecs with its uncertainty propagated; the UI draws the uncertainty
-as a ring on the distance axis, not as a vague glow. Positions are converted from (ra, dec,
+The stars within 10 pc that the cuts removed are named in the validation report. Distance is
+derived: `1000 / parallax` parsecs, with the interval `[1000/(ϖ+σ), 1000/(ϖ−σ)]` as its
+uncertainty. The UI draws that interval as a dashed ring where it spans a pixel, not as a vague
+glow. Positions are converted from (ra, dec,
 distance) to ICRS Cartesian with the Sun at the origin, then rotated into the ecliptic so the
 neighbourhood and the Solar System share one projection plane (`rendering.md`).
 
 **The brightest stars come through cross-match records.** Gaia DR3 lacks or distrusts astrometry
-for the very brightest stars; Sirius and the Alpha Centauri pair are expected to be absent or
-cut, while Proxima is present (verify at implementation). The few missing bright stars enter the
-sample from a second catalogue (Hipparcos-2 or SIMBAD identifiers; the plan chooses) through an
-explicit cross-match record carrying both source records and the basis of the match. Nothing is
-added by name alone, and the inspector shows both records.
+for the very brightest stars. Sirius, Procyon, Vega and Alpha Centauri A are absent or cut, while
+Proxima is present. The missing bright stars enter the sample from Hipparcos-2 through an explicit
+cross-match record. It carries both source records and the basis of the match, a published
+cross-identification. Nothing is added by name alone, and the inspector shows both records.
 
 ### The composition path is structural and representative
 
