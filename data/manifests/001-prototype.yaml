@@ -1,31 +1,95 @@
-# The atlas release the application loads. Every null is a placeholder the ingest pipeline fills;
-# a release with a null in it is not reproducible and the build refuses to call it one.
+# The atlas release the application loads (specs/001-earth/contracts/manifest.md). Every null is a
+# placeholder that `just ingest` fills; a release with a null in it is not reproducible, and
+# `reproducible: true` is written last, by ingest, only when every field is filled and every
+# checksum verified.
 atlas_release: 001-prototype
 generated_at: null
 units_policy: SI-internal-with-explicit-conversions
+window: { from: 2000-01-01, to: 2050-12-31, scale: TDB }
 sources:
   - name: jpl-horizons
-    role: Solar System state vectors for the supported bodies, sampled over the valid window
+    role: Solar System state vectors for the supported bodies, sampled over the window; osculating elements for the small bodies' tracks
     endpoint: https://ssd.jpl.nasa.gov/api/horizons.api
-    query_parameters: null       # EPHEM_TYPE, CENTER, REF_PLANE, REF_SYSTEM, STEP_SIZE, bodies, window
+    query: null
     retrieval_time: null
-    source_release: null         # the DE ephemeris version Horizons reports
-    checksum: null
-  - name: nasa-planetary-factsheet
-    role: radii, masses and descriptive properties
-    endpoint: https://nssdc.gsfc.nasa.gov/planetary/planetfact.html
+    source_release: null
+    api_version: null
+    licence: null
+    attribution: null
+    citation: null
+    terms_pages: null
+    raw: null
+    curated: null
+  - name: nssdca-factsheet
+    role: mean radii and masses, transcribed row by row with the page cited
+    endpoint: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    query: null
     retrieval_time: null
-    checksum: null
+    source_release: null
+    licence: null
+    attribution: null
+    citation: null
+    terms_pages: null
+    raw: null
+    curated: null
+  - name: jpl-keplerian-elements
+    role: approximate Keplerian elements of the planets, for orbit tracks only
+    endpoint: https://ssd.jpl.nasa.gov/planets/approx_pos.html
+    query: null
+    retrieval_time: null
+    source_release: null
+    licence: null
+    attribution: null
+    citation: null
+    terms_pages: null
+    raw: null
+    curated: null
   - name: gaia
-    role: a bounded nearby-star sample with parallax, proper motion and their uncertainties
+    role: the nearby-star sample, with parallax, position, proper motion and their uncertainties
     endpoint: https://gea.esac.esa.int/tap-server/tap/sync
-    catalogue_release: DR3
-    selection_query: null        # the ADQL, verbatim
+    query: null
     retrieval_time: null
-    checksum: null
+    source_release: null
+    licence: null
+    attribution: null
+    citation: null
+    terms_pages: null
+    raw: null
+    curated: null
+  - name: hipparcos2
+    role: the bright nearby stars Gaia DR3 lacks, entering only through cross-match records
+    endpoint: https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync
+    query: null
+    retrieval_time: null
+    source_release: null
+    licence: null
+    attribution: null
+    citation: null
+    terms_pages: null
+    raw: null
+    curated: null
+  - name: simbad
+    role: the names of every star and the identifiers that tie a Hipparcos number to them
+    endpoint: https://simbad.cds.unistra.fr/simbad/sim-tap/sync
+    query: null
+    retrieval_time: null
+    source_release: null
+    licence: null
+    attribution: null
+    citation: null
+    terms_pages: null
+    raw: null
+    curated: null
   - name: pubchem
-    role: water (CID 962) and its constituent atom types for the composition path
+    role: water (CID 962), its 3D conformer, and the elements hydrogen and oxygen
     endpoint: https://pubchem.ncbi.nlm.nih.gov/rest/pug
+    query: null
     retrieval_time: null
-    checksum: null
+    source_release: null
+    licence: null
+    attribution: null
+    citation: null
+    terms_pages: null
+    raw: null
+    curated: null
 validation_report: null

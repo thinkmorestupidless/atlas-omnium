@@ -1,0 +1,21 @@
+atlas_release: mini
+generated_at: 2026-10-23T00:00:00Z
+reproducible: true
+units_policy: SI-internal-with-explicit-conversions
+window: { from: 2000-01-01, to: 2050-12-31, scale: TDB }
+sources:
+  - name: fixture
+    role: a minimal release for the loader's tests
+    endpoint: none
+    query: none
+    retrieval_time: 2026-10-23T00:00:00Z
+    source_release: fixture
+    licence: fixture
+    attribution: fixture
+    citation: []
+    terms_pages: []
+    raw: []
+    curated:
+      - { file: data/curated/mini/entities.json, sha256: "0000000000000000000000000000000000000000000000000000000000000000" }
+      - { file: data/curated/mini/observations.json, sha256: "0000000000000000000000000000000000000000000000000000000000000000" }
+validation_report: none

@@ -7,6 +7,7 @@ const featuresDir = defineBddConfig({
   features: 'features/**/*.feature',
   steps: 'tests/features/steps/**/*.ts',
   outputDir: '.features-gen',
+  missingSteps: 'fail-on-run',
 });
 
 export default defineConfig({

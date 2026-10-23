@@ -63,3 +63,6 @@ body { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+.banner { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); margin: 0; padding: 4px 10px; background: var(--yellow); color: var(--ink); font-size: 12px; z-index: 10; }
+.problem { position: absolute; top: 40%; left: 24px; right: 24px; max-width: 60ch; margin: 0; padding: 16px; background: var(--paper); border-left: 4px solid var(--vermilion); font-size: 14px; z-index: 10; }

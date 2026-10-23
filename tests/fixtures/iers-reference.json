@@ -1,0 +1,13 @@
+{
+  "source": "IERS Bulletin C 70 (2025-07) and earlier: TAI-UTC since 1999; J2000.0 defined in TT",
+  "retrieved": "2026-10-23",
+  "taiMinusUtc": [
+    { "from": "1999-01-01", "seconds": 32 },
+    { "from": "2006-01-01", "seconds": 33 },
+    { "from": "2009-01-01", "seconds": 34 },
+    { "from": "2012-07-01", "seconds": 35 },
+    { "from": "2015-07-01", "seconds": 36 },
+    { "from": "2017-01-01", "seconds": 37 }
+  ],
+  "j2000": { "tt": "2000-01-01T12:00:00 TT", "utc": "2000-01-01T11:58:55.816Z", "jdTt": 2451545.0 }
+}
