@@ -440,3 +440,18 @@ Every input is drawn well within a tenth of a second, and no frame takes more th
 far under a 16.7 ms frame. Canvas 2D is enough for 001, so decision 0002's WebGL trigger is not
 met. SC-008 itself is confirmed only on the sessions' machine, which is not yet named.
 
+### The quickstart on a clean clone (T098)
+On 2026-10-23, a fresh clone of `001-earth` at the polish commit ran the quickstart with no change
+needed. `just ingest` was not run, because it needs the network and the snapshots are committed.
+
+| Command | Result |
+|---|---|
+| `npm ci` | installed as locked |
+| `just rebuild` | 21 curated files match the manifest, without the network; the tree unchanged |
+| `npm test` | 112 tests in 17 files pass |
+| `just check` | 0 findings in 47 scenarios and 1 spec |
+| `npm run build` | built |
+| `npm run features` | 47 scenarios pass |
+| `npm run visual` | 10 screenshots match their baselines |
+| `npm run perf -- --minutes 1` | runs to the end; heap growth 0.08 MB over the short soak |
+
