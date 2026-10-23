@@ -131,7 +131,9 @@ const start = async (): Promise<AtlasApp | null> => {
   const cue = chapterCue();
   const controls = document.createElement('div');
   controls.className = 'controls';
-  controls.append(crumbs.el, meta.el, rail.el, offer.el, says.notice, time.el, key.toggle, key.el, insp.el);
+  // The Tab order: lock-up, scale rail (and the offer beside it), time, breadcrumb, search, the
+  // selection's values and the inspector they open, the legend.
+  controls.append(rail.el, offer.el, time.el, crumbs.el, meta.el, insp.el, key.toggle, key.el, says.notice);
   root.append(says.live);
   root.append(cue.el);
   root.append(controls);

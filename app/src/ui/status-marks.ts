@@ -2,7 +2,7 @@
 // colour alone; and the registry of every mark shape, which the selection and focus marks join
 // without sharing a shape with any status.
 import type { Status } from '../model/schema';
-import { FOCUS_MARK, SELECTION_MARK } from '../renderers/representation';
+import { FOCUS_MARK, SELECTION_MARK } from '../renderers/marks';
 import { h } from './dom';
 
 export const STATUS_MARKS: Record<Status, { readonly shape: string; readonly word: string }> = {

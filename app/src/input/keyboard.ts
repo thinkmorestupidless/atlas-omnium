@@ -8,7 +8,12 @@
 //   /                search                                  i                  inspect the selection
 //   l                the legend                              m                  what is it made of?
 //   Escape           close the inspector, the legend or the search; leave a field
-//   Tab              moves through the controls: lock-up, scale rail, time, breadcrumb, search, inspector, legend
+//   Tab              moves through the controls: lock-up, scale rail (and the made-of offer), time, breadcrumb,
+//                    search, the selection's values and the inspector they open, the legend
+//
+// The canvas is role="img" with an aria-label naming the focus, the regime and the mode. A mode change
+// is said in a live region as well as on screen. Nothing animates: each transition is drawn per frame
+// from the scale, and under reduced motion (ui/motion.ts) the fades are cuts and the cue is still.
 import type { Action } from './actions';
 
 export const SCALE_STEP = 2;

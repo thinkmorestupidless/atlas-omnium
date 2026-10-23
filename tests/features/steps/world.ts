@@ -24,7 +24,7 @@ export interface Mark {
 export interface Line { id: string; of: string; visible: boolean; style: { vocabulary: string; alpha?: number } }
 export interface SceneView { regime: string; scale: number; marks: Mark[]; lines: Line[]; fades: Record<string, number>; cue: { text: string; alpha: number } | null }
 export interface StateView {
-  focus: string; selection: string | null; mode: string; regime: string; scale: number; utc: string; playing: boolean; scalePolicy: string;
+  focus: string; selection: string | null; mode: string; regime: string; scale: number; pan: { x: number; y: number }; utc: string; playing: boolean; scalePolicy: string;
   breadcrumb: { id: string; name: string }[]; offer: string | null; refusal: { date: string; window: { from: string; to: string } } | null;
   announcement: unknown; candidates: { id: string; name: string; kind: string }[] | null; window: { from: string; to: string }; rate: { daysPerSecond: number };
 }

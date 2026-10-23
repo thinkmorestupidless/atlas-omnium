@@ -349,6 +349,17 @@ promise to a person; where it changes a contract's letter, the entry says which.
 - The announcement names the body the branch leaves from: "a different kind of step: what Earth is
   made of" and, on the way back, "back to where Earth is".
 
+### Access
+- The keyboard and the pointer give the same outcome for scaling, panning, selecting, focusing,
+  going back, changing the date and inspecting. The wheel's factor equals the key's step to the ninth
+  digit, so the comparison holds the scale to six significant figures.
+- At the planetary view the Moon's mark lies under Earth's, so only the keyboard can select it. The
+  arrows move the selection among every visible mark, overlapping or not.
+- Nothing in the controls animates. The panels, the play indicator and structural focus moves are
+  cuts already, so T086 needed no change beyond a stylesheet guard and the one reader in `ui/motion.ts`.
+- Every text colour meets WCAG AA on the backgrounds it is set on, and the focus ring meets 3:1. The
+  unit test reads the ratios from the stylesheets, so a new token pair fails until it is checked.
+
 ### The inspector
 - The inspector opens from the metadata panel, where each value is a control, or with `i` on the
   selection. It shows an epoch outside the leap-second table, such as Hipparcos's J1991.25 in TT,
