@@ -3,20 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>an atlas of everything.</title>
+    <title>Atlas Omnium.</title>
     <meta name="description" content="Every place. Every scale. Everything we know." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/styles/tokens.css" />
+    <link rel="stylesheet" href="/src/styles/controls.css" />
   </head>
   <body>
-    <main class="atlas">
+    <main class="atlas" id="atlas">
       <canvas id="scene" aria-label="The atlas scene" role="img"></canvas>
-      <header class="lockup">
-        <h1 class="display">an atlas of everything<span class="stop">.</span></h1>
-        <p class="mono promise">Every place. Every scale. Everything we know.</p>
-      </header>
+      <p id="release-banner" class="banner mono" hidden>release not reproducible: development only</p>
+      <p id="problem" class="problem mono" role="alert" hidden></p>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

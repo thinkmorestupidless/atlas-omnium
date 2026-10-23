@@ -24,9 +24,33 @@ test:
     npm test
 
 # Acquire, validate and freeze the snapshots the manifest names (needs the network)
-ingest:
-    npx tsx ingest/run.ts data/manifests/001-prototype.yaml
+ingest *only:
+    npx tsx ingest/run.ts data/manifests/001-prototype.yaml {{only}}
 
 # The living features, the glossary and the specs that name them
 check:
     uvx --from "git+https://github.com/thinkmorestupidless/speckit-bdd@v0.2.0#subdirectory=checker" speckit-bdd check --root . --glossary GLOSSARY.md --features features --specs specs
+
+# Rebuild the curated data from the raw snapshots, without the network, and verify the checksums
+rebuild:
+    npm run rebuild
+
+# The living features end to end in a browser
+features:
+    npm run features
+
+# Screenshots at the standard scales against the approved baselines
+visual:
+    npm run visual
+
+# Frame times, mark counts, load time and heap growth against dist/
+perf:
+    npm run perf
+
+# The surface boundary and the TypeScript rules
+lint:
+    npm run lint
+
+# Derive the shared-names test release from 001-prototype, without the network
+test-release:
+    npx tsx ingest/test-release.ts

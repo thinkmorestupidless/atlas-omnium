@@ -1,25 +1,39 @@
 {
-  "name": "atlas-of-everything",
+  "name": "atlas-omnium",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "an atlas of everything: every place, every scale, everything we know",
+  "description": "Atlas Omnium: every place, every scale, everything we know",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "build": "npm run typecheck && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "features": "bddgen && playwright test --project features",
+    "visual": "playwright test --project visual",
+    "perf": "tsx tests/performance/run.ts",
+    "lint": "eslint .",
+    "rebuild": "tsx ingest/rebuild.ts data/manifests/001-prototype.yaml",
+    "ingest": "tsx ingest/run.ts data/manifests/001-prototype.yaml"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "vite": "^7.1.7",
-    "vitest": "^3.2.4",
+    "@eslint/js": "9.39.5",
+    "@playwright/test": "1.64.0",
+    "@types/node": "24.19.1",
+    "eslint": "9.39.5",
+    "playwright-bdd": "9.2.1",
     "tsx": "^4.20.6",
-    "zod": "^4.1.11",
-    "yaml": "^2.9.1"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "8.71.1",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
   },
   "engines": {
     "node": ">=24"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1",
+    "zod": "^4.1.11"
   }
 }

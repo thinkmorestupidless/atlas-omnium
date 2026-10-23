@@ -1,0 +1,5 @@
+[
+  { "id": "atlas:sun", "kind": "Star", "names": { "canonical": "Sun", "aliases": [], "catalogue": [], "source": { "dataset": "jpl-horizons", "release": "DE441", "record": "10", "retrieved": "2026-10-23T00:00:00Z" } }, "classifications": [], "relations": [], "evidence": [] },
+  { "id": "atlas:halley", "kind": "SmallBody", "names": { "canonical": "1P/Halley", "aliases": ["Halley's Comet"], "catalogue": [], "source": { "dataset": "jpl-horizons", "release": "DE441", "record": "90000030", "retrieved": "2026-10-23T00:00:00Z" } }, "classifications": [],
+    "relations": [{ "source": "atlas:halley", "predicate": "orbits", "target": "atlas:sun", "status": "observed", "evidence": ["obs:horizons:halley"] }], "evidence": [] }
+]

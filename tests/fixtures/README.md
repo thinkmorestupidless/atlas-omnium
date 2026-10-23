@@ -1,0 +1,1 @@
+Frozen reference values the suites compare against: the Horizons samples withheld from the release (written by ingest), IERS time references, a tiny Gaia sample, water's record, and a minimal release for the loader.

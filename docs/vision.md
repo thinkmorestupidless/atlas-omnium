@@ -1,6 +1,6 @@
 # Vision
 
-An atlas of everything is an explorable, connected representation of physical reality as humanity
+Atlas Omnium is an explorable, connected representation of physical reality as humanity
 currently understands it. The user encounters a thing, explores where it is, what surrounds it,
 what it belongs to and what it is made of, and follows those relationships without losing the
 sense that everything belongs to one reality. The limits of what has been observed are part of the

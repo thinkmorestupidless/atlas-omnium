@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<head>
+ <!-- Include the CSS stylesheet for the CDS navbar and footer: -->
+<link href="/cds-navbar-resources/css/cdsnavbar.min.css" rel="stylesheet"/>
+<!-- Include OpenSearch engines for CDS services: -->
+<link title="SIMBAD" rel="search" type="application/opensearchdescription+xml" href="/cds-navbar-resources/opensearch/simbad.xml"/>
+<link title="VizieR" rel="search" type="application/opensearchdescription+xml" href="/cds-navbar-resources/opensearch/vizier.xml"/>
+<link title="Aladin" rel="search" type="application/opensearchdescription+xml" href="/cds-navbar-resources/opensearch/aladin.xml"/>
+<link title="XMatch" rel="search" type="application/opensearchdescription+xml" href="/cds-navbar-resources/opensearch/xmatch.xml"/><meta charset="utf-8">
+<link rel="stylesheet" href="/Simlib/jquery.dataTables.min.css"  type="text/css" />
+<link rel="stylesheet" href="/Simlib/sed.css" type="text/css" />
+<link rel="stylesheet" href="/Simlib/tables.css" type="text/css" />
+<link rel="stylesheet" href="/Simlib/myAladinLite.css" type="text/css" />
+<link rel="search" type="application/opensearchdescription+xml" title="SIMBAD basic" href="http://simbad.u-strasbg.fr/Simlib/simbadBasic.xml" />
+<script src="/Simlib/jquery.min.js" type="text/javascript"></script>
+<script src="/Simlib/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/Simlib/simbad.js" type="text/javascript"></script>
+<script src="/Simlib/tables.js" type="text/javascript"></script>
+<script src="/Simlib/jquery-ui.js" type="text/javascript"></script>
+<script src="/Simlib/myAladinLite.js" type="text/javascript"></script>
+<script src="/samp/simbad-samp.js" type="text/javascript"></script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<link rel="stylesheet" href="/css/simbad.css"  type="text/css" />
+<link rel="stylesheet" href="/htree/css/style.css" type="text/css" />
+<script src="/htree/js/CanvasSVG.js"></script>
+<script src="/htree/js/Circle.js"></script>
+<script src="/htree/js/script.js"></script>
+<Meta name="Description" content="The SIMBAD astronomical database provides basic data, cross-identifications, bibliography and measurements for astronomical objects outside the solar system.">
+<TITLE itemprop='name'>SIMBAD Astronomical Database - CDS (Strasbourg)</TITLE></head>
+<body>
+ <!--
+#######################################################################
+#                                                                     #
+#                   CDS TOP NAVIGATION BAR                            #
+#                                                                     #
+#######################################################################
+-->
+<nav class="cds-menu for-simbad" role="menubar" aria-label="CDS services navigation" data-pagefind-ignore="all">
+<!-- HEADER: CDS WEBSITE LINK -->
+<header><a href="https://cds.unistra.fr" role="menuitem" aria-label="CDS website"></a></header>
+<!-- MENU CONTENT -->
+<ul role="menu" aria-label="CDS services">
+<!-- List of all services (collapsed on very small screens) -->
+<li class="is-collapsed-when-very-small" role="none">
+<!-- Trigger for showing the menu on very small screens -->
+<span class="menu-trigger for-all-services" tabindex="0" onclick="void(0)" role="menuitem" aria-label="List CDS services and more" aria-haspopup="true" aria-expanded="false"><span>Services</span></span>
+<!-- CDS main services -->
+<ul role="menu" aria-label="CDS main services">
+<li role="none"><a class="portal" href="https://portal.cds.unistra.fr"  role="menuitem" aria-label="CDS Portal"><span></span></a></li>
+<li role="none"><a class="simbad" href="http://simbad.cds.unistra.fr/simbad"      role="menuitem" aria-label="Simbad"><span></span></a></li>
+<li role="none"><a class="vizier" href="http://vizier.cds.unistra.fr/viz-bin/VizieR"         role="menuitem" aria-label="VizieR"><span></span></a></li>
+<li role="none"><a class="aladin" href="http://aladin.cds.unistra.fr/aladin.gml"     role="menuitem" aria-label="Aladin"><span></span></a></li>
+<li role="none"><a class="xmatch" href="http://cdsxmatch.u-strasbg.fr"  role="menuitem" aria-label="X-Match"><span></span></a></li>
+<!-- SUB-MENU: Other CDS services -->
+<li role="none">
+<!-- Trigger for showing the sub-menu -->
+<a class="menu-trigger for-other-services" tabindex="0" onclick="void(0)" role="menuitem" aria-label="Other resources" aria-haspopup="true">Others</a>
+<!-- Sub-menu itself -->
+<ul role="menu" aria-label="Other resources">
+<li role="none"><a href="https://cds.unistra.fr/cgi-bin/Sesame" role="menuitem" aria-label="Sesame name resolver">Sesame name resolver</a></li>
+<li role="none"><a href="https://cds.unistra.fr/cgi-bin/Dic-Simbad"            role="menuitem" aria-label="Dictionary of nomenclature">Dictionary of nomenclature</a></li>
+<li role="separator" class="divider" aria-hidden="true"></li>
+<!-- Link: email CDS-Question-->
+<li role="none"><a href="mailto:cds-question@unistra.fr" tabindex="0" role="menuitem" aria-label="Contact us">Contact us</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<!-- Link: CDS help resources -->
+<li role="none"><a class="help" href="https://cds.unistra.fr/help" role="menuitem" aria-label="Help resources"><span>Help</span></a></li>
+</ul>
+</nav>
+<div class="cdsPageTitle"><h1>SIMBAD Astronomical Database - CDS (Strasbourg)</h1></div><div style="margin: 10px"> <SPAN width="300px" class="info-tooltip">
+  <DIV>
+<FONT SIZE='+1'>
+               What is SIMBAD, and what is it not ?
+</FONT>
+%<CDSHEAD>WHAT IS SIMBAD</CDSHEAD>
+
+<P>
+<BR>
+The purpose of Simbad is to provide information on astronomical objects
+of interest which have been studied in scientific articles. 
+
+<P>
+Simbad is a dynamic database, updated every working day.
+
+<P>
+It provides the bibliography, as well as available basic information
+such as the nature
+of the object, its coordinates, magnitudes, proper motions and parallax,
+velocity/redshift, size, spectral or morphological type, and the multitude
+of names (identifiers) given in the literature. 
+The CDS team also performs cross-identifications based on the
+compatibility of several parameters, in the limit of a reasonably
+good astrometry.
+
+<P>
+Simbad is a meta-compilation built from what is published in the 
+literature, and from our expertise on cross-identifications. 
+By construction it is highly inhomogeneous as data come from
+any kind of instruments at all wavelenghts with any resolution and
+astrometry, and different names from one publication to another.  
+
+<P>
+Simbad is not a catalogue, and should not be used as a catalogue. The CDS
+also provides the VizieR database which contains published lists of objects, 
+as well as most very large surveys. The idea now is to use both
+Simbad and VizieR as complementary research tools.
+
+
+
+  </DIV>
+<A HREF="http://simbad.cds.unistra.fr/guide/simbad.htx">What is SIMBAD ?</A> </SPAN>
+ <TABLE WIDTH="100%" CELLSPACING="5" CELLPADDING="5">
+  <TR>
+   <TD VALIGN="TOP">
+    <TABLE WIDTH="100%" BORDER="1" CELLPADDING="2">
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP BGCOLOR="#317D8D">
+       <FONT SIZE="+1" COLOR="#FFFFFF">
+        <B>
+         <I>
+Queries
+         </I>
+        </B>
+       </FONT>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-fbasic">basic search</A>      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-fid">by identifier</A>       </B>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-fcoo">by coordinates</A>       </B>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-fsam">by criteria</A>       </B>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-fref">reference query</A>      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-fscript">scripts</A>       </B>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-tap">TAP queries</A>       </B>
+      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+     <TR BGCOLOR="#F8F8DA">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <I>
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-fout">Output options</A>       </I>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+
+Mirrors: <A HREF="http://simbad.harvard.edu/">US/Harvard</A> ; <A HREF="https://simbad.idia.ac.za">ZA/IDIA</A>      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+    </TABLE>
+   </TD>
+   <TD VALIGN="TOP">
+    <TABLE WIDTH="100%" BORDER="1" CELLPADDING="2">
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP BGCOLOR="#3264A0">
+       <FONT SIZE="+1" COLOR="#FFFFFF">
+        <B>
+         <I>
+Documentation
+         </I>
+        </B>
+       </FONT>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/../guide/otypes.htx"><img id='warn_home' src='/icons/burst.png'/> Object types</A>       </B>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/../guide/nomenclature.htx"><img id='warn_home' src='/icons/burst.png'/> Nomenclature & Dictionary</A>       </B>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <A HREF="https://doi.org/10.3847/1538-4365/ac6268">
+Recommendations for Data Publication       </A>
+      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="//simbad.cds.unistra.fr/simbad/../guide/index.htx">User's guide</A>       </B>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="http://simbad.cds.unistra.fr/guide/chMeas.htx">Measurement description</A>      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-display?data=journals">List of journals</A>      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="http://simbad.cds.unistra.fr/guide/annotations.htx">User annotations documentation</A>      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-help?Page=sim-url">Query by urls</A>      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <A HREF="#acklab">
+Acknowledgment       </A>
+      </TD>
+     </TR>
+    </TABLE>
+   </TD>
+   <TD VALIGN="TOP">
+    <TABLE WIDTH="100%" BORDER="1" CELLPADDING="2">
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP BGCOLOR="#3264A0">
+       <FONT SIZE="+1" COLOR="#FFFFFF">
+        <B>
+         <I>
+Information
+         </I>
+        </B>
+       </FONT>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="//simbad.cds.unistra.fr/simbad/sim-help?Page=simbad4">Presentation</A>      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <A HREF="http://aladin.cds.unistra.fr/simbad-thumbnails/thumbnails1.html">
+Image thumbnails       </A>
+      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <B>
+<A HREF="/mobile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 60 1792 1792" style="display:inline-block;width:20px;height:20px;fill:black;color:black;vertical-align: middle;"><path d="M976 1408q0-33-23.5-56.5t-56.5-23.5-56.5 23.5-23.5 56.5 23.5 56.5 56.5 23.5 56.5-23.5 23.5-56.5zm208-160v-704q0-13-9.5-22.5t-22.5-9.5h-512q-13 0-22.5 9.5t-9.5 22.5v704q0 13 9.5 22.5t22.5 9.5h512q13 0 22.5-9.5t9.5-22.5zm-192-848q0-16-16-16h-160q-16 0-16 16t16 16h160q16 0 16-16zm288-16v1024q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-1024q0-52 38-90t90-38h512q52 0 90 38t38 90z"></path></svg> Mobile version</A>       </B>
+      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="//simbad.cds.unistra.fr/simbad/../tools/SimWatch/manage">SimWatch <img src="/icons/simWatch.png" border="0"></A>      </TD>
+     </TR>
+     <TR>
+      <TD>
+&nbsp;      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+Release:
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+       <FONT SIZE="-1">
+SIMBAD4 1.8 - 2026-10
+       </FONT>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="CENTER" VALIGN="TOP">
+<A HREF="http://cds.unistra.fr/news/simbad.xml">Releases history</A>      </TD>
+     </TR>
+    </TABLE>
+   </TD>
+  </TR>
+ </TABLE>
+<P> <TABLE WIDTH="100%" CELLSPACING="5" CELLPADDING="5">
+  <TR VALIGN="TOP">
+   <TD WIDTH="55%">
+    <TABLE BORDER="1" CELLPADDING="2">
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP BGCOLOR="#3264A0">
+       <FONT SIZE="+1" COLOR="#FFFFFF">
+        <B>
+         <I>
+Content
+         </I>
+        </B>
+       </FONT>
+      </TD>
+     </TR>
+     <TR>
+      <TD ALIGN="LEFT">
+The SIMBAD astronomical database provides basic data, cross-identifications, bibliography and measurements for astronomical objects outside the solar system.
+      </TD>
+     </TR>
+     <TR>
+      <TD ALIGN="LEFT">
+SIMBAD can be queried by object name, coordinates and various criteria. Links to some other on-line services are also provided.
+      </TD>
+     </TR>
+     <TR>
+      <TD ALIGN="LEFT">
+Use of SIMBAD service is free without any registration under ODbL licence. We request that
+users cite the original paper reference.
+      </TD>
+     </TR>
+    </TABLE>
+   </TD>
+   <TD ALIGN="CENTER" VALIGN="TOP">
+    <TABLE WIDTH="100%" BORDER="1" CELLPADDING="2">
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP BGCOLOR="#3264A0">
+       <FONT SIZE="+1" COLOR="#FFFFFF">
+        <B>
+         <I>
+Basic search
+         </I>
+        </B>
+       </FONT>
+      </TD>
+     </TR>
+     <TR VALIGN="TOP">
+      <TD VALIGN="TOP">
+       <script language="JavaScript" type="text/javascript" src="//simbad.cds.unistra.fr/js/addSearchEngine.js">       </script>
+       <DIV itemscope itemtype="http://schema.org/WebSite">
+<meta itemprop='url' content='http://simbad.cds.unistra.fr/'/>        <FORM ACTION="sim-basic" METHOD="GET" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+<meta itemprop='target' content='https://simbad.cds.unistra.fr/simbad/sim-basic?Ident={Ident}'/>          <TABLE CELLPADDING="5">
+          <TR>
+           <TD>
+            <INPUT TYPE="text" NAME="Ident" size="50" maxlength="100" itemprop="query-input" />
+           </TD>
+          </TR>
+          <TR>
+           <TD>
+            <I>
+identifier, coordinates (radius=10 arcmin), or bibcode
+            </I>
+           </TD>
+          </TR>
+          <TR>
+           <TD ALIGN="CENTER">
+            <INPUT TYPE="submit" NAME="submit" VALUE="SIMBAD search" />
+&nbsp;&nbsp;&nbsp;&nbsp;            <INPUT TYPE="reset" NAME="reset" VALUE="clear" />
+&nbsp;&nbsp;&nbsp;&nbsp;            <A HREF="//simbad.cds.unistra.fr/simbad/sim-help?Page=sim-fbasic">
+help            </A>
+           </TD>
+          </TR>
+          <TR>
+           <TD ALIGN="CENTER">
+            <A HREF="javascript:addEngine('simbadBasic')">
+Install the Simbad basic search in your tool bar            </A>
+           </TD>
+          </TR>
+         </TABLE>
+        </FORM>
+       </DIV>
+      </TD>
+     </TR>
+    </TABLE>
+   </TD>
+  </TR>
+ </TABLE>
+<P> <TABLE WIDTH="100%" CELLSPACING="5" CELLPADDING="5">
+  <TR VALIGN="TOP">
+   <TD VALIGN="TOP" NOWRAP WIDTH="55%">
+<A NAME="acklab"></A>
+    <TABLE WIDTH="100%" BORDER="1" CELLPADDING="2">
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP BGCOLOR="#3264A0">
+       <FONT SIZE="+1" COLOR="#FFFFFF">
+        <B>
+         <I>
+Acknowledgment
+         </I>
+        </B>
+       </FONT>
+      </TD>
+     </TR>
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE">
+       <FONT SIZE="+1">
+If the Simbad database was helpful for your research work,<br>the following acknowledgment would be appreciated:        <P>
+         <I>
+This research has made use of the SIMBAD database,<br>operated at CDS, Strasbourg, France         </I>
+<BR><BR>         <FONT SIZE="+0">
+          <A HREF="https://ui.adsabs.harvard.edu/abs/2000A%26AS..143....9W">
+2000,A&amp;AS,143,9          </A>
+, "The SIMBAD astronomical database", Wenger et al.         </FONT>
+        </P>
+       </FONT>
+      </TD>
+     </TR>
+    </TABLE>
+   </TD>
+   <TD WIDTH="45%">
+    <TABLE WIDTH="100%" BORDER="1" CELLPADDING="2">
+     <TR>
+      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP COLSPAN="2" BGCOLOR="#3264A0">
+       <FONT SIZE="+1" COLOR="#FFFFFF">
+        <B>
+         <I>
+Statistics
+         </I>
+        </B>
+       </FONT>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="LEFT" VALIGN="TOP" NOWRAP COLSPAN="2">
+       <B>
+Simbad contains on 
+       </B>
+       <I>
+2026.10.23
+       </I>
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="RIGHT" VALIGN="TOP" WIDTH="28%">
+       <B>
+22,371,118
+       </B>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP">
+objects
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="RIGHT" VALIGN="TOP" WIDTH="28%">
+       <B>
+73,453,042
+       </B>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP">
+identifiers
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="RIGHT" VALIGN="TOP" WIDTH="28%">
+       <B>
+469,164
+       </B>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP">
+bibliographic references
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="RIGHT" VALIGN="TOP" WIDTH="28%">
+       <B>
+54,249,041
+       </B>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP">
+citations of objects in papers
+      </TD>
+     </TR>
+     <TR BGCOLOR="#FFFFFF">
+      <TD ALIGN="RIGHT" VALIGN="TOP" WIDTH="28%">
+       <B>
+15,885
+       </B>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP">
+acronyms described for Simbad
+      </TD>
+     </TR>
+    </TABLE>
+   </TD>
+  </TR>
+ </TABLE>
+</HTML>
+<P><P><HR><P>
+SIMBAD on the Web is the WWW interface to the SIMBAD database. It offers
+the following functionalities:
+
+<P>
+<UL>
+<LI>Query by identifiers and around identifiers
+<LI>Query by coordinates, specifying the radius and the equinox
+<LI>Query by bibcode and partial bibcode
+<LI>Sampling with a set of physical criteria
+<LI>Query by lists of objects, coordinates or bibcodes
+<LI>Display charts for list of objects resulting from coordinates query
+</UL>
+
+<P>
+Moreover, the interface provides links with many other data services :
+
+<P>
+<UL>
+<LI>Links to the other CDS services: Tables in VizieR, giving access to
+the whole catalogued data, links to Aladin images, surveys and observatory
+logs.
+<LI>Through the coordinates in basic data, you can query around an object,
+using a provided radius.
+<LI>Identifiers are linked to the nomenclature dictionary, providing full
+description of original list, and, when available, offering direct access 
+to the corresponding catalogue in the CDS catalogue service (VizieR and 
+Bazaar)
+<LI>Every bibcode is a link to the underlying bibliographic information,
+either at CDS, at ADS, or at the journal site when available. Links to
+the full text of paper are available in most cases.<BR>
+For articles containing tables stored at CDS, the reference provides also
+a link to the table or catalogue.
+<LI>A link to the Heasarc database (NASA/GSFC) is proposed when an object
+has identifiers in high energy catalogues.
+<LI>IUE measurements contain an anchor which points to the spectra stored
+in the INES database.
+<LI>The maps produced by coordinate queries are cliquable and return the
+object information from SIMBAD.
+</UL>
+
+<P>
+SIMBAD is on-boarded to the European Open Science Cloud (<A HREF="https://marketplace.eosc-portal.eu/services/eosc.cds.simbad_simbad_astronomical_database_provides_basic_data_cross-identifications_bibliography_and_measurements_for_astronomical_objects_outside_the_solar_system?return_path=search%252Fservice&amp;search_params=q%253DSIMBAD&amp;source_id=9969fed5-4403-425a-b182-5041962592ec&amp;client_uid=0562baaf-ab9d-42c1-b9b7-61dfae41621a">EOSC</A>) to serve the astronomical community. 
+
+</div>
+     <!--
+#######################################################################
+#                                                                     #
+#                             CDS FOOTER                              #
+#                                                                     #
+#######################################################################
+-->
+<footer class="cds-footer for-simbad" data-pagefind-ignore="all">
+<div class="cds">
+<!-- CDS Logo and link -->
+<a class="cds logo" href="https://cds.unistra.fr" title="CDS - Centre de Données astronomiques de Strasbourg" target="_blank"></a>
+<!-- Social networks links -->
+<div class="socials">
+<a class="email"    title="Send an email to the CDS team." href="mailto:cds-question@unistra.fr?Subject=Simbad"></a>
+<a class="rss"      title="RSS Feed of the CDS news"       href="https://cds.unistra.fr/news/rss.php" target="_blank" rel="noopener noreferrer"></a>
+<a class="bluesky"  title="CDS' BlueSky page."             href="https://bsky.app/profile/cdsportal.bsky.social" target="_blank" rel="noopener noreferrer"></a>
+<a class="facebook" title="CDS' Facebook page."            href="https://www.facebook.com/CDSportal/" target="_blank" rel="noopener noreferrer"></a>
+<a class="youtube"  title="CDS' Youtube channel."          href="https://www.youtube.com/@CDSportal" target="_blank" rel="noopener noreferrer"></a>
+<a class="github"   title="CDS' GitHub page."              href="https://github.com/cds-astro" target="_blank" rel="noopener noreferrer"></a>
+</div>
+</div>
+<div class="service">
+<div class="content">
+2026.10.23-09:39:31
+</div>
+</div>
+<div class="legal-links">
+<a href="https://cds.unistra.fr/about/contact/">Contact</a> - <a href="https://cds.unistra.fr/legals/">Legals</a>
+</div>
+</footer></body>

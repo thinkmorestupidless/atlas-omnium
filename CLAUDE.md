@@ -1,11 +1,11 @@
-# atlas-of-everything
+# atlas-omnium
 
 An explorable, connected, provenance-aware atlas of physical reality: real objects and places,
 their structure, motion and relationships, navigated outwards through astronomical scales and
 inwards through composition. A browser application in TypeScript, local-first, with frozen source
 snapshots and no backend. Read `README.md`, then `docs/` before touching the area it covers:
 `data-contracts.md` before the model or ingest, `rendering.md` before a renderer or projection,
-`evaluation.md` before a test tier. The brief is `atlas-of-everything-product-spec.md`; the docs
+`evaluation.md` before a test tier. The brief is `atlas-omnium-product-spec.md`; the docs
 restate it as contracts and win where they disagree.
 
 The family conventions in `../ankka-brain/conventions.md` apply where they fit a Node repository:
@@ -51,4 +51,27 @@ declarative commits, nothing committed to `main` by an agent. The feature being 
 
 ## Traps
 
-Written the day they cost time; newest first. None yet.
+Written the day they cost time; newest first.
+
+- **2026-10-23, `tsx` and `page.evaluate`.** Run under `tsx`, a named function inside a function
+  passed to `page.evaluate` calls a `__name` helper the page lacks, and fails with "__name is not
+  defined". `tests/performance/run.ts` defines it in the page with an init script. The Playwright
+  suites are not affected, because they are not run under `tsx`.
+- **2026-10-23, an import cycle through the mark constants.** `renderers/composition.ts` drew with
+  `orbit-geometry.ts`, which imported the selection and focus marks from `representation.ts`, which
+  imports the composition. The constants were undefined when the module loaded, and two suites
+  failed to load. They live in `renderers/marks.ts`; import them from there.
+- **2026-10-23, `ingest/run.ts` writes the manifest only at the end.** A source that fails mid-run
+  loses every source's manifest entry from that run. Acquire a failing source on its own with
+  `--only <name>`.
+- **2026-10-23, the PubChem and Gaia documentation pages.** PubChem's docs are behind a browser
+  check; the docs app fetches its markdown from `/pcfe/docs/markdown/<page>.md`, which is plain.
+  The Gaia archive's documentation server answers 503 at times; the source falls back to the
+  Internet Archive's copy and records that URL.
+- **2026-10-23, SIMBAD's ADQL.** `key` is reserved and an alias named so fails. SIMBAD's pages
+  encode quotation marks as `&quot;`; read them through `pageText`.
+- **2026-10-23, an epoch before the leap-second table.** Hipparcos's J1991.25 in TT has no UTC
+  date in `model/time.ts`. Show such an epoch as a Julian epoch, as the inspector does; never guess
+  the leap seconds.
+- **2026-10-23, a visual baseline taken during a fade.** The chapter cue and the first-use legend
+  are caught by a screenshot unless the test waits for the cue to hide and marks the legend seen.

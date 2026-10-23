@@ -1,0 +1,1 @@
+A test release derived from 001-prototype by ingest/test-release.ts: only Earth's and Mercury's ephemerides, and the element Mercury beside the planet, so that one name is shared by two entities. Shown only under ?test.

@@ -8,3 +8,7 @@ coverage/
 # Playwright output, when the visual tier is added
 test-results/
 playwright-report/
+.features-gen/
+
+# Traces from the performance run are large; the summary JSON is kept
+tests/performance/results/*.trace.json

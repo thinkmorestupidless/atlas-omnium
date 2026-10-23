@@ -1,0 +1,1 @@
+The surface's input adapters: pointer, keyboard and touch each turn device events into one `Action`, and the bus turns an `Action` into a navigation transition. A new input (a gamepad, a controller) is one more adapter here and nothing else. See `specs/001-earth/contracts/surface.md` and decision 0006.
