@@ -62,21 +62,27 @@ export const chunks = (b: Body): { startJd: number; stopJd: number }[] => {
   return out;
 };
 
-/** Held-out epochs: midpoints of every 97th grid interval inside the window, never grid samples. */
+/**
+ * Epochs held out for every body at once, so a scenario can check every body at one date. A quarter
+ * day off the half-day grid of every body, so none of them is a sample.
+ */
+export const SHARED_HELD_OUT = [2461000.25, 2466000.75] as const;
+
+/** Held-out epochs: midpoints of every 97th grid interval inside the window, never grid samples, and the shared ones. */
 export const heldOutEpochs = (b: Body): number[] => {
-  const out: number[] = [];
+  const out: number[] = [...SHARED_HELD_OUT];
   for (let k = 0; ; k += heldOutStride(b)) {
     const jd = SPAN.startJd + (k + 0.5) * b.stepDays;
     if (jd > WINDOW.toJd) break;
     if (jd >= WINDOW.fromJd) out.push(jd);
   }
-  return out;
+  return out.sort((x, y) => x - y);
 };
 
 export const queries = () => ({
   vectors,
   grid: Object.fromEntries(BODIES.map((b) => [b.slug, { COMMAND: b.command, CENTER: b.center, STEP_SIZE: `${b.stepDays} d`, span: SPAN, chunks: chunks(b).length }])),
-  heldOut: { every: Object.fromEntries(BODIES.map((b) => [b.slug, heldOutStride(b)])), at: 'grid-interval midpoints, never grid samples', center: 'as the body\'s grid' },
+  heldOut: { every: Object.fromEntries(BODIES.map((b) => [b.slug, heldOutStride(b)])), at: 'grid-interval midpoints, never grid samples', shared: [...SHARED_HELD_OUT], center: 'as the body\'s grid' },
   elements: { ...common, EPHEM_TYPE: 'ELEMENTS', OUT_UNITS: 'AU-D', CENTER: '500@10', TLIST: String(J2000_JD), bodies: ELEMENT_BODIES },
 });
 

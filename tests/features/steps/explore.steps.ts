@@ -31,7 +31,7 @@ Given('the focus is {string}', async ({ atlas }, name: string) => {
 });
 
 When('the person scales out', async ({ atlas }) => {
-  await atlas.page.locator('body').focus();
+  await atlas.blur();
   await atlas.press('-', 4);
 });
 
@@ -86,7 +86,7 @@ Given('the breadcrumb is {string} then {string}', async ({ atlas }, first: strin
   expect((await atlas.state()).breadcrumb.map((c) => c.name)).toEqual([first]);
   await atlas.planetary();
   await atlas.click(second);
-  await atlas.page.locator('body').focus();
+  await atlas.blur();
   await atlas.press('Enter');
   expect((await atlas.state()).breadcrumb.map((c) => c.name)).toEqual([first, second]);
 });
@@ -96,7 +96,7 @@ Then('the breadcrumb is {string}', async ({ atlas }, name: string) => {
 });
 
 const choosePolicy = async (atlas: Atlas, policy: string) => {
-  if ((await atlas.state()).scalePolicy !== policy) { await atlas.page.locator('body').focus(); await atlas.press('x'); }
+  if ((await atlas.state()).scalePolicy !== policy) { await atlas.blur(); await atlas.press('x'); }
   expect((await atlas.state()).scalePolicy).toBe(policy);
 };
 

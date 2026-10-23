@@ -30,7 +30,7 @@ When('the person goes back', async ({ atlas }) => {
 });
 
 When('the person focuses the selection', async ({ atlas }) => {
-  await atlas.page.locator('body').focus();
+  await atlas.blur();
   await atlas.press('Enter');
 });
 
@@ -43,10 +43,11 @@ Then('the selection is {string}', async ({ atlas }, name: string) => {
 });
 
 When('the person changes the date to {string}', async ({ atlas }, date: string) => {
-  await atlas.page.locator('body').focus();
+  await atlas.blur();
   await atlas.page.keyboard.press('d');
   await atlas.page.keyboard.press('ControlOrMeta+a');
   await atlas.page.keyboard.type(date);
   await atlas.page.keyboard.press('Enter');
+  await atlas.blur();
   await atlas.settle();
 });

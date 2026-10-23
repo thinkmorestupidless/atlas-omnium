@@ -95,7 +95,19 @@ const start = async (): Promise<AtlasApp | null> => {
       selectable: () => (scene?.marks ?? []).filter((m) => m.visible).sort((a, b) => a.at.y - b.at.y || a.at.x - b.at.x).map((m) => m.id),
     };
   });
-  const dispatch = (a: Action) => bus.dispatch(a);
+  // Time plays from the instant play is chosen and is counted up to the instant it is paused, so ten
+  // seconds of play at one day per second is ten days exactly.
+  let last = 0;
+  const dispatch = (a: Action) => {
+    const playing = bus.get().nav.playing;
+    if (playing && (a.kind === 'pause' || a.kind === 'togglePlay')) {
+      const now = performance.now();
+      bus.dispatch({ kind: 'tick', seconds: (now - last) / 1000 });
+      last = now;
+    }
+    bus.dispatch(a);
+    if (!playing && bus.get().nav.playing) last = performance.now();
+  };
 
   const rail = scaleRail(dispatch);
   const crumbs = breadcrumb(dispatch, model.entities);
@@ -123,15 +135,15 @@ const start = async (): Promise<AtlasApp | null> => {
   };
 
   let frame = 0;
-  let last = 0;
-  const loop = (now: number) => {
+  const loop = () => {
     frame = 0;
     if (bus.get().nav.playing) {
-      const elapsed = last ? (now - last) / 1000 : 0;
+      const now = performance.now();
+      const elapsed = (now - last) / 1000;
       last = now;
-      if (elapsed > 0) bus.dispatch({ kind: 'tick', seconds: Math.min(elapsed, 0.25) });
+      if (elapsed > 0) bus.dispatch({ kind: 'tick', seconds: elapsed });
       schedule();
-    } else last = 0;
+    }
     render();
   };
   const schedule = () => { if (!frame) frame = requestAnimationFrame(loop); };

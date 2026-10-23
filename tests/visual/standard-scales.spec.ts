@@ -29,3 +29,16 @@ test('opening scale', async ({ page }) => { await open(page); await shot(page, '
 test('Moon in view', async ({ page }) => { await open(page); await scaleTo(page, 1.6e6); await shot(page, 'moon-in-view'); });
 // The Solar System with every planet's track.
 test('heliocentric scale', async ({ page }) => { await open(page); await scaleTo(page, 2e10); await shot(page, 'heliocentric'); });
+
+// The time controller after a date outside the window was refused: the window, the epoch, the refusal.
+test('time controller with a refusal', async ({ page }) => {
+  await open(page);
+  await scaleTo(page, 2e9);
+  await page.evaluate(() => {
+    const h = (window as unknown as { __atlas: { dispatch(a: unknown): void } }).__atlas;
+    h.dispatch({ kind: 'setDate', date: '2030-01-01' });
+    h.dispatch({ kind: 'setDate', date: '2100-01-01' });
+  });
+  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+  await expect(page.locator('.time-controller')).toHaveScreenshot('time-controller-refused.png');
+});

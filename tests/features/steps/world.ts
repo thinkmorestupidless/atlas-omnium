@@ -41,7 +41,7 @@ export class Atlas {
   constructor(readonly page: Page) {}
 
   async open(release: string) {
-    await this.page.clock.setFixedTime(new Date(TODAY));
+    await this.page.clock.install({ time: new Date(TODAY) });
     const q = ['test', `release=${encodeURIComponent(release)}`, ALLOW_UNREPRODUCIBLE ? 'allow-unreproducible' : ''].filter(Boolean).join('&');
     await this.page.goto(`/?${q}`);
     await this.page.waitForFunction(() => (window as unknown as { __atlas?: { ready?: boolean } }).__atlas?.ready === true);
@@ -64,6 +64,8 @@ export class Atlas {
   radiusKm(id: string) { return this.call<number | null>('radiusKm', id); }
   idOf(name: string) { return this.call<string | null>('idOf', name); }
   nameOf(id: string) { return this.call<string | null>('nameOf', id); }
+  /** Leaves any field, so the next key goes to the scene. */
+  async blur() { await this.page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur()); }
   /** Waits for the frame the last action scheduled. */
   async settle() { await this.page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))); }
 
@@ -73,7 +75,7 @@ export class Atlas {
 
   /** The person scales out with the keyboard until the predicate holds. */
   async scaleOutUntil(done: (s: StateView, scene: SceneView) => boolean, max = 60) {
-    await this.page.locator('body').focus();
+    await this.blur();
     for (let i = 0; i < max; i++) {
       await this.settle();
       if (done(await this.state(), await this.scene())) return;
@@ -83,7 +85,7 @@ export class Atlas {
   }
 
   async scaleInUntil(done: (s: StateView, scene: SceneView) => boolean, max = 60) {
-    await this.page.locator('body').focus();
+    await this.blur();
     for (let i = 0; i < max; i++) {
       await this.settle();
       if (done(await this.state(), await this.scene())) return;
