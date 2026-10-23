@@ -9,7 +9,13 @@
     "build": "tsc --noEmit -p tsconfig.json && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "features": "bddgen && playwright test --project features",
+    "visual": "playwright test --project visual",
+    "perf": "tsx tests/performance/run.ts",
+    "lint": "eslint .",
+    "rebuild": "tsx ingest/rebuild.ts data/manifests/001-prototype.yaml",
+    "ingest": "tsx ingest/run.ts data/manifests/001-prototype.yaml"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
@@ -17,7 +23,12 @@
     "vitest": "^3.2.4",
     "tsx": "^4.20.6",
     "zod": "^4.1.11",
-    "yaml": "^2.9.1"
+    "yaml": "^2.9.1",
+    "@playwright/test": "1.64.0",
+    "playwright-bdd": "9.2.1",
+    "eslint": "9.39.5",
+    "@eslint/js": "9.39.5",
+    "typescript-eslint": "8.71.1"
   },
   "engines": {
     "node": ">=24"

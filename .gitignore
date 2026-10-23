@@ -8,3 +8,4 @@ coverage/
 # Playwright output, when the visual tier is added
 test-results/
 playwright-report/
+.features-gen/

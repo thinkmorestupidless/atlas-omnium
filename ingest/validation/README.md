@@ -1,0 +1,1 @@
+The checks a snapshot must pass before it is curated: the manifest's shape and completeness, typed frames and units, value domains, and no value filled where the source has none. Each check names what it rejected in the validation report.
