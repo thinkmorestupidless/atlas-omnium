@@ -2,12 +2,13 @@
 // selection ring and the focus weight (never a status mark's shape, R11), and labels through the
 // collision pass.
 import type { Renderer } from './renderer';
+import { FOCUS_MARK, SELECTION_MARK } from './representation';
 import type { ResolvedMark, Scene } from './representation-types';
 
-export const SELECTION_GAP_PX = 5;
+export const SELECTION_GAP_PX = SELECTION_MARK.gapPx;
 
 export const drawMarkDecorations = (r: Renderer, m: ResolvedMark) => {
-  if (m.focused) r.ring(m.at, m.radiusPx + 1.5, { stroke: 'ink', lineWidth: 2.5, alpha: m.alpha });
+  if (m.focused) r.ring(m.at, m.radiusPx + 1.5, { stroke: 'ink', lineWidth: FOCUS_MARK.weightPx, alpha: m.alpha });
   if (m.selected) r.ring(m.at, m.radiusPx + SELECTION_GAP_PX, { stroke: 'cobalt', lineWidth: 1.5, alpha: Math.max(m.alpha, 0.6) });
 };
 

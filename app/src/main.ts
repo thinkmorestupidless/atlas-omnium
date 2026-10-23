@@ -22,7 +22,9 @@ import { resolve, viewOf } from './renderers/representation';
 import type { Scene } from './renderers/representation-types';
 import { breadcrumb } from './ui/breadcrumb';
 import { chapterCue } from './ui/chapter-cue';
+import { inspector } from './ui/inspector';
 import { legend } from './ui/legend';
+import { MARK_SHAPES } from './ui/status-marks';
 import { lockup } from './ui/lockup';
 import { madeOf } from './ui/made-of';
 import { metadata } from './ui/metadata';
@@ -118,14 +120,15 @@ const start = async (): Promise<AtlasApp | null> => {
 
   const rail = scaleRail(dispatch);
   const crumbs = breadcrumb(dispatch, model.entities);
-  const meta = metadata();
+  const meta = metadata(dispatch);
   const time = timeController(dispatch);
   const offer = madeOf(dispatch, false);
   const key = legend(dispatch, model);
+  const insp = inspector(dispatch);
   const cue = chapterCue();
   const controls = document.createElement('div');
   controls.className = 'controls';
-  controls.append(crumbs.el, meta.el, rail.el, offer.el, time.el, key.toggle, key.el);
+  controls.append(crumbs.el, meta.el, rail.el, offer.el, time.el, key.toggle, key.el, insp.el);
   root.append(cue.el);
   root.append(controls);
 
@@ -142,6 +145,7 @@ const start = async (): Promise<AtlasApp | null> => {
     const sel = s.nav.selection;
     meta.update({ model, selection: sel, positions, mark: scene.marks.find((m) => m.id === sel), star: sel ? stars.get(sel) : undefined, crossMatch: sel ? crossMatches.get(sel) : undefined });
     key.update(s.surface.legendOpen);
+    insp.update(s.surface.inspect, { model, positions, stars, crossMatches });
     cue.update(scene, reducedMotion());
     time.update(s.nav);
     offer.update(s.nav, model.entities.name(s.nav.focus));
@@ -167,7 +171,8 @@ const start = async (): Promise<AtlasApp | null> => {
 
   attachPointer(canvas, dispatch, () => scene);
   attachTouch(canvas, dispatch, () => scene, () => bus.get().nav.selection);
-  attachKeyboard(dispatch, { dateField: () => { time.input.focus(); time.input.select(); }, rateStep: (d) => time.step(d), escape: () => dispatch({ kind: 'legend', open: false }) });
+  attachKeyboard(dispatch, { dateField: () => { time.input.focus(); time.input.select(); }, rateStep: (d) => time.step(d), escape: () => { dispatch({ kind: 'legend', open: false }); dispatch({ kind: 'inspect', target: null }); },
+    inspectSelection: () => { const sel = bus.get().nav.selection; dispatch({ kind: 'inspect', target: sel ? { kind: 'entity', subject: sel } : { kind: 'release' } }); } });
   render();
 
   return { model, bus, renderer, scene: () => scene, positions: () => positions, labels: () => labels };
@@ -192,6 +197,9 @@ void start().then((app) => {
     nameOf: (id: string) => app?.model.entities.name(id as AtlasId) ?? null,
     idOf: (name: string) => app?.model.entities.all().find((e) => e.names.canonical === name)?.id ?? null,
     precision: () => app ? [...app.model.precision.values()] : [],
+    /** Every visible mark: its entity, its status and whether a source record stands behind it. */
+    marks: () => (app?.scene()?.marks ?? []).filter((m) => m.visible).map((m) => ({ id: m.id, name: m.name, kind: m.kind, status: m.status, hasSourceRecord: m.hasSourceRecord, label: m.label })),
+    markShapes: () => MARK_SHAPES,
   };
   (window as unknown as { __atlas: unknown }).__atlas = hook;
 });

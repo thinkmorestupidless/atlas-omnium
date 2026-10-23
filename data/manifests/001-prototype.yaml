@@ -3,7 +3,7 @@
 # `reproducible: true` is written last, by ingest, only when every field is filled and every
 # checksum verified.
 atlas_release: 001-prototype
-generated_at: 2026-10-23T07:41:43.218Z
+generated_at: 2026-10-23T08:03:55.494Z
 units_policy: SI-internal-with-explicit-conversions
 window: { from: 2000-01-01, to: 2050-12-31, scale: TDB }
 sources:
@@ -357,9 +357,9 @@ sources:
         sha256: 1d275cf4286b089134f47e5fc8a02894ba30b2d565cc1ed466d180ac8eabc4ab
     curated:
       - file: data/curated/001-prototype/entities.json
-        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+        sha256: f4bcd7079631e2f020bcb05ebfd004a3c78a5e3c6941a583489340baa176a1d3
       - file: data/curated/001-prototype/observations.json
-        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+        sha256: fa3576ab23c09133cfd588a1740f1d5a92c8b38b84bdcdeefb9fb16fae03c2e1
       - file: data/curated/001-prototype/ephemeris/mercury.json
         sha256: e2c7884dbc39388cbe070e79e3ae143a0d17539e6396fdfa5c0f875a2bd81602
       - file: data/curated/001-prototype/ephemeris/venus.json
@@ -391,9 +391,9 @@ sources:
       - file: data/curated/001-prototype/elements.json
         sha256: f713816ed679c9b1d94bd3b70d250ec54080f4b4b1e890fbf212b885d9d99f7b
       - file: data/curated/001-prototype/attribution.json
-        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+        sha256: 408a9802b66f0bf27bcde8f6ed2841fa157fb5a2ebf7ca715a1e29d801edb5d0
       - file: data/curated/001-prototype/validation-report.json
-        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
+        sha256: ec3e6cdc9cde2584c137b7dc9a3d844a89dbd96cd881a12058c5dbcb966396a6
   - name: nssdca-factsheet
     role: mean radii and masses, transcribed row by row with the page cited
     endpoint: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
@@ -453,13 +453,13 @@ sources:
         sha256: 473c61da0bf7188764ec8ae5b12c0fdc9f922bccd9e3f6b47c885fef0723541c
     curated:
       - file: data/curated/001-prototype/entities.json
-        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+        sha256: f4bcd7079631e2f020bcb05ebfd004a3c78a5e3c6941a583489340baa176a1d3
       - file: data/curated/001-prototype/observations.json
-        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+        sha256: fa3576ab23c09133cfd588a1740f1d5a92c8b38b84bdcdeefb9fb16fae03c2e1
       - file: data/curated/001-prototype/attribution.json
-        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+        sha256: 408a9802b66f0bf27bcde8f6ed2841fa157fb5a2ebf7ca715a1e29d801edb5d0
       - file: data/curated/001-prototype/validation-report.json
-        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
+        sha256: ec3e6cdc9cde2584c137b7dc9a3d844a89dbd96cd881a12058c5dbcb966396a6
   - name: jpl-keplerian-elements
     role: approximate Keplerian elements of the planets, for orbit tracks only
     endpoint: https://ssd.jpl.nasa.gov/planets/approx_pos.html
@@ -481,9 +481,9 @@ sources:
       - file: data/curated/001-prototype/elements.json
         sha256: f713816ed679c9b1d94bd3b70d250ec54080f4b4b1e890fbf212b885d9d99f7b
       - file: data/curated/001-prototype/attribution.json
-        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+        sha256: 408a9802b66f0bf27bcde8f6ed2841fa157fb5a2ebf7ca715a1e29d801edb5d0
       - file: data/curated/001-prototype/validation-report.json
-        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
+        sha256: ec3e6cdc9cde2584c137b7dc9a3d844a89dbd96cd881a12058c5dbcb966396a6
   - name: hipparcos2
     role: the bright nearby stars Gaia DR3 lacks, entering only through cross-match records
     endpoint: https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync
@@ -506,15 +506,15 @@ sources:
         sha256: f6bab16f7060f41c98958f0044fa3a526eeeeacdd23cb2fa7a529016d2b29e9f
     curated:
       - file: data/curated/001-prototype/entities.json
-        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+        sha256: f4bcd7079631e2f020bcb05ebfd004a3c78a5e3c6941a583489340baa176a1d3
       - file: data/curated/001-prototype/observations.json
-        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+        sha256: fa3576ab23c09133cfd588a1740f1d5a92c8b38b84bdcdeefb9fb16fae03c2e1
       - file: data/curated/001-prototype/stars.json
         sha256: 871369c848fa89d7baf60903c07dd60eeab817c792b63930e83f6ba939ccff75
       - file: data/curated/001-prototype/attribution.json
-        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+        sha256: 408a9802b66f0bf27bcde8f6ed2841fa157fb5a2ebf7ca715a1e29d801edb5d0
       - file: data/curated/001-prototype/validation-report.json
-        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
+        sha256: ec3e6cdc9cde2584c137b7dc9a3d844a89dbd96cd881a12058c5dbcb966396a6
   - name: gaia
     role: the nearby-star sample, with parallax, position, proper motion and their uncertainties
     endpoint: https://gea.esac.esa.int/tap-server/tap/sync
@@ -550,15 +550,15 @@ sources:
         sha256: f5e6f6b4fc3570b1b515faeb40521f23568d7def25a3ff5d24234dc171c8bf90
     curated:
       - file: data/curated/001-prototype/entities.json
-        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+        sha256: f4bcd7079631e2f020bcb05ebfd004a3c78a5e3c6941a583489340baa176a1d3
       - file: data/curated/001-prototype/observations.json
-        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+        sha256: fa3576ab23c09133cfd588a1740f1d5a92c8b38b84bdcdeefb9fb16fae03c2e1
       - file: data/curated/001-prototype/stars.json
         sha256: 871369c848fa89d7baf60903c07dd60eeab817c792b63930e83f6ba939ccff75
       - file: data/curated/001-prototype/attribution.json
-        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+        sha256: 408a9802b66f0bf27bcde8f6ed2841fa157fb5a2ebf7ca715a1e29d801edb5d0
       - file: data/curated/001-prototype/validation-report.json
-        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
+        sha256: ec3e6cdc9cde2584c137b7dc9a3d844a89dbd96cd881a12058c5dbcb966396a6
   - name: simbad
     role: the names of every star and the identifiers that tie a Hipparcos number to them
     endpoint: https://simbad.cds.unistra.fr/simbad/sim-tap/sync
@@ -628,25 +628,54 @@ sources:
         sha256: ebb4b9bc2a906e83fcb5959e74b5aee12e55513edd95664d3d00d45cd61c9ac5
     curated:
       - file: data/curated/001-prototype/entities.json
-        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+        sha256: f4bcd7079631e2f020bcb05ebfd004a3c78a5e3c6941a583489340baa176a1d3
       - file: data/curated/001-prototype/observations.json
-        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+        sha256: fa3576ab23c09133cfd588a1740f1d5a92c8b38b84bdcdeefb9fb16fae03c2e1
       - file: data/curated/001-prototype/stars.json
         sha256: 871369c848fa89d7baf60903c07dd60eeab817c792b63930e83f6ba939ccff75
       - file: data/curated/001-prototype/attribution.json
-        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+        sha256: 408a9802b66f0bf27bcde8f6ed2841fa157fb5a2ebf7ca715a1e29d801edb5d0
       - file: data/curated/001-prototype/validation-report.json
-        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
+        sha256: ec3e6cdc9cde2584c137b7dc9a3d844a89dbd96cd881a12058c5dbcb966396a6
   - name: pubchem
     role: water (CID 962), its 3D conformer, and the elements hydrogen and oxygen
     endpoint: https://pubchem.ncbi.nlm.nih.gov/rest/pug
-    query: null
-    retrieval_time: null
-    source_release: null
-    licence: null
-    attribution: null
-    citation: null
-    terms_pages: null
-    raw: null
-    curated: null
+    query:
+      conformer: https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/962/record/JSON?record_type=3d
+      record: https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/962/record/JSON
+      periodicTable: https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON
+      rateLimit: under five requests per second
+    retrieval_time: 2026-10-23T08:03:54.822Z
+    source_release: PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)
+    licence: "PubChem states no licence of its own. NCBI's website policies: \"Information that is created by or for the US government on this site is within the public domain. Public domain information on the National Library of Medicine (NLM) Web pages may be freely distributed and copied. However, it is requested that in any subsequent use of this work, NLM be given appropriate acknowledgment.\" (https://www.ncbi.nlm.nih.gov/home/about/policies/)"
+    attribution: "PubChem Identifier: CID 962. URL: https://pubchem.ncbi.nlm.nih.gov/compound/962"
+    citation:
+      - Kim S, Chen J, Cheng T, et al. PubChem 2025 update. Nucleic Acids Res. 2025;53(D1):D1516-D1525. doi:10.1093/nar/gkae1059
+    terms_pages:
+      - https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines
+      - https://pubchem.ncbi.nlm.nih.gov/pcfe/docs/markdown/citation-guidelines.md
+      - https://www.ncbi.nlm.nih.gov/home/about/policies/
+    raw:
+      - file: data/raw/001-prototype/pubchem/cid-962-3d.json
+        sha256: dbf27360f038ab06716c1681ee2496c94fdfb7ee3237c14955221fca3f6e881d
+      - file: data/raw/001-prototype/pubchem/cid-962.json
+        sha256: 43eb35b535506885f9cb735d2bac9ed7c74d82828fa38dfe77584c713a995eca
+      - file: data/raw/001-prototype/pubchem/periodic-table.json
+        sha256: ff0f75976583b8a6493b18d0b42e83e1b68bd6e112b45d33578d98494ed5d321
+      - file: data/raw/001-prototype/pubchem/terms/citation-guidelines.md
+        sha256: 624c02bbd91b8195bb54fddba17cd517e2d2a0a2a7e86be608240f4144a8a0d5
+      - file: data/raw/001-prototype/pubchem/terms/ncbi-policies.html
+        sha256: 8ad8f6f186ca51ec73a5fb8935ecfa17b8cbaad300b7025b381898ab72621869
+    curated:
+      - file: data/curated/001-prototype/entities.json
+        sha256: f4bcd7079631e2f020bcb05ebfd004a3c78a5e3c6941a583489340baa176a1d3
+      - file: data/curated/001-prototype/observations.json
+        sha256: fa3576ab23c09133cfd588a1740f1d5a92c8b38b84bdcdeefb9fb16fae03c2e1
+      - file: data/curated/001-prototype/molecules.json
+        sha256: 5407a79d1711f66050f0087004b3a73b15b46f8a03c926c939976c689a4cd7a8
+      - file: data/curated/001-prototype/attribution.json
+        sha256: 408a9802b66f0bf27bcde8f6ed2841fa157fb5a2ebf7ca715a1e29d801edb5d0
+      - file: data/curated/001-prototype/validation-report.json
+        sha256: ec3e6cdc9cde2584c137b7dc9a3d844a89dbd96cd881a12058c5dbcb966396a6
 validation_report: data/curated/001-prototype/validation-report.json
+reproducible: true

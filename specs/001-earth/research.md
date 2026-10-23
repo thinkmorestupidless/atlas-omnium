@@ -319,6 +319,30 @@ promise to a person; where it changes a contract's letter, the entry says which.
   copy, and the source module reads the live page first. SIMBAD's licence (ODbL) is stated on its
   home page and copied from there.
 
+### Water and the release as a whole
+- PubChem was acquired during US4, not US5. T074 asks for a manifest with no unfilled field, and
+  PubChem's entry is part of the manifest, so T078 and T079 were done first.
+- PubChem's citation guidelines page sits behind a browser check. The page renders a markdown file,
+  `/pcfe/docs/markdown/citation-guidelines.md`, and the citation is copied from that file.
+  PubChem states no licence of its own. The licence quotes NCBI's website policies, which say US
+  government work is public domain and ask that NLM be acknowledged. The record's attribution
+  follows the guidelines' own form: "PubChem Identifier: CID 962. URL: …".
+- The atom types come from PubChem's periodic table resource, the first choice of R7.
+- The schema has no property for a molecular formula, because an observation's value is a number.
+  The molecule type carries PubChem's molecular weight (18.015 g/mol) as an observation, and the
+  formula H2O as an alias. Its canonical name is PubChem's preferred IUPAC name, "oxidane". The
+  substance's canonical name is the traditional one, "water".
+- The `hasPart` relationships rest on the conformer's atom list. Their evidence id is
+  `conformer:atlas:pubchem-962`, which the inspector resolves to the conformer's source record.
+- With PubChem in, the release rebuilds offline to all 21 checksums, and the manifest says
+  `reproducible: true`. The feature harness and the visual tier no longer open the release with
+  `allow-unreproducible`.
+
+### The inspector
+- The inspector opens from the metadata panel, where each value is a control, or with `i` on the
+  selection. It shows an epoch outside the leap-second table, such as Hipparcos's J1991.25 in TT,
+  as a Julian epoch. Converting that epoch to a UTC date had failed.
+
 ### The surface
 - The transition band starts at 1 × 10¹² m/px, not 3 × 10¹¹. At that scale the Sun is under
   0.15 px from an Earth-centred view's centre, so it does not visibly move across the band. The

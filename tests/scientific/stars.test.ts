@@ -8,7 +8,7 @@ import { ObservationSchema } from '../../app/src/model/schema';
 
 interface Row { source_id: string; ra: number; dec: number; parallax: number; parallax_error: number; reference: { distancePc: number; intervalPc: [number, number]; icrsPc: number[]; eclipticJ2000Pc: number[] } }
 const fixture = async (): Promise<{ rows: Row[] }> => JSON.parse(await readFile('tests/fixtures/star-sample-tiny.json', 'utf8'));
-const release = () => loadRelease('001-prototype', (p) => readFile(`data/${p}`, 'utf8'), { allowUnreproducible: true });
+const release = () => loadRelease('001-prototype', (p) => readFile(`data/${p}`, 'utf8'));
 const TOL_PC = 1e-6;
 
 describe('Gaia rows to positions', () => {

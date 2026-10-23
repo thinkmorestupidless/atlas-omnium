@@ -17,7 +17,7 @@ const viewport = { width: 1280, height: 800 };
 
 describe('the Sun across the band', () => {
   it('keeps its id and its screen point at every scale, out and back', async () => {
-    const model = await loadRelease('001-prototype', (p) => readFile(`data/${p}`, 'utf8'), { allowUnreproducible: true });
+    const model = await loadRelease('001-prototype', (p) => readFile(`data/${p}`, 'utf8'));
     const base = initialState({ release: '001-prototype', window: model.release.window, today: '2026-10-22' });
     const positions = bodyPositions(model, epochOf(base.utc));
     const stars = starStates(model);

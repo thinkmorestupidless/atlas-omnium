@@ -72,5 +72,19 @@
       "https://simbad.cds.unistra.fr/simbad/",
       "https://cds.unistra.fr/help/acknowledgement/"
     ]
+  },
+  {
+    "source": "pubchem",
+    "role": "water (CID 962), its 3D conformer, and the elements hydrogen and oxygen",
+    "licence": "PubChem states no licence of its own. NCBI's website policies: \"Information that is created by or for the US government on this site is within the public domain. Public domain information on the National Library of Medicine (NLM) Web pages may be freely distributed and copied. However, it is requested that in any subsequent use of this work, NLM be given appropriate acknowledgment.\" (https://www.ncbi.nlm.nih.gov/home/about/policies/)",
+    "attribution": "PubChem Identifier: CID 962. URL: https://pubchem.ncbi.nlm.nih.gov/compound/962",
+    "citation": [
+      "Kim S, Chen J, Cheng T, et al. PubChem 2025 update. Nucleic Acids Res. 2025;53(D1):D1516-D1525. doi:10.1093/nar/gkae1059"
+    ],
+    "pages": [
+      "https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines",
+      "https://pubchem.ncbi.nlm.nih.gov/pcfe/docs/markdown/citation-guidelines.md",
+      "https://www.ncbi.nlm.nih.gov/home/about/policies/"
+    ]
   }
 ]

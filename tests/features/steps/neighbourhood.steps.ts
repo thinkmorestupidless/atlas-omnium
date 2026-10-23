@@ -86,8 +86,15 @@ Then('the metadata shows the distance from {string} with its unit and the range 
   await expect(line.locator('.meta-value')).toHaveText(/^[\d.,]+ pc, range [\d.,]+ to [\d.,]+ pc$/);
 });
 
-Then('the inspector shows the parallax observation with its source record and the model the distance is derived from', async () => {
-  throw new Error('the inspector arrives with US4 (T068 to T075)');
+Then('the inspector shows the parallax observation with its source record and the model the distance is derived from', async ({ atlas }) => {
+  await atlas.inspectField('distance');
+  const insp = atlas.page.locator('#inspector');
+  await expect(insp.locator('[data-field="model"]').first()).toContainText('inverse-parallax');
+  const from = insp.locator('[data-predicate="derivedFrom"]');
+  await expect(from.locator('[data-field="value"] dt')).toHaveText('parallax');
+  await expect(from.locator('[data-field="value"] dd')).toHaveText(/^[\d.,]+ mas$/);
+  await expect(from.locator('[data-field="source-dataset"] dd')).toHaveText('gaia');
+  await expect(from.locator('[data-field="source-record"] dd')).toContainText('source_id');
 });
 
 When('the person focuses {string}', async ({ atlas }, name: string) => {
@@ -143,6 +150,11 @@ Then('the star is visible as a stellar mark', async ({ atlas }) => {
   expect(m?.shape).toBe('stellar');
 });
 
-Then('the inspector shows a cross-match record with both source records and the basis of the match', async () => {
-  throw new Error('the inspector arrives with US4 (T068 to T075)');
+Then('the inspector shows a cross-match record with both source records and the basis of the match', async ({ atlas }) => {
+  await atlas.inspectField('cross-match');
+  const same = atlas.page.locator('#inspector [data-predicate="sameAs"]');
+  await expect(same.locator('[data-field="cross-match-record"]')).toHaveCount(2);
+  await expect(same.locator('[data-field="cross-match-record"]').nth(0)).toContainText('hipparcos2');
+  await expect(same.locator('[data-field="cross-match-record"]').nth(1)).toContainText('simbad');
+  await expect(same.locator('[data-field="cross-match-basis"] dd')).toHaveText('published cross identification');
 });

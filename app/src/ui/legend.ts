@@ -5,6 +5,7 @@ import type { Model } from '../model/derived';
 import type { Action } from '../input/actions';
 import { STAR_BANDS, STAR_FAINTEST_PX, SUN_STELLAR_PX } from '../renderers/representation';
 import { h, replace } from './dom';
+import { statusGlyph } from './status-marks';
 
 const SVG = 'http://www.w3.org/2000/svg';
 const svg = (w: number, draw: (s: SVGSVGElement) => void): SVGSVGElement => {
@@ -21,7 +22,6 @@ const add = (s: SVGSVGElement, tag: string, attrs: Record<string, string | numbe
 const INK = 'var(--ink)';
 const disc = (r: number) => svg(16, (s) => add(s, 'circle', { cx: 8, cy: 8, r, fill: INK }));
 const ring = (r: number, extra: Record<string, string | number> = {}) => svg(16, (s) => add(s, 'circle', { cx: 8, cy: 8, r, fill: 'none', stroke: INK, 'stroke-width': 1.25, ...extra }));
-const half = () => svg(16, (s) => { add(s, 'circle', { cx: 8, cy: 8, r: 5, fill: 'none', stroke: INK, 'stroke-width': 1.25 }); add(s, 'path', { d: 'M8 3 A5 5 0 0 0 8 13 Z', fill: INK }); });
 const line = (attrs: Record<string, string | number>) => svg(28, (s) => add(s, 'line', { x1: 2, y1: 8, x2: 26, y2: 8, stroke: INK, ...attrs }));
 
 const row = (field: string, glyph: SVGSVGElement | null, words: string) =>
@@ -70,10 +70,10 @@ export const legend = (dispatch: (a: Action) => void, model: Model) => {
       row('mark-tick', svg(16, (s) => { add(s, 'line', { x1: 8, y1: 14, x2: 8, y2: 2, stroke: 'var(--muted)', 'stroke-width': 0.75 }); add(s, 'line', { x1: 6, y1: 2, x2: 10, y2: 2, stroke: 'var(--muted)', 'stroke-width': 0.75 }); }),
         'a tick: the height above (up) or below (down) the ecliptic, which the view flattens')),
     section('how a value is known',
-      row('status-observed', disc(4), 'observed'),
-      row('status-derived', half(), 'derived'),
-      row('status-inferred', ring(4.5), 'inferred'),
-      row('status-illustrative', ring(4.5, { 'stroke-dasharray': '2 1.5' }), 'illustrative')),
+      row('status-observed', statusGlyph('observed', 16), 'observed'),
+      row('status-derived', statusGlyph('derived', 16), 'derived'),
+      row('status-inferred', statusGlyph('inferred', 16), 'inferred'),
+      row('status-illustrative', statusGlyph('illustrative', 16), 'illustrative')),
     section('selection and focus',
       row('selection', svg(16, (s) => { add(s, 'circle', { cx: 8, cy: 8, r: 2.5, fill: INK }); add(s, 'circle', { cx: 8, cy: 8, r: 7, fill: 'none', stroke: 'var(--cobalt)', 'stroke-width': 1.5 }); }), 'the selection: a ring set apart from the mark'),
       row('focus', svg(16, (s) => { add(s, 'circle', { cx: 8, cy: 8, r: 3, fill: INK }); add(s, 'circle', { cx: 8, cy: 8, r: 5, fill: 'none', stroke: INK, 'stroke-width': 2.5 }); }), 'the focus: a heavy ring on the mark')),

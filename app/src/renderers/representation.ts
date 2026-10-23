@@ -10,6 +10,7 @@ import { moonLoop } from '../model/positions';
 import { AU_KM, PC_M } from '../model/units';
 import { fadesAt } from '../navigation/resolver';
 import type { NavigationState } from '../navigation/state';
+import type { Entity } from '../model/schema';
 import type { Projection, View } from '../projections/projection';
 import type { ResolvedLine, ResolvedMark, Scene } from './representation-types';
 
@@ -23,6 +24,13 @@ export interface ResolveInput {
   readonly stars?: ReadonlyMap<AtlasId, StarState>;
   readonly reducedMotion?: boolean;
 }
+
+/**
+ * The selection mark is a ring set apart from the mark; the focus mark is the mark's own ring made
+ * heavy. Neither shares a shape with a status mark (R11, app/src/ui/status-marks.ts).
+ */
+export const SELECTION_MARK = { shape: 'offset-ring', gapPx: 5 } as const;
+export const FOCUS_MARK = { shape: 'ring-weight', weightPx: 2.5 } as const;
 
 /** The smallest disc an exaggerated policy draws; anything drawn larger than measured says by how much. */
 export const MIN_DISC_PX = 3;
@@ -69,6 +77,9 @@ export const STAR_BANDS: readonly { readonly brighterThan: number; readonly px: 
 export const STAR_FAINTEST_PX = 1.2;
 export const SUN_STELLAR_PX = 3.5;
 export const starRadiusPx = (mag: number | null): number => (mag === null ? STAR_FAINTEST_PX : STAR_BANDS.find((b) => mag < b.brighterThan)?.px ?? STAR_FAINTEST_PX);
+
+/** An entity is drawn as known only when a source record stands behind it; otherwise it says it is illustrative. */
+const hasSource = (e: Entity) => Boolean(e.names.source?.dataset && e.names.source.record);
 
 const onScreen = (x: number, y: number, r: number, v: View) => x + r >= 0 && x - r <= v.width && y + r >= 0 && y - r <= v.height;
 
@@ -123,12 +134,13 @@ export const resolve = (i: ResolveInput): Scene => {
       else if (state.scalePolicy === 'exaggerated' && truePx < MIN_DISC_PX) { radiusPx = MIN_DISC_PX; exaggeration = MIN_DISC_PX / truePx; }
       const focused = state.focus === id;
       const selected = state.selection === id;
-      const name = e.names.canonical;
+      const sourced = hasSource(e);
+      const name = sourced ? e.names.canonical : `${e.names.canonical} · illustrative`;
       const visible = alpha > 0.01 && onScreen(p.x, p.y, radiusPx, view);
       marks.push({
         id, name, kind: e.kind, shape, at: { x: p.x, y: p.y }, radiusPx, visible,
         style: { fill: 'ink', ...(exaggeration ? { stroke: 'vermilion', lineWidth: 1 } : {}) },
-        exaggeration, radiusMissing: truePx === null, status: 'derived', hasSourceRecord: true,
+        exaggeration, radiusMissing: truePx === null, status: sourced ? 'derived' : 'illustrative', hasSourceRecord: sourced,
         selected, focused,
         label: exaggeration && (focused || selected) ? `${name} · exaggerated ×${formatFactor(exaggeration)}` : name,
         labelPriority: focused ? 100 : selected ? 90 : isSun ? 60 : (IMPORTANCE[e.kind] ?? 10),
@@ -150,13 +162,14 @@ export const resolve = (i: ResolveInput): Scene => {
         const focused = state.focus === id;
         const selected = state.selection === id;
         const visible = fades.stars > 0.01 && onScreen(p.x, p.y, radiusPx, view);
+        const sourced = hasSource(e);
         marks.push({
           id, name: e.names.canonical, kind: e.kind, shape: 'stellar', at: { x: p.x, y: p.y }, radiusPx, visible,
-          style: { fill: 'ink' }, exaggeration: null, radiusMissing: false, status: 'derived', hasSourceRecord: true,
+          style: { fill: 'ink' }, exaggeration: null, radiusMissing: false, status: sourced ? 'derived' : 'illustrative', hasSourceRecord: sourced,
           selected, focused,
           ...(range ? { rangePx: range } : {}),
           heightTickPx: (p.height) / state.scale,
-          label: e.names.canonical,
+          label: sourced ? e.names.canonical : `${e.names.canonical} · illustrative`,
           labelPriority: focused ? 100 : selected ? 90 : 40 - (mag ?? 20),
           alpha: fades.stars,
         });

@@ -66,10 +66,61 @@
         "evidence": [
           "obs:horizons:earth:state-vectors"
         ]
+      },
+      {
+        "source": "atlas:earth",
+        "predicate": "representativeOf",
+        "target": "atlas:water",
+        "status": "illustrative",
+        "evidence": []
       }
     ],
     "evidence": [
       "obs:horizons:earth:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:element-h",
+    "kind": "AtomType",
+    "names": {
+      "canonical": "Hydrogen",
+      "aliases": [
+        "H"
+      ],
+      "catalogue": [],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "periodic table: AtomicNumber 1, Hydrogen",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:pubchem:element-1:atomicNumber"
+    ]
+  },
+  {
+    "id": "atlas:element-o",
+    "kind": "AtomType",
+    "names": {
+      "canonical": "Oxygen",
+      "aliases": [
+        "O"
+      ],
+      "catalogue": [],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "periodic table: AtomicNumber 8, Oxygen",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": [
+      "obs:pubchem:element-8:atomicNumber"
     ]
   },
   {
@@ -7701,6 +7752,55 @@
     ]
   },
   {
+    "id": "atlas:pubchem-962",
+    "kind": "MoleculeType",
+    "names": {
+      "canonical": "oxidane",
+      "aliases": [
+        "H2O"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "pubchem-cid",
+          "id": "962"
+        }
+      ],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "CID 962, compound record: IUPAC Name (Preferred)",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "evidence": [
+      "obs:pubchem:962:molecularWeight",
+      "conformer:atlas:pubchem-962"
+    ],
+    "relations": [
+      {
+        "source": "atlas:pubchem-962",
+        "predicate": "hasPart",
+        "target": "atlas:element-h",
+        "status": "observed",
+        "evidence": [
+          "conformer:atlas:pubchem-962"
+        ],
+        "count": 2
+      },
+      {
+        "source": "atlas:pubchem-962",
+        "predicate": "hasPart",
+        "target": "atlas:element-o",
+        "status": "observed",
+        "evidence": [
+          "conformer:atlas:pubchem-962"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  {
     "id": "atlas:saturn",
     "kind": "Planet",
     "names": {
@@ -7826,6 +7926,41 @@
     ],
     "evidence": [
       "obs:horizons:venus:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:water",
+    "kind": "Substance",
+    "names": {
+      "canonical": "water",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "pubchem-cid",
+          "id": "962"
+        }
+      ],
+      "source": {
+        "dataset": "pubchem",
+        "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+        "record": "CID 962, compound record: IUPAC Name (Traditional)",
+        "retrieved": "2026-10-23T08:03:54.822Z"
+      }
+    },
+    "classifications": [],
+    "evidence": [
+      "obs:pubchem:962:molecularWeight"
+    ],
+    "relations": [
+      {
+        "source": "atlas:water",
+        "predicate": "composedOf",
+        "target": "atlas:pubchem-962",
+        "status": "observed",
+        "evidence": [
+          "obs:pubchem:962:molecularWeight"
+        ]
+      }
     ]
   }
 ]

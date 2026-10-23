@@ -9,7 +9,7 @@ const open = async (page: Page, o: { motion?: boolean } = {}) => {
   await page.emulateMedia({ reducedMotion: o.motion ? 'no-preference' : 'reduce' });
   // The legend shows itself once on first use; these views are of the scene, so it has been seen.
   await page.addInitScript(() => { try { localStorage.setItem('atlas.legend.seen', '1'); } catch { /* no storage */ } });
-  await page.goto('/?test&release=001-prototype&allow-unreproducible');
+  await page.goto('/?test&release=001-prototype');
   await page.waitForFunction(() => (window as unknown as { __atlas?: { ready?: boolean } }).__atlas?.ready === true);
   await page.evaluate(() => document.fonts.ready);
 };
@@ -61,4 +61,26 @@ test('stellar scale', async ({ page }) => {
   // Under reduced motion the chapter cue is a one-second static display; the view is of what follows.
   await expect(page.locator('.chapter-cue')).toBeHidden({ timeout: 3000 });
   await shot(page, 'stellar');
+});
+
+// The inspector on Mars's distance from the Sun: the derived state, its model, and the state vectors'
+// record with the attribution beside the dataset release.
+test('inspector on a distance', async ({ page }) => {
+  await open(page);
+  await scaleTo(page, 2e9);
+  await page.evaluate(() => {
+    const h = (window as unknown as { __atlas: { idOf(n: string): string; dispatch(a: unknown): void } }).__atlas;
+    h.dispatch({ kind: 'select', id: h.idOf('Mars') });
+    h.dispatch({ kind: 'inspect', target: { kind: 'value', subject: h.idOf('Mars'), property: 'distance' } });
+  });
+  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+  await expect(page.locator('#inspector')).toHaveScreenshot('inspector-distance.png');
+});
+
+// The release view: the release, its window, and every source with its licence and attribution.
+test('release view', async ({ page }) => {
+  await open(page);
+  await page.evaluate(() => (window as unknown as { __atlas: { dispatch(a: unknown): void } }).__atlas.dispatch({ kind: 'inspect', target: { kind: 'release' } }));
+  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+  await expect(page.locator('#inspector')).toHaveScreenshot('release-view.png');
 });

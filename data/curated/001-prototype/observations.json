@@ -38572,5 +38572,44 @@
       "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html \"Volumetric mean radius (km)\"",
       "retrieved": "2026-10-23T07:13:31.713Z"
     }
+  },
+  {
+    "id": "obs:pubchem:962:molecularWeight",
+    "subject": "atlas:pubchem-962",
+    "property": "molecularWeight",
+    "value": 18.015,
+    "unit": "g/mol",
+    "source": {
+      "dataset": "pubchem",
+      "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+      "record": "CID 962, compound record: Molecular Weight",
+      "retrieved": "2026-10-23T08:03:54.822Z"
+    }
+  },
+  {
+    "id": "obs:pubchem:element-1:atomicNumber",
+    "subject": "atlas:element-h",
+    "property": "atomicNumber",
+    "value": 1,
+    "unit": "dimensionless",
+    "source": {
+      "dataset": "pubchem",
+      "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+      "record": "periodic table: AtomicNumber 1, Hydrogen",
+      "retrieved": "2026-10-23T08:03:54.822Z"
+    }
+  },
+  {
+    "id": "obs:pubchem:element-8:atomicNumber",
+    "subject": "atlas:element-o",
+    "property": "atomicNumber",
+    "value": 8,
+    "unit": "dimensionless",
+    "source": {
+      "dataset": "pubchem",
+      "release": "PubChem, not numbered; the records as retrieved (citation guidelines last updated July 7, 2026)",
+      "record": "periodic table: AtomicNumber 8, Oxygen",
+      "retrieved": "2026-10-23T08:03:54.822Z"
+    }
   }
 ]

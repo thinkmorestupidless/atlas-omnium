@@ -298,10 +298,20 @@
       ],
       "unnamed": []
     },
+    "molecules": {
+      "cid": 962,
+      "formula": "H2O",
+      "atoms": 3,
+      "bonds": 2,
+      "counts": {
+        "atlas:element-o": 1,
+        "atlas:element-h": 2
+      }
+    },
     "counts": {
-      "entities": 264,
-      "observations": 2246,
-      "files": 20
+      "entities": 268,
+      "observations": 2249,
+      "files": 21
     }
   },
   "rejections": []

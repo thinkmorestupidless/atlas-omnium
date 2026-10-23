@@ -23,7 +23,6 @@ Feature: Travel out to the nearby stars
     Then the nearby stars of the star sample are visible as marks
     And "Sun" is one mark among them
 
-  @needs-inspector
   Scenario: selecting a nearby star shows its distance, its uncertainty and its source record
     Given the nearby stellar regime is in force
     When the person selects "Proxima Centauri"
@@ -52,7 +51,6 @@ Feature: Travel out to the nearby stars
     When the person reads the scale rail
     Then the scale rail declares that a dimension is flattened
 
-  @needs-inspector
   Scenario: a bright star the catalogue lacks is drawn through a cross-match record showing both source records
     Given the nearby stellar regime is in force
     When the person selects "Alpha Centauri A"

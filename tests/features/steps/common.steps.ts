@@ -16,7 +16,10 @@ Given('the planetary regime is in force', async ({ atlas }) => {
 
 Given('the selection is {string}', async ({ atlas }, name: string) => {
   if ((await atlas.selectionName()) === name) return;
-  if (!(await atlas.mark(name))?.visible) await atlas.planetary();
+  if (!(await atlas.mark(name))?.visible) {
+    // A star of the sample is selected among the nearby stars; a body in the Solar System.
+    if (/^atlas:(gaia-dr3|hip)-/.test((await atlas.idOf(name)) ?? '')) await atlas.stellar(); else await atlas.planetary();
+  }
   await atlas.click(name);
   expect(await atlas.selectionName()).toBe(name);
 });

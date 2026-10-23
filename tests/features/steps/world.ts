@@ -5,8 +5,8 @@
 import { expect, type Page } from '@playwright/test';
 import { createBdd, test as base } from 'playwright-bdd';
 
-/** Until the release is fully ingested (T074), the harness opens it in development mode. */
-export const ALLOW_UNREPRODUCIBLE = process.env.ATLAS_ALLOW_UNREPRODUCIBLE !== '0';
+/** The release is reproducible (T074); development mode is for working on an incomplete one. */
+export const ALLOW_UNREPRODUCIBLE = process.env.ATLAS_ALLOW_UNREPRODUCIBLE === '1';
 /** Every scenario runs on one date so positions, and so the marks' places, are the same each run. */
 export const TODAY = '2026-10-22T12:00:00Z';
 export const PLANETARY_SCALE = 2e9;
@@ -36,6 +36,8 @@ interface Hook {
   dispatch(a: unknown): void; radiusKm(id: string): number | null; nameOf(id: string): string | null; idOf(name: string): string | null;
   positions(): { id: string; r: [number, number, number]; unit: string; frame: string; jd: number; scale: string }[];
   precision(): { subject: string; maxError: { value: number; unit: string } }[];
+  marks(): { id: string; name: string; kind: string; status: string; hasSourceRecord: boolean; label: string | null }[];
+  markShapes(): Record<string, string>;
 }
 
 export class Atlas {
@@ -68,6 +70,16 @@ export class Atlas {
   positions() { return this.call<ReturnType<Hook['positions']>>('positions'); }
   precision() { return this.call<ReturnType<Hook['precision']>>('precision'); }
   radiusKm(id: string) { return this.call<number | null>('radiusKm', id); }
+  marks() { return this.call<ReturnType<Hook['marks']>>('marks'); }
+  markShapes() { return this.call<Record<string, string>>('markShapes'); }
+  dispatch(a: unknown) { return this.call<void>('dispatch', a); }
+  /** The person opens the inspector on a value of the selection's metadata. */
+  async inspectField(field: string, text?: string) {
+    const v = this.page.locator(`.metadata [data-field="${field}"] button.meta-value`);
+    await (text ? v.filter({ hasText: text }) : v).first().click();
+    await this.settle();
+    await expect(this.page.locator('#inspector')).toBeVisible();
+  }
   idOf(name: string) { return this.call<string | null>('idOf', name); }
   nameOf(id: string) { return this.call<string | null>('nameOf', id); }
   /** Leaves any field, so the next key goes to the scene. */
