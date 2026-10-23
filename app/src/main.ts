@@ -6,6 +6,7 @@ import { loadRelease, UnreproducibleRelease } from './model/release';
 import type { DerivedState, Model } from './model/derived';
 import type { PositionAtEpoch } from './model/frames';
 import type { AtlasId } from './model/ids';
+import { starStates } from './model/parallax';
 import { bodyPositions, epochOf } from './model/positions';
 import { createBus, type Bus, type Store } from './input/bus';
 import type { Action } from './input/actions';
@@ -15,10 +16,13 @@ import { attachTouch } from './input/touch';
 import { eclipticTopDown } from './projections/ecliptic-top-down';
 import { createCanvas2d } from './renderers/canvas2d';
 import { drawOrbitGeometry } from './renderers/orbit-geometry';
+import { drawPoints } from './renderers/points';
 import type { Renderer } from './renderers/renderer';
 import { resolve, viewOf } from './renderers/representation';
 import type { Scene } from './renderers/representation-types';
 import { breadcrumb } from './ui/breadcrumb';
+import { chapterCue } from './ui/chapter-cue';
+import { legend } from './ui/legend';
 import { lockup } from './ui/lockup';
 import { madeOf } from './ui/made-of';
 import { metadata } from './ui/metadata';
@@ -85,9 +89,12 @@ const start = async (): Promise<AtlasApp | null> => {
   let positions: ReadonlyMap<AtlasId, DerivedState<PositionAtEpoch>> = new Map();
   let labels = { placed: [] as string[], dropped: [] as string[] };
   const projection = eclipticTopDown;
+  // The stars are at their catalogue epochs and do not move with the date (no proper motion in 001).
+  const stars = starStates(model);
+  const crossMatches = new Map((model.stars?.crossMatches ?? []).map((c) => [c.entity, c]));
 
   const bus = createBus({ nav, surface: { inspect: null, legendOpen: false } }, () => {
-    const v = viewOf({ state: bus.get().nav, viewport: viewport(), positions });
+    const v = viewOf({ state: bus.get().nav, viewport: viewport(), positions, stars });
     return {
       ctx,
       anchorToPlane: (px) => projection.offsetOf(px, v),
@@ -114,21 +121,28 @@ const start = async (): Promise<AtlasApp | null> => {
   const meta = metadata();
   const time = timeController(dispatch);
   const offer = madeOf(dispatch, false);
+  const key = legend(dispatch, model);
+  const cue = chapterCue();
   const controls = document.createElement('div');
   controls.className = 'controls';
-  controls.append(crumbs.el, meta.el, rail.el, offer.el, time.el);
+  controls.append(crumbs.el, meta.el, rail.el, offer.el, time.el, key.toggle, key.el);
+  root.append(cue.el);
   root.append(controls);
 
   const render = () => {
     const s: Store = bus.get();
     positions = bodyPositions(model, epochOf(s.nav.utc));
-    scene = resolve({ state: s.nav, model, projection, viewport: viewport(), positions, reducedMotion: reducedMotion() });
+    scene = resolve({ state: s.nav, model, projection, viewport: viewport(), positions, stars, reducedMotion: reducedMotion() });
     renderer.clear();
     drawOrbitGeometry(renderer, scene);
+    drawPoints(renderer, scene);
     labels = renderer.flush();
     rail.update(s.nav, projection);
     crumbs.update(s.nav);
-    meta.update({ model, selection: s.nav.selection, positions, mark: scene.marks.find((m) => m.id === s.nav.selection) });
+    const sel = s.nav.selection;
+    meta.update({ model, selection: sel, positions, mark: scene.marks.find((m) => m.id === sel), star: sel ? stars.get(sel) : undefined, crossMatch: sel ? crossMatches.get(sel) : undefined });
+    key.update(s.surface.legendOpen);
+    cue.update(scene, reducedMotion());
     time.update(s.nav);
     offer.update(s.nav, model.entities.name(s.nav.focus));
     canvas.setAttribute('aria-label', `The atlas scene: ${model.entities.name(s.nav.focus)} in focus, the ${s.nav.regime.replace('-', ' ')} regime`);
@@ -153,7 +167,7 @@ const start = async (): Promise<AtlasApp | null> => {
 
   attachPointer(canvas, dispatch, () => scene);
   attachTouch(canvas, dispatch, () => scene, () => bus.get().nav.selection);
-  attachKeyboard(dispatch, { dateField: () => { time.input.focus(); time.input.select(); }, rateStep: (d) => time.step(d) });
+  attachKeyboard(dispatch, { dateField: () => { time.input.focus(); time.input.select(); }, rateStep: (d) => time.step(d), escape: () => dispatch({ kind: 'legend', open: false }) });
   render();
 
   return { model, bus, renderer, scene: () => scene, positions: () => positions, labels: () => labels };

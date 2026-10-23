@@ -3,7 +3,7 @@
 # `reproducible: true` is written last, by ingest, only when every field is filled and every
 # checksum verified.
 atlas_release: 001-prototype
-generated_at: 2026-10-23T07:27:50.139Z
+generated_at: 2026-10-23T07:41:43.218Z
 units_policy: SI-internal-with-explicit-conversions
 window: { from: 2000-01-01, to: 2050-12-31, scale: TDB }
 sources:
@@ -357,9 +357,9 @@ sources:
         sha256: 1d275cf4286b089134f47e5fc8a02894ba30b2d565cc1ed466d180ac8eabc4ab
     curated:
       - file: data/curated/001-prototype/entities.json
-        sha256: 43f5a30cc227a99cebe96dbc318d167b0785d8a78ad58183623ebb0de21046c7
+        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
       - file: data/curated/001-prototype/observations.json
-        sha256: 873c672a025fb0a82ca6c4399a419d6f8134981c9ce3f977344808171a1e67c2
+        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
       - file: data/curated/001-prototype/ephemeris/mercury.json
         sha256: e2c7884dbc39388cbe070e79e3ae143a0d17539e6396fdfa5c0f875a2bd81602
       - file: data/curated/001-prototype/ephemeris/venus.json
@@ -391,9 +391,9 @@ sources:
       - file: data/curated/001-prototype/elements.json
         sha256: f713816ed679c9b1d94bd3b70d250ec54080f4b4b1e890fbf212b885d9d99f7b
       - file: data/curated/001-prototype/attribution.json
-        sha256: 4b8152757d335facd02f6f0c8ca73621780bf39c2d8be054a6eba8890721c4fc
+        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
       - file: data/curated/001-prototype/validation-report.json
-        sha256: da05aeb1f895483ca3b263c57f2be130466618d0e51d3c4ae6e7857116c471b8
+        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
   - name: nssdca-factsheet
     role: mean radii and masses, transcribed row by row with the page cited
     endpoint: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
@@ -453,13 +453,13 @@ sources:
         sha256: 473c61da0bf7188764ec8ae5b12c0fdc9f922bccd9e3f6b47c885fef0723541c
     curated:
       - file: data/curated/001-prototype/entities.json
-        sha256: 43f5a30cc227a99cebe96dbc318d167b0785d8a78ad58183623ebb0de21046c7
+        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
       - file: data/curated/001-prototype/observations.json
-        sha256: 873c672a025fb0a82ca6c4399a419d6f8134981c9ce3f977344808171a1e67c2
+        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
       - file: data/curated/001-prototype/attribution.json
-        sha256: 4b8152757d335facd02f6f0c8ca73621780bf39c2d8be054a6eba8890721c4fc
+        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
       - file: data/curated/001-prototype/validation-report.json
-        sha256: da05aeb1f895483ca3b263c57f2be130466618d0e51d3c4ae6e7857116c471b8
+        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
   - name: jpl-keplerian-elements
     role: approximate Keplerian elements of the planets, for orbit tracks only
     endpoint: https://ssd.jpl.nasa.gov/planets/approx_pos.html
@@ -481,45 +481,162 @@ sources:
       - file: data/curated/001-prototype/elements.json
         sha256: f713816ed679c9b1d94bd3b70d250ec54080f4b4b1e890fbf212b885d9d99f7b
       - file: data/curated/001-prototype/attribution.json
-        sha256: 4b8152757d335facd02f6f0c8ca73621780bf39c2d8be054a6eba8890721c4fc
+        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
       - file: data/curated/001-prototype/validation-report.json
-        sha256: da05aeb1f895483ca3b263c57f2be130466618d0e51d3c4ae6e7857116c471b8
-  - name: gaia
-    role: the nearby-star sample, with parallax, position, proper motion and their uncertainties
-    endpoint: https://gea.esac.esa.int/tap-server/tap/sync
-    query: null
-    retrieval_time: null
-    source_release: null
-    licence: null
-    attribution: null
-    citation: null
-    terms_pages: null
-    raw: null
-    curated: null
+        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
   - name: hipparcos2
     role: the bright nearby stars Gaia DR3 lacks, entering only through cross-match records
     endpoint: https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync
-    query: null
-    retrieval_time: null
-    source_release: null
-    licence: null
-    attribution: null
-    citation: null
-    terms_pages: null
-    raw: null
-    curated: null
+    query:
+      adql: SELECT HIP, RArad, DErad, Plx, e_Plx, pmRA, pmDE, e_pmRA, e_pmDE, Hpmag FROM "I/311/hip2" WHERE Plx > 100
+      format: csv
+    retrieval_time: 2026-10-23T07:39:42.184Z
+    source_release: I/311 (Hipparcos, the New Reduction, van Leeuwen 2007), epoch J1991.25
+    licence: '"The data retrieved with VizieR are free of usage in a scientific context ; however, as it is the usage in scientific publication, the original authors and publication references including the publisher have to be explicitely cited" (https://cds.unistra.fr/vizier-org/licences_vizier.html).'
+    attribution: "This research has made use of the VizieR catalogue access tool, CDS, Strasbourg, France (DOI : 10.26093/cds/vizier). The original description of the VizieR service was published in 2000, A&AS 143, 23"
+    citation:
+      - van Leeuwen F. 2007, A&A 474, 653, "Validation of the new Hipparcos reduction" (VizieR I/311)
+      - Ochsenbein F. et al. 2000, A&AS 143, 23, "The VizieR database of astronomical catalogues"
+    terms_pages:
+      - https://cds.unistra.fr/vizier-org/licences_vizier.html
+    raw:
+      - file: data/raw/001-prototype/hipparcos2/hip2.csv
+        sha256: efcca8b5ab14cee2a148a89972e96d3117f43965a3eb4f158b3db13584cdd2bd
+      - file: data/raw/001-prototype/hipparcos2/terms/licences_vizier.html
+        sha256: f6bab16f7060f41c98958f0044fa3a526eeeeacdd23cb2fa7a529016d2b29e9f
+    curated:
+      - file: data/curated/001-prototype/entities.json
+        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+      - file: data/curated/001-prototype/observations.json
+        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+      - file: data/curated/001-prototype/stars.json
+        sha256: 871369c848fa89d7baf60903c07dd60eeab817c792b63930e83f6ba939ccff75
+      - file: data/curated/001-prototype/attribution.json
+        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+      - file: data/curated/001-prototype/validation-report.json
+        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
+  - name: gaia
+    role: the nearby-star sample, with parallax, position, proper motion and their uncertainties
+    endpoint: https://gea.esac.esa.int/tap-server/tap/sync
+    query:
+      adql: SELECT source_id, ra, dec, parallax, parallax_error, pmra, pmdec, pmra_error, pmdec_error, radial_velocity, radial_velocity_error, phot_g_mean_mag, bp_rp, ruwe, ref_epoch FROM gaiadr3.gaia_source WHERE parallax > 100 AND parallax_over_error > 10 AND ruwe < 1.4
+      uncut: SELECT source_id, ra, dec, parallax, parallax_over_error, ruwe FROM gaiadr3.gaia_source WHERE parallax > 100
+      bestNeighbour: SELECT original_ext_source_id, source_id FROM gaiadr3.hipparcos2_best_neighbour WHERE original_ext_source_id IN (every HIP of the hipparcos2 source)
+      criteria:
+        parallaxMasGt: 100
+        parallaxOverErrorGt: 10
+        ruweLt: 1.4
+      format: csv
+    retrieval_time: 2026-10-23T07:41:09.975Z
+    source_release: Gaia DR3, reference epoch J2016.0 (TCB)
+    licence: Gaia data are distributed under the CC BY-NC 3.0 IGO license. (https://www.cosmos.esa.int/web/gaia-users/license)
+    attribution: This work has made use of data from the European Space Agency (ESA) mission Gaia (https://www.cosmos.esa.int/gaia), processed by the Gaia Data Processing and Analysis Consortium (DPAC, https://www.cosmos.esa.int/web/gaia/dpac/consortium). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the Gaia Multilateral Agreement.
+    citation:
+      - "Gaia Collaboration et al. (2016b): The Gaia mission"
+      - "Gaia Collaboration et al. (2023j): Gaia DR3: Summary of the contents and survey properties. In addition, please cite"
+    terms_pages:
+      - https://www.cosmos.esa.int/web/gaia-users/license
+      - https://web.archive.org/web/20260211062935id_/https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions/
+    raw:
+      - file: data/raw/001-prototype/gaia/hipparcos2-best-neighbour.csv
+        sha256: c4d438a1741d503197e08823068b3c6b1613bf5d10aad100cde7714c19a3eab3
+      - file: data/raw/001-prototype/gaia/sample.csv
+        sha256: a2fcdc7b0d79eff21a1a832fb2d336c25e47a91f3b6975fefa9c15b654659000
+      - file: data/raw/001-prototype/gaia/terms/credit-and-citation.html
+        sha256: 0f70c12b6bec734435c34fd369c1c57360849fea32f8b340b1b08b5e341f703c
+      - file: data/raw/001-prototype/gaia/terms/license.html
+        sha256: fcdd84ae0486ba124b02f6e75c6440b177781a7a9a87780ebdfb34f97cf62056
+      - file: data/raw/001-prototype/gaia/within-10pc-uncut.csv
+        sha256: f5e6f6b4fc3570b1b515faeb40521f23568d7def25a3ff5d24234dc171c8bf90
+    curated:
+      - file: data/curated/001-prototype/entities.json
+        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+      - file: data/curated/001-prototype/observations.json
+        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+      - file: data/curated/001-prototype/stars.json
+        sha256: 871369c848fa89d7baf60903c07dd60eeab817c792b63930e83f6ba939ccff75
+      - file: data/curated/001-prototype/attribution.json
+        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+      - file: data/curated/001-prototype/validation-report.json
+        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
   - name: simbad
     role: the names of every star and the identifiers that tie a Hipparcos number to them
     endpoint: https://simbad.cds.unistra.fr/simbad/sim-tap/sync
-    query: null
-    retrieval_time: null
-    source_release: null
-    licence: null
-    attribution: null
-    citation: null
-    terms_pages: null
-    raw: null
-    curated: null
+    query:
+      main: SELECT i.id AS asked, b.main_id FROM ident AS i JOIN basic AS b ON b.oid = i.oidref WHERE i.id IN ('<id>', '...')
+      idents: SELECT i.id AS asked, i2.id AS ident FROM ident AS i JOIN ident AS i2 ON i2.oidref = i.oidref WHERE i.id IN ('<id>', '...') AND (i2.id LIKE 'NAME %' OR i2.id LIKE 'Gaia DR3 %' OR i2.id LIKE '* %')
+      identifiers: every Gaia DR3 source within 10 pc before the cuts, and every Hipparcos-2 star with Plx > 100
+      batch: 50
+      format: csv
+    retrieval_time: 2026-10-23T07:39:32.086Z
+    source_release: SIMBAD4 1.8 - 2026-10
+    licence: '"Use of SIMBAD service is free without any registration under ODbL licence. We request that users cite the original paper reference." (https://simbad.cds.unistra.fr/simbad/)'
+    attribution: This research has made use of the SIMBAD database, CDS, Strasbourg Astronomical Observatory, France
+    citation:
+      - 2000, A&AS, 143, 9, "The SIMBAD astronomical database", Wenger et al.
+    terms_pages:
+      - https://simbad.cds.unistra.fr/simbad/
+      - https://cds.unistra.fr/help/acknowledgement/
+    raw:
+      - file: data/raw/001-prototype/simbad/idents-00.csv
+        sha256: 9d5594227e879030c06a88c317f422e4f8a914e28ce1962966ff28477cf6983c
+      - file: data/raw/001-prototype/simbad/idents-01.csv
+        sha256: 202eaa3d8361526e806ac9b7e3a6baa8bcdc9dbc43a560f29849a954f4905e45
+      - file: data/raw/001-prototype/simbad/idents-02.csv
+        sha256: 5b78aff11d222041a615e2a0d18bbd9c3d6b071d047e6f4f4cb72cb2d1221109
+      - file: data/raw/001-prototype/simbad/idents-03.csv
+        sha256: 33d90ba8df69372db5ec64298deec7dbc56f6510d0edab69ec2a2b5e54c3d186
+      - file: data/raw/001-prototype/simbad/idents-04.csv
+        sha256: 005c6217bbb28ef0f00d43395e070dbdc6df5f0dc99e95e83f719dfa4722106a
+      - file: data/raw/001-prototype/simbad/idents-05.csv
+        sha256: c1d64de430cbacd986a09547ac12a90f23125b8ee96fb5b532dc49f60ab2074c
+      - file: data/raw/001-prototype/simbad/idents-06.csv
+        sha256: ff8e380999e4d2056195e603f28bb818bcadda7dedd53754c7a724d426c8f417
+      - file: data/raw/001-prototype/simbad/idents-07.csv
+        sha256: ec638cfbfece29227307dd6133fac9acb62a634cb7577475c5bb3238b35c90f2
+      - file: data/raw/001-prototype/simbad/idents-08.csv
+        sha256: 92a8bcb59931803d080a15b693bd686747a00d4490362505da3dab5fe7c4c271
+      - file: data/raw/001-prototype/simbad/idents-09.csv
+        sha256: ed0e5970ea1caa0c7405eb2ad19dfd352113298797a20f6448f3c97d6c0e3570
+      - file: data/raw/001-prototype/simbad/idents-10.csv
+        sha256: 5fd8948eef9b346130de1a97d50a5874cfec10c374450279533bbcbeec5f829b
+      - file: data/raw/001-prototype/simbad/main-00.csv
+        sha256: 3ca28b70ccadd2e89a8fdb0c2ccfc7e39086f8a413a8d10acf5d8b78b3297be6
+      - file: data/raw/001-prototype/simbad/main-01.csv
+        sha256: 193f0db0f640cb7363d237cadca08ac78b5ce1e478fc0b57fbf6ee56fedc24c2
+      - file: data/raw/001-prototype/simbad/main-02.csv
+        sha256: 2906cb47d56825b5299d4d697a2a4d5201fdedaea7f81a392a9c0fb86a6e3739
+      - file: data/raw/001-prototype/simbad/main-03.csv
+        sha256: ea014b8833d1de935c8ebc7c5586980880bbfe60e6450a59a23d52df1151810b
+      - file: data/raw/001-prototype/simbad/main-04.csv
+        sha256: da5261786f3fd67e3426c149bc590f27231b41cd8389da8cac9557f34c6e965f
+      - file: data/raw/001-prototype/simbad/main-05.csv
+        sha256: aff01f5d304f40179ffc5f88c254f2c5232aeb4237e73d9593a19548dcf4aca9
+      - file: data/raw/001-prototype/simbad/main-06.csv
+        sha256: 1faa1e5aadd20e16a8cfc0c89f1fc39537da9d924bb08173be06db75810307f9
+      - file: data/raw/001-prototype/simbad/main-07.csv
+        sha256: 7c12622d3b3f12a33b6fd607e7c6ffddf6d009ef27b58fcac835adf783f35bef
+      - file: data/raw/001-prototype/simbad/main-08.csv
+        sha256: 676fe3c98e9a0ea9c2e27e3cc20d6a818d036f2ab4c58c351e17ab38966d13f0
+      - file: data/raw/001-prototype/simbad/main-09.csv
+        sha256: 9ce117e990a7b84373f5cbc3e32ead8117ddab2eb8d153de36e67a8729e8a650
+      - file: data/raw/001-prototype/simbad/main-10.csv
+        sha256: c8d8b1af7fc227b8a44cbcbd7b14e35fac78d7a2f151babc3b12c18db12cc6c2
+      - file: data/raw/001-prototype/simbad/terms/acknowledgement.html
+        sha256: 953c6cdee01fd2fa58345049aa7d1fc4f7b2d8ddd9e0b483778d492c483e2375
+      - file: data/raw/001-prototype/simbad/terms/home.html
+        sha256: ebb4b9bc2a906e83fcb5959e74b5aee12e55513edd95664d3d00d45cd61c9ac5
+    curated:
+      - file: data/curated/001-prototype/entities.json
+        sha256: 97b1b5ae22e00d961851e7ce8bb88a0c4e1c702a0642e504db1181b118535a2a
+      - file: data/curated/001-prototype/observations.json
+        sha256: 681cc55ee5412e34e9233661daa4099d86c44463c014cbb48a9a1c802c831cc1
+      - file: data/curated/001-prototype/stars.json
+        sha256: 871369c848fa89d7baf60903c07dd60eeab817c792b63930e83f6ba939ccff75
+      - file: data/curated/001-prototype/attribution.json
+        sha256: e6720fbfdb9917410b331f5d24a7484a0ee95ac00684a37d1fc9203f50fc10f6
+      - file: data/curated/001-prototype/validation-report.json
+        sha256: 1c0ea309268e007673c123010cd2552d1437ed1430abe91529bd09e3234619ef
   - name: pubchem
     role: water (CID 962), its 3D conformer, and the elements hydrogen and oxygen
     endpoint: https://pubchem.ncbi.nlm.nih.gov/rest/pug

@@ -4,9 +4,11 @@ import { expect, test, type Page } from '@playwright/test';
 
 const TODAY = '2026-10-22T12:00:00Z';
 
-const open = async (page: Page) => {
+const open = async (page: Page, o: { motion?: boolean } = {}) => {
   await page.clock.setFixedTime(new Date(TODAY));
-  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.emulateMedia({ reducedMotion: o.motion ? 'no-preference' : 'reduce' });
+  // The legend shows itself once on first use; these views are of the scene, so it has been seen.
+  await page.addInitScript(() => { try { localStorage.setItem('atlas.legend.seen', '1'); } catch { /* no storage */ } });
   await page.goto('/?test&release=001-prototype&allow-unreproducible');
   await page.waitForFunction(() => (window as unknown as { __atlas?: { ready?: boolean } }).__atlas?.ready === true);
   await page.evaluate(() => document.fonts.ready);
@@ -41,4 +43,22 @@ test('time controller with a refusal', async ({ page }) => {
   });
   await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
   await expect(page.locator('.time-controller')).toHaveScreenshot('time-controller-refused.png');
+});
+
+// The midpoint of the band between the Solar System and the nearby stars (5 × 10¹² m/px), with motion
+// allowed: under reduced motion the band is a cut and its midpoint shows one side or the other.
+test('transition midpoint', async ({ page }) => { await open(page, { motion: true }); await scaleTo(page, 5e12); await shot(page, 'transition-midpoint'); });
+
+// The nearby stars, Proxima Centauri selected: its distance, range and parallax record.
+test('stellar scale', async ({ page }) => {
+  await open(page);
+  await scaleTo(page, 3e14);
+  await page.evaluate(() => {
+    const h = (window as unknown as { __atlas: { idOf(n: string): string; dispatch(a: unknown): void } }).__atlas;
+    h.dispatch({ kind: 'select', id: h.idOf('Proxima Centauri') });
+  });
+  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+  // Under reduced motion the chapter cue is a one-second static display; the view is of what follows.
+  await expect(page.locator('.chapter-cue')).toBeHidden({ timeout: 3000 });
+  await shot(page, 'stellar');
 });

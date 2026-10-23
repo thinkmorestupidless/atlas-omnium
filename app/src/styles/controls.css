@@ -50,3 +50,16 @@ input { font: inherit; color: var(--ink); background: var(--cream); border: 1px 
 .time-play-row { display: flex; gap: 6px; align-items: center; }
 .time-refusal { color: var(--ink); border-left: 3px solid var(--vermilion); padding-left: 6px; }
 [hidden] { display: none !important; }
+
+.legend-toggle { position: absolute; left: 24px; top: 50%; font-size: 12px; }
+.legend { position: absolute; left: 24px; top: 44px; bottom: 24px; width: min(420px, 44vw); overflow-y: auto; font-size: 12px; background: var(--paper); border: 1px solid var(--ink); padding: 12px 14px; z-index: 2; }
+.legend header { display: flex; justify-content: space-between; align-items: baseline; }
+.legend h2 { font-family: var(--sans); font-size: 24px; font-weight: 700; margin: 0 0 6px; }
+.legend h3 { font-family: var(--sans); font-size: 14px; margin: 12px 0 4px; border-top: 4px solid var(--violet); padding-top: 4px; }
+.legend ul { list-style: none; margin: 0; padding: 0; }
+.legend li { display: grid; grid-template-columns: 32px 1fr; gap: 6px; align-items: center; padding: 2px 0; }
+.legend p { margin: 4px 0; }
+.legend-glyph { display: inline-flex; justify-content: center; }
+
+.chapter-cue { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+.chapter-cue-text { margin: 0; font-size: clamp(56px, 12vw, 168px); color: var(--ink); transform-origin: center; }

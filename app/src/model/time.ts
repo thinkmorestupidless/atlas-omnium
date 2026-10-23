@@ -2,7 +2,7 @@
 // TDB. TDB = UTC + (TAI-UTC) + 32.184 s, with TDB-TT neglected: it is periodic and never exceeds
 // 1.7 ms, far below the sampling of any position the atlas shows (research R2).
 
-export type TimeScale = 'TDB' | 'TT' | 'UTC';
+export type TimeScale = 'TDB' | 'TT' | 'TCB' | 'UTC';
 export interface Epoch { readonly scale: TimeScale; readonly jd: number }
 
 export const TDB_MINUS_TT_NEGLECTED_MAX_S = 0.0017;

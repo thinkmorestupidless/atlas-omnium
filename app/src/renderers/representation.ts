@@ -5,8 +5,9 @@ import type { DerivedState, Model } from '../model/derived';
 import { orbitTrack } from '../model/elements';
 import { toMetres, type PositionAtEpoch, type Vector3 } from '../model/frames';
 import { IDS, type AtlasId } from '../model/ids';
+import type { StarState } from '../model/parallax';
 import { moonLoop } from '../model/positions';
-import { AU_KM } from '../model/units';
+import { AU_KM, PC_M } from '../model/units';
 import { fadesAt } from '../navigation/resolver';
 import type { NavigationState } from '../navigation/state';
 import type { Projection, View } from '../projections/projection';
@@ -18,6 +19,8 @@ export interface ResolveInput {
   readonly projection: Projection;
   readonly viewport: { readonly width: number; readonly height: number };
   readonly positions: ReadonlyMap<AtlasId, DerivedState<PositionAtEpoch>>;
+  /** The star sample's members with their derived distances and positions at the catalogue epoch. */
+  readonly stars?: ReadonlyMap<AtlasId, StarState>;
   readonly reducedMotion?: boolean;
 }
 
@@ -39,18 +42,33 @@ const ramp = (s: number, from: number, to: number) => (s <= from ? 0 : s >= to ?
 export const formatFactor = (f: number): string =>
   f >= 100 ? Math.round(f).toLocaleString('en-GB') : f >= 10 ? f.toFixed(0) : f.toFixed(1);
 
-export const focusCentre = (state: NavigationState, positions: ResolveInput['positions']): Vector3 => {
-  const p = positions.get(state.focus);
+export const focusCentre = (state: NavigationState, positions: ResolveInput['positions'], stars?: ResolveInput['stars']): Vector3 => {
+  const p = positions.get(state.focus) ?? stars?.get(state.focus)?.position ?? undefined;
   return p ? toMetres(p.value) : [0, 0, 0];
 };
 
-export const viewOf = (i: Pick<ResolveInput, 'state' | 'viewport' | 'positions'>): View => ({
+export const viewOf = (i: Pick<ResolveInput, 'state' | 'viewport' | 'positions' | 'stars'>): View => ({
   scale: i.state.scale,
-  centre: focusCentre(i.state, i.positions),
+  centre: focusCentre(i.state, i.positions, i.stars),
   pan: i.state.pan,
   width: i.viewport.width,
   height: i.viewport.height,
 });
+
+/**
+ * A stellar mark's radius by the star's catalogue magnitude (Gaia G, or Hipparcos Hp for a star
+ * entered through a cross-match): brighter is larger, in four bands; no magnitude is the smallest.
+ * The Sun, whose apparent magnitude no catalogue in the sample gives, is drawn at the largest.
+ */
+export const STAR_BANDS: readonly { readonly brighterThan: number; readonly px: number; readonly words: string }[] = [
+  { brighterThan: 2, px: 3.5, words: 'brighter than magnitude 2' },
+  { brighterThan: 6, px: 2.75, words: 'magnitude 2 to 6' },
+  { brighterThan: 10, px: 2, words: 'magnitude 6 to 10' },
+  { brighterThan: 14, px: 1.5, words: 'magnitude 10 to 14' },
+];
+export const STAR_FAINTEST_PX = 1.2;
+export const SUN_STELLAR_PX = 3.5;
+export const starRadiusPx = (mag: number | null): number => (mag === null ? STAR_FAINTEST_PX : STAR_BANDS.find((b) => mag < b.brighterThan)?.px ?? STAR_FAINTEST_PX);
 
 const onScreen = (x: number, y: number, r: number, v: View) => x + r >= 0 && x - r <= v.width && y + r >= 0 && y - r <= v.height;
 
@@ -100,7 +118,7 @@ export const resolve = (i: ResolveInput): Scene => {
       let shape: ResolvedMark['shape'] = 'disc';
       let radiusPx = truePx ?? POINT_PX;
       let exaggeration: number | null = null;
-      if (stellar) { shape = 'stellar'; radiusPx = 2.5; }
+      if (stellar) { shape = 'stellar'; radiusPx = SUN_STELLAR_PX; }
       else if (truePx === null) shape = 'point';
       else if (state.scalePolicy === 'exaggerated' && truePx < MIN_DISC_PX) { radiusPx = MIN_DISC_PX; exaggeration = MIN_DISC_PX / truePx; }
       const focused = state.focus === id;
@@ -113,9 +131,36 @@ export const resolve = (i: ResolveInput): Scene => {
         exaggeration, radiusMissing: truePx === null, status: 'derived', hasSourceRecord: true,
         selected, focused,
         label: exaggeration && (focused || selected) ? `${name} · exaggerated ×${formatFactor(exaggeration)}` : name,
-        labelPriority: focused ? 100 : selected ? 90 : (IMPORTANCE[e.kind] ?? 10),
+        labelPriority: focused ? 100 : selected ? 90 : isSun ? 60 : (IMPORTANCE[e.kind] ?? 10),
         alpha,
       });
+    }
+
+    if (i.stars && fades.stars > 0) {
+      for (const [id, st] of i.stars) {
+        const e = model.entities.get(id);
+        if (!e || !st.position) continue;
+        const p = projection.project(st.position.value, view);
+        const mag = model.observations.measured(id, 'gMagnitude').value ?? model.observations.measured(id, 'hpMagnitude').value;
+        const radiusPx = starRadiusPx(mag);
+        const d = st.distance;
+        const range = d.value && d.uncertainty?.kind === 'interval'
+          ? { inner: ((d.value.value - d.uncertainty.low) * PC_M) / state.scale, outer: ((d.uncertainty.high - d.value.value) * PC_M) / state.scale }
+          : undefined;
+        const focused = state.focus === id;
+        const selected = state.selection === id;
+        const visible = fades.stars > 0.01 && onScreen(p.x, p.y, radiusPx, view);
+        marks.push({
+          id, name: e.names.canonical, kind: e.kind, shape: 'stellar', at: { x: p.x, y: p.y }, radiusPx, visible,
+          style: { fill: 'ink' }, exaggeration: null, radiusMissing: false, status: 'derived', hasSourceRecord: true,
+          selected, focused,
+          ...(range ? { rangePx: range } : {}),
+          heightTickPx: (p.height) / state.scale,
+          label: e.names.canonical,
+          labelPriority: focused ? 100 : selected ? 90 : 40 - (mag ?? 20),
+          alpha: fades.stars,
+        });
+      }
     }
   }
   return { regime: state.regime, scale: state.scale, fades, marks, lines, cue: null };

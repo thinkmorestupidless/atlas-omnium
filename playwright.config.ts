@@ -20,7 +20,8 @@ export default defineConfig({
   use: { baseURL: 'http://localhost:4173', ...devices['Desktop Chrome'], viewport: { width: 1280, height: 800 } },
   webServer: { command: 'npx vite preview --port 4173 --strictPort', url: 'http://localhost:4173', reuseExistingServer: true },
   projects: [
-    { name: 'features', testDir: featuresDir },
+    // The inspector arrives with US4 (T068 to T075); until then the scenarios that read it are skipped.
+    { name: 'features', testDir: featuresDir, grepInvert: /@needs-inspector/ },
     { name: 'visual', testDir: 'tests/visual', snapshotPathTemplate: 'tests/visual/baselines/{arg}{ext}' },
   ],
 });

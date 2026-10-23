@@ -7,7 +7,7 @@ import { UNITS } from './units';
 export const AtlasIdSchema = z.string().regex(/^atlas:[a-z0-9][a-z0-9-]*$/, 'not an atlas id');
 export const UnitSchema = z.enum(UNITS);
 export const QuantitySchema = z.object({ value: z.number().finite(), unit: UnitSchema }).strict();
-export const EpochSchema = z.object({ scale: z.enum(['TDB', 'TT', 'UTC']), jd: z.number().finite() }).strict();
+export const EpochSchema = z.object({ scale: z.enum(['TDB', 'TT', 'TCB', 'UTC']), jd: z.number().finite() }).strict();
 export const Vector3Schema = z.tuple([z.number().finite(), z.number().finite(), z.number().finite()]);
 
 export const DATASETS = [
@@ -71,6 +71,7 @@ export const PROPERTIES = {
   radialVelocity: { unit: 'km/s', positive: false, epoch: true },
   gMagnitude: { unit: 'mag', positive: false, epoch: false },
   vMagnitude: { unit: 'mag', positive: false, epoch: false },
+  hpMagnitude: { unit: 'mag', positive: false, epoch: false },
   bpRp: { unit: 'mag', positive: false, epoch: false },
   ruwe: { unit: 'dimensionless', positive: true, epoch: false },
   atomicNumber: { unit: 'dimensionless', positive: true, epoch: false },

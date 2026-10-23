@@ -244,3 +244,94 @@ against `dist/` with Playwright's CDP tracing, reporting frame-time percentiles 
 and during the transition, mark count, load time and heap growth over ten minutes. The stated test
 machine is the one the sessions run on and is named in `tests/performance/README.md` when known;
 SC-008 is measured there.
+
+## Found during implementation
+
+What building 001 showed that the decisions above did not say. None of it changes a contract's
+promise to a person; where it changes a contract's letter, the entry says which.
+
+### Time, frames and the reference ephemeris
+- Horizons states its "Ecliptic of J2000.0" obliquity as 84381.448″ (IAU 1976) in every vectors
+  response. The stars are rotated with the same value so both share one plane exactly.
+- The Horizons API reports version 1.2. It is recorded in the manifest as `api_version`.
+- T010's reference value was wrong. 2000-01-01T12:00 UTC is not JD 2451545.000800741 in TT: with
+  TT − UTC of 64.184 s it is JD 2451545.000742870. The test instead checks J2000.0 from its defining
+  instant, 2000-01-01T11:58:55.816 UTC, which is JD 2451545.0 in TT.
+- `setDate` accepts a civil date or a full UTC instant ending in `Z`. The held-out epochs fall at
+  fractional days, and the time scenario changes the date to one.
+
+### The Solar System's data
+- The held-out epochs are fetched from Horizons at the midpoints of grid intervals, not withheld
+  from the sampled rows. `contracts/curated-files.md` says "withholds every 97th sample". The
+  midpoints are a harder test, because they are the furthest points from any sample. The stride is
+  per body, min(97, floor(intervals / 50)), so every body has at least 50. Two shared epochs, JD
+  2461000.25 and 2466000.75, serve the scenario that compares every body at one epoch. Horizons
+  answers 502 to a list of more than about 40 epochs, so the requests are batched.
+- The sampling steps were shortened to follow each planet's motion about its system barycentre,
+  which its moons cause. With the first steps the outer planets' errors were 223 to 4,790 km.
+  The steps in days are now: 1 for Mercury, Jupiter and the Moon; 2 for Neptune, Pluto and
+  Halley; 4 for Venus, Earth, Saturn and Uranus; 8 for Mars; 16 for Ceres. Every body's error is
+  now under 100 km.
+- Ceres's fact sheet gives three axes and no mean radius. Its radius is missing, not averaged.
+- The Moon's orbit track is drawn from its own samples over one sidereal month around the epoch,
+  not from elements.
+- Orbit tracks fade in from 1 × 10⁸ to 2 × 10⁸ m/px. Below that, the approximate elements' error
+  would show against the bodies' true positions.
+- The curated release is about 13 MB and the raw snapshots about 21 MB.
+
+### The nearby stars
+- `stars.json` holds the `StarSample` and the cross-match records together, and the positions are
+  derived when the release loads. `contracts/curated-files.md` lists a separate
+  `cross-matches.json` and positions written at ingest. A position is a derived state and names its
+  model, so it is computed, not stored as if observed.
+- A Gaia DR3 parallax σ gives a distance range of [1000/(p + σ), 1000/(p − σ)] pc. Positions are at
+  the catalogue's epoch (J2016.0 TCB for Gaia, J1991.25 for Hipparcos-2). 001 applies no proper
+  motion, and the epoch is part of each position.
+- The query of R3 returns 238 stars. Without the cuts there are 315, and every one of the 77 removed
+  fails the RUWE cut. Proxima Centauri is in the sample.
+- A Hipparcos-2 star enters through a cross-match record only when four checks all hold:
+  - its HIP number has no row in `gaiadr3.hipparcos2_best_neighbour`;
+  - SIMBAD lists no Gaia DR3 identifier for it;
+  - no Gaia DR3 source within 10 pc, before or after the cuts, lies within 5″ of its position
+    carried to J2016.0;
+  - SIMBAD has a record for it.
+
+  The third check keeps out Hipparcos entries for whole systems (70 Oph, HD 32450, CD-44 3045)
+  whose components Gaia has and the cuts removed. Entering those would undo the cuts. Thirteen
+  stars enter this way, among them Sirius, Procyon, Alpha Centauri A, Vega, Altair and Fomalhaut.
+  The validation report gives the decision for every Hipparcos-2 star.
+- Alpha Centauri B is not in the sample. Gaia DR3's best neighbour for HIP 71681, source
+  5877748442128924544, is not among the sources with a parallax over 100 mas, so it fails the
+  sample's bound. Hipparcos-2 cannot add it, because Gaia does not lack it. The validation report
+  records this.
+- A star's canonical name follows a fixed order:
+  1. SIMBAD's main identifier, when it is a name.
+  2. A Bayer designation with its component letter written out ("* alf Cen A" is "Alpha
+     Centauri A").
+  3. SIMBAD's shortest name.
+  4. The main identifier.
+
+  The epoch scale `TCB` and the property `hpMagnitude` were added to the schema for the Gaia and
+  Hipparcos-2 records.
+- The Gaia DR3 credit page answered 503 throughout acquisition, as the archive's documentation
+  server was in maintenance. The acknowledgement and the two papers were copied from the Internet
+  Archive's copy of the same page, taken on 2026-02-11. The manifest's `terms_pages` names that
+  copy, and the source module reads the live page first. SIMBAD's licence (ODbL) is stated on its
+  home page and copied from there.
+
+### The surface
+- The transition band starts at 1 × 10¹² m/px, not 3 × 10¹¹. At that scale the Sun is under
+  0.15 px from an Earth-centred view's centre, so it does not visibly move across the band. The
+  geometric midpoint is therefore 5 × 10¹² m/px, and the reduced-motion cut happens there rather
+  than at 3 × 10¹².
+- A star's height above the ecliptic is drawn as a tick at the view's own scale, faint. Reading the
+  ticks against the labels is a question for the sessions.
+- The legend's "shown once on first use" is remembered in the browser's local storage. The test
+  harness marks it as seen, and a scenario about the legend opens it.
+
+### Tooling
+- The fonts are vendored from Fontsource's woff2 files.
+- The release loader skips files outside the release's curated directory. Those are the held-out
+  fixtures under `tests/fixtures/`.
+- The observation properties were refined while writing the curators. `raDec` and `properMotion`
+  are four properties (`ra`, `dec`, `pmra`, `pmdec`), each with its own uncertainty.

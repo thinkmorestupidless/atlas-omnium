@@ -32,5 +32,45 @@
     "pages": [
       "https://ssd.jpl.nasa.gov/about/"
     ]
+  },
+  {
+    "source": "hipparcos2",
+    "role": "the bright nearby stars Gaia DR3 lacks, entering only through cross-match records",
+    "licence": "\"The data retrieved with VizieR are free of usage in a scientific context ; however, as it is the usage in scientific publication, the original authors and publication references including the publisher have to be explicitely cited\" (https://cds.unistra.fr/vizier-org/licences_vizier.html).",
+    "attribution": "This research has made use of the VizieR catalogue access tool, CDS, Strasbourg, France (DOI : 10.26093/cds/vizier). The original description of the VizieR service was published in 2000, A&AS 143, 23",
+    "citation": [
+      "van Leeuwen F. 2007, A&A 474, 653, \"Validation of the new Hipparcos reduction\" (VizieR I/311)",
+      "Ochsenbein F. et al. 2000, A&AS 143, 23, \"The VizieR database of astronomical catalogues\""
+    ],
+    "pages": [
+      "https://cds.unistra.fr/vizier-org/licences_vizier.html"
+    ]
+  },
+  {
+    "source": "gaia",
+    "role": "the nearby-star sample, with parallax, position, proper motion and their uncertainties",
+    "licence": "Gaia data are distributed under the CC BY-NC 3.0 IGO license. (https://www.cosmos.esa.int/web/gaia-users/license)",
+    "attribution": "This work has made use of data from the European Space Agency (ESA) mission Gaia (https://www.cosmos.esa.int/gaia), processed by the Gaia Data Processing and Analysis Consortium (DPAC, https://www.cosmos.esa.int/web/gaia/dpac/consortium). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the Gaia Multilateral Agreement.",
+    "citation": [
+      "Gaia Collaboration et al. (2016b): The Gaia mission",
+      "Gaia Collaboration et al. (2023j): Gaia DR3: Summary of the contents and survey properties. In addition, please cite"
+    ],
+    "pages": [
+      "https://www.cosmos.esa.int/web/gaia-users/license",
+      "https://web.archive.org/web/20260211062935id_/https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions/"
+    ]
+  },
+  {
+    "source": "simbad",
+    "role": "the names of every star and the identifiers that tie a Hipparcos number to them",
+    "licence": "\"Use of SIMBAD service is free without any registration under ODbL licence. We request that users cite the original paper reference.\" (https://simbad.cds.unistra.fr/simbad/)",
+    "attribution": "This research has made use of the SIMBAD database, CDS, Strasbourg Astronomical Observatory, France",
+    "citation": [
+      "2000, A&AS, 143, 9, \"The SIMBAD astronomical database\", Wenger et al."
+    ],
+    "pages": [
+      "https://simbad.cds.unistra.fr/simbad/",
+      "https://cds.unistra.fr/help/acknowledgement/"
+    ]
   }
 ]

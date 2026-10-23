@@ -11,6 +11,10 @@ export const ALLOW_UNREPRODUCIBLE = process.env.ATLAS_ALLOW_UNREPRODUCIBLE !== '
 export const TODAY = '2026-10-22T12:00:00Z';
 export const PLANETARY_SCALE = 2e9;
 export const HELIOCENTRIC_SCALE = 2e10;
+/** The inner edge of the band between the Solar System and the nearby stars (the resolver's BAND.inner). */
+export const BAND_INNER = 1e12;
+/** A view of the nearby stars: about four parsecs either side of the Sun on the test viewport. */
+export const STELLAR_VIEW_SCALE = 3e14;
 export const PLANETS = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
 export interface Mark {
@@ -42,6 +46,8 @@ export class Atlas {
 
   async open(release: string) {
     await this.page.clock.install({ time: new Date(TODAY) });
+    // The legend shows itself once on first use; a scenario opens it when it is about the legend.
+    await this.page.addInitScript(() => { try { localStorage.setItem('atlas.legend.seen', '1'); } catch { /* no storage */ } });
     const q = ['test', `release=${encodeURIComponent(release)}`, ALLOW_UNREPRODUCIBLE ? 'allow-unreproducible' : ''].filter(Boolean).join('&');
     await this.page.goto(`/?${q}`);
     await this.page.waitForFunction(() => (window as unknown as { __atlas?: { ready?: boolean } }).__atlas?.ready === true);
@@ -108,6 +114,11 @@ export class Atlas {
   async planetary(scale = PLANETARY_SCALE) {
     await this.scaleOutUntil((s) => s.scale >= scale);
     expect((await this.state()).regime).toBe('planetary');
+  }
+
+  /** The person scales out until the nearby stellar regime is in force and the nearby stars are in view. */
+  async stellar() {
+    await this.scaleOutUntil((s, sc) => s.regime === 'nearby-stellar' && s.scale >= STELLAR_VIEW_SCALE && (sc.fades.stars ?? 0) >= 1);
   }
 
   async focusName() { const s = await this.state(); return this.nameOf(s.focus); }
