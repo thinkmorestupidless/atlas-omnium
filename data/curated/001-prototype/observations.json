@@ -1,0 +1,340 @@
+[
+  {
+    "id": "obs:nssdca:ceres:mass",
+    "subject": "atlas:ceres",
+    "property": "mass",
+    "value": 939300000000000000000,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "asteroidfact.html, last updated 27 September 2019",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/asteroidfact.html \"~Mass (10^15 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:ceres:meanRadius",
+    "subject": "atlas:ceres",
+    "property": "meanRadius",
+    "value": null,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "asteroidfact.html, last updated 27 September 2019",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/asteroidfact.html \"Diameter (km) \"965 x 961 x 891\", three axes; no mean radius\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:earth:mass",
+    "subject": "atlas:earth",
+    "property": "mass",
+    "value": 5.9722e+24,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "earthfact.html, last updated 15 November 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:earth:meanRadius",
+    "subject": "atlas:earth",
+    "property": "meanRadius",
+    "value": 6371,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "earthfact.html, last updated 15 November 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:halley:mass",
+    "subject": "atlas:halley",
+    "property": "mass",
+    "value": null,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "cometfact.html, last updated 04 January 2016",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/cometfact.html \"no mass row for Halley\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:halley:meanRadius",
+    "subject": "atlas:halley",
+    "property": "meanRadius",
+    "value": null,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "cometfact.html, last updated 04 January 2016",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/cometfact.html \"no radius row for Halley\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:jupiter:mass",
+    "subject": "atlas:jupiter",
+    "property": "mass",
+    "value": 1.89813e+27,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "jupiterfact.html, last updated 2 October 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:jupiter:meanRadius",
+    "subject": "atlas:jupiter",
+    "property": "meanRadius",
+    "value": 69911,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "jupiterfact.html, last updated 2 October 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:mars:mass",
+    "subject": "atlas:mars",
+    "property": "mass",
+    "value": 6.4169e+23,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "marsfact.html, last updated 19 May 2025",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:mars:meanRadius",
+    "subject": "atlas:mars",
+    "property": "meanRadius",
+    "value": 3389.5,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "marsfact.html, last updated 19 May 2025",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:mercury:mass",
+    "subject": "atlas:mercury",
+    "property": "mass",
+    "value": 3.301e+23,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "mercuryfact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:mercury:meanRadius",
+    "subject": "atlas:mercury",
+    "property": "meanRadius",
+    "value": 2439.7,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "mercuryfact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:moon:mass",
+    "subject": "atlas:moon",
+    "property": "mass",
+    "value": 7.346e+22,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "moonfact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:moon:meanRadius",
+    "subject": "atlas:moon",
+    "property": "meanRadius",
+    "value": 1737.4,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "moonfact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:neptune:mass",
+    "subject": "atlas:neptune",
+    "property": "mass",
+    "value": 1.02409e+26,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "neptunefact.html, last updated 3 October 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:neptune:meanRadius",
+    "subject": "atlas:neptune",
+    "property": "meanRadius",
+    "value": 24622,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "neptunefact.html, last updated 3 October 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:pluto:mass",
+    "subject": "atlas:pluto",
+    "property": "mass",
+    "value": 1.303e+22,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "plutofact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:pluto:meanRadius",
+    "subject": "atlas:pluto",
+    "property": "meanRadius",
+    "value": 1188,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "plutofact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:saturn:mass",
+    "subject": "atlas:saturn",
+    "property": "mass",
+    "value": 5.6832e+26,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "saturnfact.html, last updated 18 March 2025",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturnfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:saturn:meanRadius",
+    "subject": "atlas:saturn",
+    "property": "meanRadius",
+    "value": 58232,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "saturnfact.html, last updated 18 March 2025",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturnfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:sun:mass",
+    "subject": "atlas:sun",
+    "property": "mass",
+    "value": 1.9884e+30,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "sunfact.html, last updated 9 May 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:sun:meanRadius",
+    "subject": "atlas:sun",
+    "property": "meanRadius",
+    "value": 695700,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "sunfact.html, last updated 9 May 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:uranus:mass",
+    "subject": "atlas:uranus",
+    "property": "mass",
+    "value": 8.6811e+25,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "uranusfact.html, last updated 2 October 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:uranus:meanRadius",
+    "subject": "atlas:uranus",
+    "property": "meanRadius",
+    "value": 25362,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "uranusfact.html, last updated 2 October 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:venus:mass",
+    "subject": "atlas:venus",
+    "property": "mass",
+    "value": 4.8673e+24,
+    "unit": "kg",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "venusfact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html \"Mass (10^24 kg)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  },
+  {
+    "id": "obs:nssdca:venus:meanRadius",
+    "subject": "atlas:venus",
+    "property": "meanRadius",
+    "value": 6051.8,
+    "unit": "km",
+    "source": {
+      "dataset": "nssdca-factsheet",
+      "release": "venusfact.html, last updated 11 January 2024",
+      "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html \"Volumetric mean radius (km)\"",
+      "retrieved": "2026-10-23T07:13:31.713Z"
+    }
+  }
+]

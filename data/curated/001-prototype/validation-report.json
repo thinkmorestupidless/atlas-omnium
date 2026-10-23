@@ -1,0 +1,138 @@
+{
+  "release": "001-prototype",
+  "sections": {
+    "ephemeris": {
+      "bodies": {
+        "mercury": {
+          "rows": 18775,
+          "first": 2451483.5,
+          "last": 2470257.5,
+          "heldOut": 188,
+          "ephemeris": "DE441"
+        },
+        "venus": {
+          "rows": 4694,
+          "first": 2451483.5,
+          "last": 2470255.5,
+          "heldOut": 50,
+          "ephemeris": "DE441"
+        },
+        "earth": {
+          "rows": 4694,
+          "first": 2451483.5,
+          "last": 2470255.5,
+          "heldOut": 50,
+          "ephemeris": "DE441"
+        },
+        "mars": {
+          "rows": 2347,
+          "first": 2451483.5,
+          "last": 2470251.5,
+          "heldOut": 50,
+          "ephemeris": "mar099 (centre DE441)"
+        },
+        "jupiter": {
+          "rows": 18775,
+          "first": 2451483.5,
+          "last": 2470257.5,
+          "heldOut": 188,
+          "ephemeris": "jup365_merged"
+        },
+        "saturn": {
+          "rows": 4694,
+          "first": 2451483.5,
+          "last": 2470255.5,
+          "heldOut": 50,
+          "ephemeris": "sat441l (centre DE441)"
+        },
+        "uranus": {
+          "rows": 4694,
+          "first": 2451483.5,
+          "last": 2470255.5,
+          "heldOut": 50,
+          "ephemeris": "ura184_merged (centre DE441)"
+        },
+        "neptune": {
+          "rows": 9388,
+          "first": 2451483.5,
+          "last": 2470257.5,
+          "heldOut": 94,
+          "ephemeris": "nep098_merged"
+        },
+        "moon": {
+          "rows": 18775,
+          "first": 2451483.5,
+          "last": 2470257.5,
+          "heldOut": 188,
+          "ephemeris": "DE441"
+        },
+        "ceres": {
+          "rows": 1174,
+          "first": 2451483.5,
+          "last": 2470251.5,
+          "heldOut": 52,
+          "ephemeris": "JPL#48 (centre DE441)"
+        },
+        "pluto": {
+          "rows": 9388,
+          "first": 2451483.5,
+          "last": 2470257.5,
+          "heldOut": 94,
+          "ephemeris": "plu060_merged"
+        },
+        "halley": {
+          "rows": 9388,
+          "first": 2451483.5,
+          "last": 2470257.5,
+          "heldOut": 94,
+          "ephemeris": "JPL#75 (centre DE441)"
+        }
+      }
+    },
+    "precision": {
+      "maxErrorKm": {
+        "atlas:ceres": 25.5,
+        "atlas:earth": 22.3,
+        "atlas:halley": 0.00006,
+        "atlas:jupiter": 7.15,
+        "atlas:mars": 35.4,
+        "atlas:mercury": 20,
+        "atlas:moon": 5.02,
+        "atlas:neptune": 3.83,
+        "atlas:pluto": 78,
+        "atlas:saturn": 10.5,
+        "atlas:uranus": 17.7,
+        "atlas:venus": 46.5
+      }
+    },
+    "solar-system": {
+      "entities": 13,
+      "missingValues": [
+        "atlas:ceres meanRadius: Diameter (km) \"965 x 961 x 891\", three axes; no mean radius (https://nssdc.gsfc.nasa.gov/planetary/factsheet/asteroidfact.html)",
+        "atlas:halley meanRadius: no radius row for Halley (https://nssdc.gsfc.nasa.gov/planetary/factsheet/cometfact.html)",
+        "atlas:halley mass: no mass row for Halley (https://nssdc.gsfc.nasa.gov/planetary/factsheet/cometfact.html)"
+      ]
+    },
+    "elements": {
+      "tracks": [
+        "atlas:ceres: keplerian-elements (osculating at J2000)",
+        "atlas:earth: keplerian-elements (Table 1; the Earth–Moon barycentre)",
+        "atlas:halley: keplerian-elements (osculating at J2000)",
+        "atlas:jupiter: keplerian-elements (Table 1)",
+        "atlas:mars: keplerian-elements (Table 1)",
+        "atlas:mercury: keplerian-elements (Table 1)",
+        "atlas:neptune: keplerian-elements (Table 1)",
+        "atlas:pluto: keplerian-elements (osculating at J2000)",
+        "atlas:saturn: keplerian-elements (Table 1)",
+        "atlas:uranus: keplerian-elements (Table 1)",
+        "atlas:venus: keplerian-elements (Table 1)"
+      ]
+    },
+    "counts": {
+      "entities": 13,
+      "observations": 26,
+      "files": 19
+    }
+  },
+  "rejections": []
+}

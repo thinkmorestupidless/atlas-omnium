@@ -1,0 +1,451 @@
+[
+  {
+    "id": "atlas:ceres",
+    "kind": "SmallBody",
+    "names": {
+      "canonical": "Ceres",
+      "aliases": [
+        "1 Ceres",
+        "A801 AA"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "1"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "JPL#48",
+        "record": "Target body name: 1 Ceres (A801 AA)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:ceres",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:ceres:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:ceres:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:earth",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Earth",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "399"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Earth (399)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:earth",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:earth:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:earth:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:halley",
+    "kind": "SmallBody",
+    "names": {
+      "canonical": "1P/Halley",
+      "aliases": [
+        "Halley",
+        "1P"
+      ],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "DES=1P;CAP"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "JPL#75",
+        "record": "Target body name: 1P/Halley",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:halley",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:halley:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:halley:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:jupiter",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Jupiter",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "599"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "jup365_merged",
+        "record": "Target body name: Jupiter (599)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:jupiter",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:jupiter:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:jupiter:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:mars",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Mars",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "499"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "mar099",
+        "record": "Target body name: Mars (499)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:mars",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:mars:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:mars:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:mercury",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Mercury",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "199"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Mercury (199)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:mercury",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:mercury:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:mercury:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:moon",
+    "kind": "Moon",
+    "names": {
+      "canonical": "Moon",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "301"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Moon (301)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:moon",
+        "predicate": "satelliteOf",
+        "target": "atlas:earth",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:moon:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:moon:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:neptune",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Neptune",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "899"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "nep098_merged",
+        "record": "Target body name: Neptune (899)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:neptune",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:neptune:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:neptune:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:pluto",
+    "kind": "SmallBody",
+    "names": {
+      "canonical": "Pluto",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "999"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "plu060_merged",
+        "record": "Target body name: Pluto (999)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:pluto",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:pluto:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:pluto:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:saturn",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Saturn",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "699"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "sat441l",
+        "record": "Target body name: Saturn (699)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:saturn",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:saturn:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:saturn:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:sun",
+    "kind": "Star",
+    "names": {
+      "canonical": "Sun",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "10"
+        }
+      ],
+      "source": {
+        "dataset": "nssdca-factsheet",
+        "release": "sunfact.html, last updated 9 May 2024",
+        "record": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+        "retrieved": "2026-10-23T07:13:31.713Z"
+      }
+    },
+    "classifications": [],
+    "relations": [],
+    "evidence": []
+  },
+  {
+    "id": "atlas:uranus",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Uranus",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "799"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "ura184_merged",
+        "record": "Target body name: Uranus (799)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:uranus",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:uranus:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:uranus:state-vectors"
+    ]
+  },
+  {
+    "id": "atlas:venus",
+    "kind": "Planet",
+    "names": {
+      "canonical": "Venus",
+      "aliases": [],
+      "catalogue": [
+        {
+          "catalogue": "horizons",
+          "id": "299"
+        }
+      ],
+      "source": {
+        "dataset": "jpl-horizons",
+        "release": "DE441",
+        "record": "Target body name: Venus (299)",
+        "retrieved": "2026-10-23T07:16:21.482Z"
+      }
+    },
+    "classifications": [],
+    "relations": [
+      {
+        "source": "atlas:venus",
+        "predicate": "orbits",
+        "target": "atlas:sun",
+        "status": "derived",
+        "evidence": [
+          "obs:horizons:venus:state-vectors"
+        ]
+      }
+    ],
+    "evidence": [
+      "obs:horizons:venus:state-vectors"
+    ]
+  }
+]

@@ -1,0 +1,343 @@
+[
+  {
+    "subject": "atlas:ceres",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 2.766496019994375,
+      "unit": "au"
+    },
+    "e": 0.0783756264716304,
+    "i": 10.58336045805628,
+    "node": 80.49435747295276,
+    "argPeri": 73.92286274285223,
+    "validity": {
+      "from": "2000-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (osculating at J2000)",
+    "source": {
+      "dataset": "jpl-horizons",
+      "release": "JPL#48",
+      "record": "COMMAND=1; ELEMENTS at JD 2451545",
+      "retrieved": "2026-10-23T07:16:21.482Z"
+    }
+  },
+  {
+    "subject": "atlas:earth",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 1.00000261,
+      "unit": "au"
+    },
+    "e": 0.01671123,
+    "i": -0.00001531,
+    "node": 0,
+    "argPeri": 102.93768193,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1; the Earth–Moon barycentre)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"EM Bary\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  },
+  {
+    "subject": "atlas:halley",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 17.9215074123436,
+      "unit": "au"
+    },
+    "e": 0.967270202449048,
+    "i": 162.1960426230816,
+    "node": 59.5078653556394,
+    "argPeri": 112.449622028568,
+    "validity": {
+      "from": "2000-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (osculating at J2000)",
+    "source": {
+      "dataset": "jpl-horizons",
+      "release": "JPL#75",
+      "record": "COMMAND=DES=1P;CAP; ELEMENTS at JD 2451545",
+      "retrieved": "2026-10-23T07:16:21.482Z"
+    }
+  },
+  {
+    "subject": "atlas:jupiter",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 5.202887,
+      "unit": "au"
+    },
+    "e": 0.04838624,
+    "i": 1.30439695,
+    "node": 100.47390909,
+    "argPeri": 274.25457074,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"Jupiter\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  },
+  {
+    "subject": "atlas:mars",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 1.52371034,
+      "unit": "au"
+    },
+    "e": 0.0933941,
+    "i": 1.84969142,
+    "node": 49.55953891,
+    "argPeri": 286.4968315,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"Mars\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  },
+  {
+    "subject": "atlas:mercury",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 0.38709927,
+      "unit": "au"
+    },
+    "e": 0.20563593,
+    "i": 7.00497902,
+    "node": 48.33076593,
+    "argPeri": 29.12703035,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"Mercury\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  },
+  {
+    "subject": "atlas:neptune",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 30.06992276,
+      "unit": "au"
+    },
+    "e": 0.00859048,
+    "i": 1.77004347,
+    "node": 131.78422574,
+    "argPeri": 273.18053653,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"Neptune\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  },
+  {
+    "subject": "atlas:pluto",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 39.57126152242962,
+      "unit": "au"
+    },
+    "e": 0.2494484952274253,
+    "i": 17.23565301572196,
+    "node": 110.03993995362,
+    "argPeri": 115.178665976094,
+    "validity": {
+      "from": "2000-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (osculating at J2000)",
+    "source": {
+      "dataset": "jpl-horizons",
+      "release": "plu060_merged",
+      "record": "COMMAND=999 ELEMENTS at JD 2451545",
+      "retrieved": "2026-10-23T07:16:21.482Z"
+    }
+  },
+  {
+    "subject": "atlas:saturn",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 9.53667594,
+      "unit": "au"
+    },
+    "e": 0.05386179,
+    "i": 2.48599187,
+    "node": 113.66242448,
+    "argPeri": 338.93645383,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"Saturn\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  },
+  {
+    "subject": "atlas:uranus",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 19.18916464,
+      "unit": "au"
+    },
+    "e": 0.04725744,
+    "i": 0.77263783,
+    "node": 74.01692503,
+    "argPeri": 96.93735127,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"Uranus\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  },
+  {
+    "subject": "atlas:venus",
+    "frame": {
+      "kind": "heliocentric-ecliptic",
+      "equinox": "J2000",
+      "system": "ICRF"
+    },
+    "epoch": {
+      "scale": "TDB",
+      "jd": 2451545
+    },
+    "a": {
+      "value": 0.72333566,
+      "unit": "au"
+    },
+    "e": 0.00677672,
+    "i": 3.39467605,
+    "node": 76.67984255,
+    "argPeri": 54.92262463,
+    "validity": {
+      "from": "1800-01-01",
+      "to": "2050-12-31"
+    },
+    "model": "keplerian-elements (Table 1)",
+    "source": {
+      "dataset": "jpl-keplerian-elements",
+      "release": "Table 1, valid 1800 AD to 2050 AD",
+      "record": "https://ssd.jpl.nasa.gov/planets/approx_pos.html Table 1 \"Venus\"",
+      "retrieved": "2026-10-23T07:13:32.070Z"
+    }
+  }
+]

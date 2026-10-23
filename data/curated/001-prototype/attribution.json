@@ -1,0 +1,36 @@
+[
+  {
+    "source": "jpl-horizons",
+    "role": "Solar System state vectors for the supported bodies, sampled over the window; osculating elements for the small bodies' tracks",
+    "licence": "No licence stated. \"For referencing the data downloaded from the SSD website, please use the following citation\" (https://ssd.jpl.nasa.gov/about/).",
+    "attribution": "Solar System Dynamics. (Downloaded 2026, October). (Horizons System). https://ssd.jpl.nasa.gov",
+    "citation": [
+      "Solar System Dynamics. (Downloaded Year, Month, Date). (Title of the Page). https://ssd.jpl.nasa.gov"
+    ],
+    "pages": [
+      "https://ssd.jpl.nasa.gov/about/"
+    ]
+  },
+  {
+    "source": "nssdca-factsheet",
+    "role": "mean radii and masses, transcribed row by row with the page cited",
+    "licence": "No licence stated; a NASA web page. The index page names \"Author/Curator: Dr. David R. Williams, dave.williams@nasa.gov\".",
+    "attribution": "NASA Space Science Data Coordinated Archive, Planetary Fact Sheets. Author/Curator: Dr. David R. Williams.",
+    "citation": [],
+    "pages": [
+      "https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+    ]
+  },
+  {
+    "source": "jpl-keplerian-elements",
+    "role": "approximate Keplerian elements of the planets, for orbit tracks only",
+    "licence": "No licence stated. \"For referencing the data downloaded from the SSD website, please use the following citation\" (https://ssd.jpl.nasa.gov/about/).",
+    "attribution": "Solar System Dynamics. (Downloaded 2026, October). (Approximate Positions of the Planets). https://ssd.jpl.nasa.gov",
+    "citation": [
+      "Solar System Dynamics. (Downloaded Year, Month, Date). (Title of the Page). https://ssd.jpl.nasa.gov"
+    ],
+    "pages": [
+      "https://ssd.jpl.nasa.gov/about/"
+    ]
+  }
+]

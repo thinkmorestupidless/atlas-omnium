@@ -3,47 +3,484 @@
 # `reproducible: true` is written last, by ingest, only when every field is filled and every
 # checksum verified.
 atlas_release: 001-prototype
-generated_at: null
+generated_at: 2026-10-23T07:16:23.001Z
 units_policy: SI-internal-with-explicit-conversions
 window: { from: 2000-01-01, to: 2050-12-31, scale: TDB }
 sources:
   - name: jpl-horizons
     role: Solar System state vectors for the supported bodies, sampled over the window; osculating elements for the small bodies' tracks
     endpoint: https://ssd.jpl.nasa.gov/api/horizons.api
-    query: null
-    retrieval_time: null
-    source_release: null
-    api_version: null
-    licence: null
-    attribution: null
-    citation: null
-    terms_pages: null
-    raw: null
-    curated: null
+    query:
+      vectors:
+        format: json
+        OBJ_DATA: NO
+        MAKE_EPHEM: YES
+        REF_PLANE: ECLIPTIC
+        REF_SYSTEM: ICRF
+        TIME_TYPE: TDB
+        CSV_FORMAT: YES
+        EPHEM_TYPE: VECTORS
+        VEC_TABLE: "2"
+        OUT_UNITS: KM-S
+        VEC_LABELS: NO
+      grid:
+        mercury:
+          COMMAND: "199"
+          CENTER: 500@10
+          STEP_SIZE: 1 d
+          span: &a1
+            startJd: 2451483.5
+            stopJd: 2470257.5
+          chunks: 11
+        venus:
+          COMMAND: "299"
+          CENTER: 500@10
+          STEP_SIZE: 4 d
+          span: *a1
+          chunks: 3
+        earth:
+          COMMAND: "399"
+          CENTER: 500@10
+          STEP_SIZE: 4 d
+          span: *a1
+          chunks: 3
+        mars:
+          COMMAND: "499"
+          CENTER: 500@10
+          STEP_SIZE: 8 d
+          span: *a1
+          chunks: 2
+        jupiter:
+          COMMAND: "599"
+          CENTER: 500@10
+          STEP_SIZE: 1 d
+          span: *a1
+          chunks: 11
+        saturn:
+          COMMAND: "699"
+          CENTER: 500@10
+          STEP_SIZE: 4 d
+          span: *a1
+          chunks: 3
+        uranus:
+          COMMAND: "799"
+          CENTER: 500@10
+          STEP_SIZE: 4 d
+          span: *a1
+          chunks: 3
+        neptune:
+          COMMAND: "899"
+          CENTER: 500@10
+          STEP_SIZE: 2 d
+          span: *a1
+          chunks: 6
+        moon:
+          COMMAND: "301"
+          CENTER: 500@399
+          STEP_SIZE: 1 d
+          span: *a1
+          chunks: 11
+        ceres:
+          COMMAND: 1;
+          CENTER: 500@10
+          STEP_SIZE: 16 d
+          span: *a1
+          chunks: 1
+        pluto:
+          COMMAND: "999"
+          CENTER: 500@10
+          STEP_SIZE: 2 d
+          span: *a1
+          chunks: 6
+        halley:
+          COMMAND: DES=1P;CAP;
+          CENTER: 500@10
+          STEP_SIZE: 2 d
+          span: *a1
+          chunks: 6
+      heldOut:
+        every:
+          mercury: 97
+          venus: 91
+          earth: 91
+          mars: 45
+          jupiter: 97
+          saturn: 91
+          uranus: 91
+          neptune: 97
+          moon: 97
+          ceres: 22
+          pluto: 97
+          halley: 97
+        at: grid-interval midpoints, never grid samples
+        center: as the body's grid
+      elements:
+        format: json
+        OBJ_DATA: NO
+        MAKE_EPHEM: YES
+        REF_PLANE: ECLIPTIC
+        REF_SYSTEM: ICRF
+        TIME_TYPE: TDB
+        CSV_FORMAT: YES
+        EPHEM_TYPE: ELEMENTS
+        OUT_UNITS: AU-D
+        CENTER: 500@10
+        TLIST: "2451545"
+        bodies:
+          - ceres
+          - pluto
+          - halley
+    retrieval_time: 2026-10-23T07:16:21.482Z
+    source_release: "per body, as each response header names it: DE441 for the planets and the Moon, the satellite or small-body solution for the target (see the curated files)"
+    api_version: "1.2"
+    licence: No licence stated. "For referencing the data downloaded from the SSD website, please use the following citation" (https://ssd.jpl.nasa.gov/about/).
+    attribution: Solar System Dynamics. (Downloaded 2026, October). (Horizons System). https://ssd.jpl.nasa.gov
+    citation:
+      - Solar System Dynamics. (Downloaded Year, Month, Date). (Title of the Page). https://ssd.jpl.nasa.gov
+    terms_pages:
+      - https://ssd.jpl.nasa.gov/about/
+    raw:
+      - file: data/raw/001-prototype/jpl-horizons/elements/ceres.json
+        sha256: 2a259cb256d2060b4386317e5dda6ed0679b97fb236ff9cf55bece6c2dcb5e8a
+      - file: data/raw/001-prototype/jpl-horizons/elements/halley.json
+        sha256: eb2446826239c4e648487c768eaa2a42eda790ba80117d0ba7a6deeb64ed5957
+      - file: data/raw/001-prototype/jpl-horizons/elements/pluto.json
+        sha256: 52b067c504e1ce1aa3ade755b93430eefa3606dcfdcdbd504fef567c304eb1ee
+      - file: data/raw/001-prototype/jpl-horizons/held-out/ceres-00.json
+        sha256: e3f153c37389ae5e316702ef29fc9313db63d20e94f1dfc59870050911d08886
+      - file: data/raw/001-prototype/jpl-horizons/held-out/ceres-01.json
+        sha256: ba60999cc9de7cf6174b38baed3bf147b54e28f352903e4bfa64913b021fc90a
+      - file: data/raw/001-prototype/jpl-horizons/held-out/earth-00.json
+        sha256: f1ac5fa44bebf4e53e9b2962084be313a0337ae80345b14a16faa9b777cb90ad
+      - file: data/raw/001-prototype/jpl-horizons/held-out/earth-01.json
+        sha256: 1470d800a62ee6cd57d9d0ddb72f3838ddf8b9c6a972b4151fe723d739065b6b
+      - file: data/raw/001-prototype/jpl-horizons/held-out/halley-00.json
+        sha256: 294163b2e79fed6c576c7db4af6d6fa431a752ebe5e75ea57211fb229551139b
+      - file: data/raw/001-prototype/jpl-horizons/held-out/halley-01.json
+        sha256: 2fa36d21b39d0289f0b34281fb25f5df377920c4e703084a319a8a0778039a76
+      - file: data/raw/001-prototype/jpl-horizons/held-out/halley-02.json
+        sha256: 12b073a83c8f7292d18d091677112cb8d9149d440afacb09dc6d295a6bcdd004
+      - file: data/raw/001-prototype/jpl-horizons/held-out/jupiter-00.json
+        sha256: d4e0d76ed8c9c1a65f6a66eb02cb5ca15421d0ebe5593f15ff514a5ef54846ad
+      - file: data/raw/001-prototype/jpl-horizons/held-out/jupiter-01.json
+        sha256: 2110dbd6bab16fc8e14199c586396a5dca2129bf4da5696fd2f6f3d44684104d
+      - file: data/raw/001-prototype/jpl-horizons/held-out/jupiter-02.json
+        sha256: c5c6fcc13c2179234bb441bfe5f5e5fa550b2f59eedea371796210af304368f6
+      - file: data/raw/001-prototype/jpl-horizons/held-out/jupiter-03.json
+        sha256: b6bcc0f4fcc6eff897df414a0957a93de29a764e748eb79a84d3d77c49baec50
+      - file: data/raw/001-prototype/jpl-horizons/held-out/jupiter-04.json
+        sha256: df20e4f0205f625ffd04a61776397434ca641dd3a90167ffa63cd0dfcfe60602
+      - file: data/raw/001-prototype/jpl-horizons/held-out/mars-00.json
+        sha256: 486bebba73c30eac5f904e65180e1ed33afa9752291dff6dc2dac7854fc5d6cf
+      - file: data/raw/001-prototype/jpl-horizons/held-out/mars-01.json
+        sha256: 634fd8c106b1a76f063ea79c5b15c3b01ee355d228a9d54734c8e59c80dace32
+      - file: data/raw/001-prototype/jpl-horizons/held-out/mercury-00.json
+        sha256: adf95ce1d9b9629826d53376c7529b88bba949aea9e3a83667b5d0f6119b305b
+      - file: data/raw/001-prototype/jpl-horizons/held-out/mercury-01.json
+        sha256: 0d8fd4b92aa73495747c1f050d9945f96d3cd808ccc37af61c4d910e6785bb34
+      - file: data/raw/001-prototype/jpl-horizons/held-out/mercury-02.json
+        sha256: a99296025a227b6ed48d935a0e0788a5bc17a988e7a7bcb3c267e5f0538702bf
+      - file: data/raw/001-prototype/jpl-horizons/held-out/mercury-03.json
+        sha256: 6a79862bb9d5ac0baaddf8c245817d6558270d1190d35b85eeed49cb90407e7e
+      - file: data/raw/001-prototype/jpl-horizons/held-out/mercury-04.json
+        sha256: f14e56ba21d3fcae9ef5a7f0efddd18655a20bea24e636b05d7181fdeb24426f
+      - file: data/raw/001-prototype/jpl-horizons/held-out/moon-00.json
+        sha256: cd2d7175d718f8cc7f648cd2863fa21bd507240b34f259010ccd82a05ecdf55b
+      - file: data/raw/001-prototype/jpl-horizons/held-out/moon-01.json
+        sha256: be3319a91a83960b0e1863107164fb80acc3502141235647b21e4a26ef3f085d
+      - file: data/raw/001-prototype/jpl-horizons/held-out/moon-02.json
+        sha256: 1e655406d4ba3a4028fb7b939640b5d28ff913cdb71a287bd0dd8fed92d3f2d4
+      - file: data/raw/001-prototype/jpl-horizons/held-out/moon-03.json
+        sha256: 01473507ba1bd92706a3f11855b0639f8a99dc42d104ce4604e8af63df277c3e
+      - file: data/raw/001-prototype/jpl-horizons/held-out/moon-04.json
+        sha256: 7efad2741e3da4c4044c6c5e9f0d47ad2f40538ee9e32131481e7f2fcc5b66dd
+      - file: data/raw/001-prototype/jpl-horizons/held-out/neptune-00.json
+        sha256: af191156f1b66b6af0b9a96f2d4bcd45596b002a21e5e477682c5e8a2b06c35b
+      - file: data/raw/001-prototype/jpl-horizons/held-out/neptune-01.json
+        sha256: 4ca78521c1e5b823dd2292e86b082e1aef2fb85e034ceca326726b6b13b808f9
+      - file: data/raw/001-prototype/jpl-horizons/held-out/neptune-02.json
+        sha256: cd210476a292efa7b671c0990754d8fbe7e00c740b5b6755de18566e743152b9
+      - file: data/raw/001-prototype/jpl-horizons/held-out/pluto-00.json
+        sha256: da5ae11d935e1f46f4bd585834c71d817ca1bf7becb4d487db8ef78dde55ea04
+      - file: data/raw/001-prototype/jpl-horizons/held-out/pluto-01.json
+        sha256: f571cc4b2e9693de3fab95240342b8d268f887fda57d990b71930b893a99ed42
+      - file: data/raw/001-prototype/jpl-horizons/held-out/pluto-02.json
+        sha256: 19e0bac3aa105043843f590c624ee5135e84ad73081b0854d255e6ba55d4d129
+      - file: data/raw/001-prototype/jpl-horizons/held-out/saturn-00.json
+        sha256: d80426cf3577a34067eee873f939ec4913d038a87a6aff252eeb7e8821bfb85c
+      - file: data/raw/001-prototype/jpl-horizons/held-out/saturn-01.json
+        sha256: 575ab2aa049f0ad583c4c7a8fcfb17c168fe22a21ff567811607d0acd16cd353
+      - file: data/raw/001-prototype/jpl-horizons/held-out/uranus-00.json
+        sha256: b512b01f5389648eead1d893debc1a5d398e42fb3ec59f2bfa58d22a2090c512
+      - file: data/raw/001-prototype/jpl-horizons/held-out/uranus-01.json
+        sha256: b204e1ec8d86a49b7daf5f77ea4475e967202a8947cc7939617ace78fd5c6b80
+      - file: data/raw/001-prototype/jpl-horizons/held-out/venus-00.json
+        sha256: f9685af91eafc8d168d522477da8c88bf9795ef65dfe3348ebe0aac2ebc9001a
+      - file: data/raw/001-prototype/jpl-horizons/held-out/venus-01.json
+        sha256: b5ee324d81b1257e28031a7e1b48d4c343168be47e1834b742df67c52fabe28b
+      - file: data/raw/001-prototype/jpl-horizons/terms/ssd-about.html
+        sha256: d56a9f6c91b5dde6f5245203595e22ed7ff5c3deeb62349b67d76402929c058d
+      - file: data/raw/001-prototype/jpl-horizons/vectors/ceres-2451483.5.json
+        sha256: c3ded3398401b5a0c72b97072f0580ec489e3d704789ecbff16aa39d4583ce40
+      - file: data/raw/001-prototype/jpl-horizons/vectors/earth-2451483.5.json
+        sha256: 98e1647742e0265a41efe03803b8e2a254645d003ae6f669ca1e5168d3905fcf
+      - file: data/raw/001-prototype/jpl-horizons/vectors/earth-2458803.5.json
+        sha256: cfb89bd2eca33b4f912a85e05f1151e08edc0fc0e099bade87e068876c428c90
+      - file: data/raw/001-prototype/jpl-horizons/vectors/earth-2466123.5.json
+        sha256: 7fcd6a1b4861288246e9de77974a82f197323f51dc5606cea691ffda7a2388cc
+      - file: data/raw/001-prototype/jpl-horizons/vectors/halley-2451483.5.json
+        sha256: 49b6e0dab332b5d10c5b2785cf7db2dd83fcea4521827501b7b7c46545b8303e
+      - file: data/raw/001-prototype/jpl-horizons/vectors/halley-2455143.5.json
+        sha256: a1045d67f466acea1afd2cf8e8c294eee90157f6055e8664a2e25103554f857f
+      - file: data/raw/001-prototype/jpl-horizons/vectors/halley-2458803.5.json
+        sha256: 7681368d5c5765973fd7c9923528703efa71dd2ccd84e40ab3067e7b2e368496
+      - file: data/raw/001-prototype/jpl-horizons/vectors/halley-2462463.5.json
+        sha256: a658355adc8b458460f6543515b9b3cb151764e62d340bfc7dcf26d79b60b894
+      - file: data/raw/001-prototype/jpl-horizons/vectors/halley-2466123.5.json
+        sha256: 365545ea62433bb17b8d3ddc70f26c44d55a72a408ce722769a55996a0a70d9f
+      - file: data/raw/001-prototype/jpl-horizons/vectors/halley-2469783.5.json
+        sha256: 6225369b4cbd943d36f9c6218e3d9ecde3cdeb3fa73eecb06e36d826eec45b5f
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2451483.5.json
+        sha256: b8a00564bb3988e80d919d897fbce1fa821470ca82a87974e97256d3bf2601ea
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2453313.5.json
+        sha256: 8f91b4fa9ba2fe172d74330868ae15890bb6d340200c5db92aa88ea8dc819fe5
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2455143.5.json
+        sha256: 7b9655e8ed18b36b049f4961e2cc404d72dbff160a5b3de843017e42185e2bad
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2456973.5.json
+        sha256: 1f09a4f6981d7bd1114a754d3d2686bbef6f56d2bf1f414ad79f1b958731441a
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2458803.5.json
+        sha256: 073c2c2648907a9e07b33b2a40a0cf3258be5ff2c3f8a37f90b26cf09959cacc
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2460633.5.json
+        sha256: a1c9aabc976de38b44299d05f0e7e372205da01df627faf02202770bea61be28
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2462463.5.json
+        sha256: e08f95a004022e2335775e4b30c523bec350075aa97d717dcd2edaf77bc69a5c
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2464293.5.json
+        sha256: 81b2c80b98c67f903ca3bf7cbe02a0eb9a86dac8d42300a5c1813db4428cc8be
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2466123.5.json
+        sha256: 49db054c1cd2a630f68398dda4b5c7ecf06d2c55aec744e900cca99f18dfd66c
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2467953.5.json
+        sha256: 8e93f8c4e023415a032db6d3477277a1d7a32eedc37bce3557ee7b0da50a653a
+      - file: data/raw/001-prototype/jpl-horizons/vectors/jupiter-2469783.5.json
+        sha256: 922ef6f29b42648f96eea83be396ab040001824d3ba43c96d80e42cef6059afb
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mars-2451483.5.json
+        sha256: ed042950e6033575e62cef3dfaf56ca7746c34a81532d1a906acdd18254a7886
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mars-2466123.5.json
+        sha256: 7b6999856427649858ba0c9536b1d08551395fc79a87b0ca2e4e5c777728945f
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2451483.5.json
+        sha256: 559a8a4d9103bab49769cbb1a20f9806c85e69f04eedb80ae0b854f5dd2a3c21
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2453313.5.json
+        sha256: 02e952814a7d2aa943b19a32c172d899af0817c06042da4df576cbcd9405ff2c
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2455143.5.json
+        sha256: 44116856ff58f6760cb4023a23b040975c2f7615ffa689d25a147bbe54bb8778
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2456973.5.json
+        sha256: 7e9661a8937093feaadb9506236abe7e1f0f48a9d4c5b8beb7134a57db351ada
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2458803.5.json
+        sha256: 05753cf8b1aaf33d4f2957e848b4cb8307048b16df4da28a75ce3916b16f1d56
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2460633.5.json
+        sha256: 28ba6df91c38b7557dc23ff96a2b5a31b5e15d8382e4ba851e103a134dc006c7
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2462463.5.json
+        sha256: a89b3df8bb21d7f8c5fccbc677464ad53f0ee998336266baeef8b0eb35ea67c5
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2464293.5.json
+        sha256: 26c1911dee7f983f14e4c2244c638b15091b45cc521ccb84699fd675b0394d04
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2466123.5.json
+        sha256: b06b38a4d947b3952b4999997482474136d24f4c9a0b6fcbfc55f665e36c20b5
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2467953.5.json
+        sha256: e1052bdd9ffb60a0e99928ac0147dafbed9723f5e5cbda46abf4ca451d1c3bb4
+      - file: data/raw/001-prototype/jpl-horizons/vectors/mercury-2469783.5.json
+        sha256: 397f809124fcc502c75363468fa726d010fdce3b7d1aa19745bed360d751f713
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2451483.5.json
+        sha256: a75784ec66d8e45a3073469d84053eccc228cc36008b23bc952fffb64f31770a
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2453313.5.json
+        sha256: 5896d073df1b86be8f7a822a76b7ff45f7fd320dd59524eafb36e1c7d9a87249
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2455143.5.json
+        sha256: 0ef0103a2541acfc1a3990bdcfa8bfb1630c24f805c8daa40d8b9e9b0f4bcdb0
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2456973.5.json
+        sha256: 03ca286c048d9ddc542be7f94dcd12e6141166d14d86953ccabfd878ad03dbdb
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2458803.5.json
+        sha256: 5b7a7b8cc662116abdafc4fd28de2c446b0ea2db0d70b3cc7a774a97c92bf243
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2460633.5.json
+        sha256: 889ec1243e87e8e9c7d12c1a02c76734174123fcbc8ba1d9d1c4c0ae6bbf49d8
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2462463.5.json
+        sha256: 9cb0ad1125407687b76aa134dd2e1cbfdd6038b0cf414d346a4d794539b98eb4
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2464293.5.json
+        sha256: ba44a1b0a14fb781eb8814559f49411194cb35a416718f8fce2288c439ac38e6
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2466123.5.json
+        sha256: 69db0a9f324554df121f7a0dbf8597b10192d3a2a46087fe2e333715017493ab
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2467953.5.json
+        sha256: 3ddbc745ff64cbf90badc064a4aa39b9e753e3fce2895791f28c51750acb8e3e
+      - file: data/raw/001-prototype/jpl-horizons/vectors/moon-2469783.5.json
+        sha256: 19f7bca2b897ffb938b0680fd657736c616e6860e1a7181b172ca6a04f5de519
+      - file: data/raw/001-prototype/jpl-horizons/vectors/neptune-2451483.5.json
+        sha256: 096f564eebc57291f7aec18fadc39cb50d0ec2bd32b958b6dfac6b13487be04e
+      - file: data/raw/001-prototype/jpl-horizons/vectors/neptune-2455143.5.json
+        sha256: 16f599fd2a27b59ffb3f40f2c65a1f78c67bb4ea6e212abd149d43e4d8b156f4
+      - file: data/raw/001-prototype/jpl-horizons/vectors/neptune-2458803.5.json
+        sha256: 7e04a622dd6a64df50194209a2a3c57440c5afa8b35c4ba9f61683e58425661e
+      - file: data/raw/001-prototype/jpl-horizons/vectors/neptune-2462463.5.json
+        sha256: 59008179c4fbe639ec2e3b1c0517a91289cf6326ae03eb044c63e1b7674e1610
+      - file: data/raw/001-prototype/jpl-horizons/vectors/neptune-2466123.5.json
+        sha256: 11331cb73f96cd9a3640d5daa868bb868996f3ace05fef4960b52d53374541df
+      - file: data/raw/001-prototype/jpl-horizons/vectors/neptune-2469783.5.json
+        sha256: f9435b77e6c3fcccfdedb481bdb4c09623f74b010022ff7645840ad9c59e2951
+      - file: data/raw/001-prototype/jpl-horizons/vectors/pluto-2451483.5.json
+        sha256: 43f40ba2f1d85c74c90a8b30da85d75a6ea31b730d65f6dc4caa6d3b9d9a4fd8
+      - file: data/raw/001-prototype/jpl-horizons/vectors/pluto-2455143.5.json
+        sha256: 23fe2e3e38070879704f223b177016a46b5d0a56de9b5311783e8fa72f5bb551
+      - file: data/raw/001-prototype/jpl-horizons/vectors/pluto-2458803.5.json
+        sha256: 1f324f7d91d4b87aef0cd456c878ab64421b874c9faa717c87ae87038e274be7
+      - file: data/raw/001-prototype/jpl-horizons/vectors/pluto-2462463.5.json
+        sha256: a7c93a560f24e057aeb2c065a6dc4f8e9843d3c085f106b73dfc4bb5eb0b8317
+      - file: data/raw/001-prototype/jpl-horizons/vectors/pluto-2466123.5.json
+        sha256: c9d6b34b193b610e2e743538bbdb57e3041c4916c827956ce47c96150c454063
+      - file: data/raw/001-prototype/jpl-horizons/vectors/pluto-2469783.5.json
+        sha256: 80ea2fb0f07fef5e70a8bf98317f22332559a388175e09c228d10c296c25e896
+      - file: data/raw/001-prototype/jpl-horizons/vectors/saturn-2451483.5.json
+        sha256: 9b14cf013af59fef9d95d85c6f5607b6678f9427b4b6d3af10c0242ca992bc9e
+      - file: data/raw/001-prototype/jpl-horizons/vectors/saturn-2458803.5.json
+        sha256: e9253186aaa8103d741a64c21d0b51ea8b7668428d39ac130243127b6f289c04
+      - file: data/raw/001-prototype/jpl-horizons/vectors/saturn-2466123.5.json
+        sha256: b1c053da7f5cecf88cecbc2e619666f02f1903cfa65af31177dfde7f06ec2be5
+      - file: data/raw/001-prototype/jpl-horizons/vectors/uranus-2451483.5.json
+        sha256: bd01512c7f1022bd486959dfc9e16ae94c56cd2f7d9156cf9ddbd33e1d9328d2
+      - file: data/raw/001-prototype/jpl-horizons/vectors/uranus-2458803.5.json
+        sha256: 6d1c4d513563ff68cfaf94598d009748da6776e4cf4072f4f9bf970f79166930
+      - file: data/raw/001-prototype/jpl-horizons/vectors/uranus-2466123.5.json
+        sha256: 235baf5703e81affec57e85fabb5daa1d9835fc12e38e1cae8b76edb4c491f74
+      - file: data/raw/001-prototype/jpl-horizons/vectors/venus-2451483.5.json
+        sha256: d0da2fe9f1c45cd929971665a9949dfffa9b121a5fbb51078c41687ea9a7a283
+      - file: data/raw/001-prototype/jpl-horizons/vectors/venus-2458803.5.json
+        sha256: 0aff4ffdbc4a5dafc1564d0a80dcd1dc1ac0b91c57323d1b962a3f9583a2dea5
+      - file: data/raw/001-prototype/jpl-horizons/vectors/venus-2466123.5.json
+        sha256: b59dfa9a90569d475a17a54fa5d4fc29846ab25d35412f782777ae5f0ddbbdaf
+    curated:
+      - file: data/curated/001-prototype/entities.json
+        sha256: 57d170e14cb091e8da68526b8f3bae478351f3ef68784c74c1a252a60f406338
+      - file: data/curated/001-prototype/observations.json
+        sha256: 873c672a025fb0a82ca6c4399a419d6f8134981c9ce3f977344808171a1e67c2
+      - file: data/curated/001-prototype/ephemeris/mercury.json
+        sha256: 8da3137bfdb3b72e1fbcd8a17d4f1092c06593986f666574c9dc79d27962aed6
+      - file: data/curated/001-prototype/ephemeris/venus.json
+        sha256: 06dd64b7965d13f26e4401cb508aaa75609d57df79ecacfabe85034eaceea785
+      - file: data/curated/001-prototype/ephemeris/earth.json
+        sha256: e2dd425c323356423d6cf9d9e96b57c4ebe1eb64eb6d423329b6d00407f06334
+      - file: data/curated/001-prototype/ephemeris/mars.json
+        sha256: e7dcd9cd642bc1eb83940c754f8cd4547184884a52f7344ff5e72350b31fd2a1
+      - file: data/curated/001-prototype/ephemeris/jupiter.json
+        sha256: 76a76aff283ed798ff4cd1eb55997dbc17179227010a78fd23895e2839780328
+      - file: data/curated/001-prototype/ephemeris/saturn.json
+        sha256: 98e24cacd59ecca188551909b1338e12d9a8091bd8896b3915884f81c2ea831c
+      - file: data/curated/001-prototype/ephemeris/uranus.json
+        sha256: d19122b8d01f967040f49fc715f40158d4fe47c3f9e9a2874dff79ca4364ab89
+      - file: data/curated/001-prototype/ephemeris/neptune.json
+        sha256: 16a25f4ae588ce091eb0481be7c0672cae3b229d829a9ba02c394a685bc3a265
+      - file: data/curated/001-prototype/ephemeris/moon.json
+        sha256: 4fa0b7591942af15023b92968f3001df1573172163d302c91907d1ae78b34826
+      - file: data/curated/001-prototype/ephemeris/ceres.json
+        sha256: 1a80f03f5a243c3ed10d05070dc477d2208931854a0910737a8abfea00d321fc
+      - file: data/curated/001-prototype/ephemeris/pluto.json
+        sha256: 78de8a129226c2b9e83a14c3bfbf57d751b50990e0d2d8ca08d47e2d569eda8d
+      - file: data/curated/001-prototype/ephemeris/halley.json
+        sha256: 27f6cfac7607d6b429ae68310dafe6dd8b989fd2e221596495de529c39a8491d
+      - file: tests/fixtures/horizons-held-out.json
+        sha256: bb3559ed99204273eb1ce24efd0b87c6964d0a15fdd8677359fec4c8f6880e14
+      - file: data/curated/001-prototype/precision.json
+        sha256: a0fb84de113dd2213964f5bc5ad67c30e4bffb75509e07bb2b25533f02508454
+      - file: data/curated/001-prototype/elements.json
+        sha256: 42c001b59feb0608afc7973691e69a2e16f1706f7577a3e4b12d9b70b41016fd
+      - file: data/curated/001-prototype/attribution.json
+        sha256: 4b8152757d335facd02f6f0c8ca73621780bf39c2d8be054a6eba8890721c4fc
+      - file: data/curated/001-prototype/validation-report.json
+        sha256: fe4d59791828c2c3078656d4dacb714ccc49c6e82467d8aec4bda5e2b8bd101f
   - name: nssdca-factsheet
     role: mean radii and masses, transcribed row by row with the page cited
     endpoint: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
-    query: null
-    retrieval_time: null
-    source_release: null
-    licence: null
-    attribution: null
-    citation: null
-    terms_pages: null
-    raw: null
-    curated: null
+    query:
+      pages:
+        sun: https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html
+        mercury: https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html
+        venus: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+        earth: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+        mars: https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html
+        jupiter: https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html
+        saturn: https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturnfact.html
+        uranus: https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html
+        neptune: https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html
+        moon: https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
+        pluto: https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html
+        ceres: https://nssdc.gsfc.nasa.gov/planetary/factsheet/asteroidfact.html
+        halley: https://nssdc.gsfc.nasa.gov/planetary/factsheet/cometfact.html
+      rows:
+        - Volumetric mean radius (km)
+        - Mass (10^n kg)
+    retrieval_time: 2026-10-23T07:13:31.713Z
+    source_release: 'the pages as retrieved; the index page reads "Last Updated: 18 March 2025, DRW"'
+    licence: 'No licence stated; a NASA web page. The index page names "Author/Curator: Dr. David R. Williams, dave.williams@nasa.gov".'
+    attribution: "NASA Space Science Data Coordinated Archive, Planetary Fact Sheets. Author/Curator: Dr. David R. Williams."
+    citation: []
+    terms_pages:
+      - https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    raw:
+      - file: data/raw/001-prototype/nssdca-factsheet/asteroidfact.html
+        sha256: 23bec548888df80453dec4756ed53a2529d3227402066e65d2af6927383e8622
+      - file: data/raw/001-prototype/nssdca-factsheet/cometfact.html
+        sha256: 146b78c51739d9ef4403193e314b58e0bf0cf0b5714a996e98de5ca3b7589740
+      - file: data/raw/001-prototype/nssdca-factsheet/earthfact.html
+        sha256: 1b06e3ec31249d063d40d1b38837fac89ddcd2f4b25268b38e8a6d5f413e70ef
+      - file: data/raw/001-prototype/nssdca-factsheet/jupiterfact.html
+        sha256: 9ac7835ae5387261bc02019a641bbfc8450122ffebebffea5678c3de6c54d0cb
+      - file: data/raw/001-prototype/nssdca-factsheet/marsfact.html
+        sha256: 366b0ce9b69cbee370be904956748af954468a41b93dc71a796a986519aa8d74
+      - file: data/raw/001-prototype/nssdca-factsheet/mercuryfact.html
+        sha256: 170d9f2d2ba7f7ae322c68d473ccb0b35ab94f4b4aca197bf74fe3b7e4e10f3f
+      - file: data/raw/001-prototype/nssdca-factsheet/moonfact.html
+        sha256: a468979dfb4179e36a3f6579cd2d1d4a475b5c6da29313fd470fa68ca1aa30c1
+      - file: data/raw/001-prototype/nssdca-factsheet/neptunefact.html
+        sha256: 4b9166f959be2b507eea77a9eef56f4e5679b693ba75151072a28bb228f44328
+      - file: data/raw/001-prototype/nssdca-factsheet/plutofact.html
+        sha256: cdf13d454e44e0abf141389a1b0554c48b49fc7b46c9e1feea704b91db8e791f
+      - file: data/raw/001-prototype/nssdca-factsheet/saturnfact.html
+        sha256: 6d09ba010cacef61c8ae1a1ff137b06e5464e99461faf8f32c107419c474d06d
+      - file: data/raw/001-prototype/nssdca-factsheet/sunfact.html
+        sha256: bcc186a518298636340e7975bf5a32da660cd656b90081f2e7c8aa7ec2b6561a
+      - file: data/raw/001-prototype/nssdca-factsheet/terms/index.html
+        sha256: 42bdc3f1dae470b85580c6ac66c353964a05d544ad2ac970a6b7d908337a6c3c
+      - file: data/raw/001-prototype/nssdca-factsheet/uranusfact.html
+        sha256: 02389139f8345a4328fc8f8956012cb72f691c6c7c2854c03c0b2512a063de81
+      - file: data/raw/001-prototype/nssdca-factsheet/venusfact.html
+        sha256: 473c61da0bf7188764ec8ae5b12c0fdc9f922bccd9e3f6b47c885fef0723541c
+    curated:
+      - file: data/curated/001-prototype/entities.json
+        sha256: 57d170e14cb091e8da68526b8f3bae478351f3ef68784c74c1a252a60f406338
+      - file: data/curated/001-prototype/observations.json
+        sha256: 873c672a025fb0a82ca6c4399a419d6f8134981c9ce3f977344808171a1e67c2
+      - file: data/curated/001-prototype/attribution.json
+        sha256: 4b8152757d335facd02f6f0c8ca73621780bf39c2d8be054a6eba8890721c4fc
+      - file: data/curated/001-prototype/validation-report.json
+        sha256: fe4d59791828c2c3078656d4dacb714ccc49c6e82467d8aec4bda5e2b8bd101f
   - name: jpl-keplerian-elements
     role: approximate Keplerian elements of the planets, for orbit tracks only
     endpoint: https://ssd.jpl.nasa.gov/planets/approx_pos.html
-    query: null
-    retrieval_time: null
-    source_release: null
-    licence: null
-    attribution: null
-    citation: null
-    terms_pages: null
-    raw: null
-    curated: null
+    query:
+      page: https://ssd.jpl.nasa.gov/planets/approx_pos.html
+      table: "Table 1: Keplerian elements and their rates, valid 1800 AD - 2050 AD; the J2000 values only"
+    retrieval_time: 2026-10-23T07:13:32.070Z
+    source_release: Table 1, E M Standish, as published on the page retrieved
+    licence: No licence stated. "For referencing the data downloaded from the SSD website, please use the following citation" (https://ssd.jpl.nasa.gov/about/).
+    attribution: Solar System Dynamics. (Downloaded 2026, October). (Approximate Positions of the Planets). https://ssd.jpl.nasa.gov
+    citation:
+      - Solar System Dynamics. (Downloaded Year, Month, Date). (Title of the Page). https://ssd.jpl.nasa.gov
+    terms_pages:
+      - https://ssd.jpl.nasa.gov/about/
+    raw:
+      - file: data/raw/001-prototype/jpl-keplerian-elements/approx_pos.html
+        sha256: 9f7b30ca81cc548a879565bb3f70e6899a38ff5877cb1ff16bb04892f9c4d742
+    curated:
+      - file: data/curated/001-prototype/elements.json
+        sha256: 42c001b59feb0608afc7973691e69a2e16f1706f7577a3e4b12d9b70b41016fd
+      - file: data/curated/001-prototype/attribution.json
+        sha256: 4b8152757d335facd02f6f0c8ca73621780bf39c2d8be054a6eba8890721c4fc
+      - file: data/curated/001-prototype/validation-report.json
+        sha256: fe4d59791828c2c3078656d4dacb714ccc49c6e82467d8aec4bda5e2b8bd101f
   - name: gaia
     role: the nearby-star sample, with parallax, position, proper motion and their uncertainties
     endpoint: https://gea.esac.esa.int/tap-server/tap/sync
@@ -92,4 +529,4 @@ sources:
     terms_pages: null
     raw: null
     curated: null
-validation_report: null
+validation_report: data/curated/001-prototype/validation-report.json

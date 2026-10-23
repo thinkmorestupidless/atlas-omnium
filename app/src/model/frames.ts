@@ -12,9 +12,9 @@ export type Frame =
   | { readonly kind: 'icrs-cartesian'; readonly origin: 'sun' }
   | { readonly kind: 'molecular-conformer'; readonly source: { dataset: string; release: string; record: string; retrieved: string } };
 
-export const ECLIPTIC_J2000: Frame = { kind: 'heliocentric-ecliptic', equinox: 'J2000', system: 'ICRF' };
-export const GEOCENTRIC_ECLIPTIC_J2000: Frame = { kind: 'geocentric-ecliptic', equinox: 'J2000', system: 'ICRF' };
-export const ICRS_SUN: Frame = { kind: 'icrs-cartesian', origin: 'sun' };
+export const ECLIPTIC_J2000 = { kind: 'heliocentric-ecliptic', equinox: 'J2000', system: 'ICRF' } as const satisfies Frame;
+export const GEOCENTRIC_ECLIPTIC_J2000 = { kind: 'geocentric-ecliptic', equinox: 'J2000', system: 'ICRF' } as const satisfies Frame;
+export const ICRS_SUN = { kind: 'icrs-cartesian', origin: 'sun' } as const satisfies Frame;
 
 export interface PositionAtEpoch {
   readonly r: Vector3;
